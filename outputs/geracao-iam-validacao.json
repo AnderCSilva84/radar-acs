@@ -1,0 +1,15 @@
+{
+  "requestId": "56cada76-4a30-48f9-a6ac-2ebeb0138d11",
+  "inicio": "2026-10-03T00:46:09.462Z",
+  "anonimoHttp": 403,
+  "iamHttp": 405,
+  "beforeHash": "8efa7caf48ef8d1c91ad8e16060dd0950b3a1ff5cfeba26227131118a6596728",
+  "httpGeracao": 503,
+  "resultado": {
+    "success": false,
+    "message": "A geração não foi concluída. Consulte as métricas e verifique o briefing antes de repetir."
+  },
+  "duracaoClienteMs": 41586,
+  "getHttp": 200,
+  "briefingAnteriorPreservado": true
+}

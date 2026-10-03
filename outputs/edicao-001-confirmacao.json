@@ -1,0 +1,19 @@
+{
+  "publicacao": {
+    "success": true,
+    "id": "2026-10-02",
+    "publicado": true
+  },
+  "get": {
+    "http": 200,
+    "titulo": "Radar ACS — Edição #001",
+    "data": "2026-10-02",
+    "corresponde": false
+  },
+  "noticias": [
+    "OpenAI apresenta GPT-6 Sol e Luna",
+    "GitHub Copilot Code Review ganha suporte por API",
+    "GitHub destaca três habilidades para desenvolvedores na era da IA",
+    "Google Cloud reúne suas atualizações mais recentes"
+  ]
+}

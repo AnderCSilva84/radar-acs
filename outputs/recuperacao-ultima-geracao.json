@@ -1,0 +1,139 @@
+{
+  "actions": {
+    "toolItems": 4,
+    "toolActions": 4,
+    "pesquisasObservadas": 3,
+    "pesquisasConcluidas": 3,
+    "searchQueries": 12,
+    "classificacaoCompleta": true,
+    "acoes": [
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "completed",
+        "action": "search",
+        "queries": [
+          "site:blog.google/ or site:cloud.google.com AI software September 2026 October 2026 official blog release",
+          "site:openai.com October 2026 blog API release official",
+          "site:microsoft.com September 2026 AI software official blog",
+          "Brazil concurso TI setembro 2026 outubro 2026 site:gov.br oficial"
+        ]
+      },
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "completed",
+        "action": "search",
+        "queries": [
+          "site:openai.com/index/ September 2026 openai official blog api changelog",
+          "site:blog.google/ October 2026 official AI blog release October 2 2026",
+          "site:developers.googleblog.com September 2026 release official software engineering model",
+          "site:github.blog September 2026 official changelog AI coding release"
+        ]
+      },
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "completed",
+        "action": "search",
+        "queries": [
+          "site:blog.google September 2026 Gemini 4 Argon official",
+          "site:blog.google WeatherNext 3 September 2026 official",
+          "site:blog.google Gemini for Windows September 2026 official",
+          "site:blog.google Connected Apps Gemini App September 2026 official"
+        ]
+      },
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "searching",
+        "action": "open_page",
+        "queries": []
+      }
+    ]
+  },
+  "titles": [
+    "OpenAI adiciona computer use ao Agents API e lança GPT-6.1 Sol",
+    "Google lança Gemini 4 Argon para fluxos complexos de software, jurídico, finanças e cibersegurança",
+    "Google adiciona Skills ao Gemini para automatizar tarefas repetitivas",
+    "GitHub Copilot no VS Code ganha seleção automática de modelos com HydraFusion"
+  ],
+  "contract": {
+    "status": "FAIL",
+    "message": "Roteiro fora do padrão de áudio esperado: 305 palavras; mínimo técnico 320, máximo 750, sem URLs ou marcação",
+    "code": "AUDIO_SCRIPT_INVALID"
+  },
+  "duplicate": {
+    "resultado": "PASS",
+    "pares": [
+      {
+        "assuntos": [
+          1,
+          2
+        ],
+        "similaridadeTitulo": 0.047619047619047616,
+        "similaridadeResumo": 0.08928571428571429,
+        "mesmaUrl": false
+      },
+      {
+        "assuntos": [
+          1,
+          3
+        ],
+        "similaridadeTitulo": 0.058823529411764705,
+        "similaridadeResumo": 0.09259259259259259,
+        "mesmaUrl": false
+      },
+      {
+        "assuntos": [
+          1,
+          4
+        ],
+        "similaridadeTitulo": 0,
+        "similaridadeResumo": 0.11538461538461539,
+        "mesmaUrl": false
+      },
+      {
+        "assuntos": [
+          2,
+          3
+        ],
+        "similaridadeTitulo": 0.125,
+        "similaridadeResumo": 0.125,
+        "mesmaUrl": false
+      },
+      {
+        "assuntos": [
+          2,
+          4
+        ],
+        "similaridadeTitulo": 0,
+        "similaridadeResumo": 0.06,
+        "mesmaUrl": false
+      },
+      {
+        "assuntos": [
+          3,
+          4
+        ],
+        "similaridadeTitulo": 0,
+        "similaridadeResumo": 0.04081632653061224,
+        "mesmaUrl": false
+      }
+    ]
+  },
+  "fields": [
+    "criadoEm",
+    "responseStatus",
+    "metrics",
+    "expiresAt",
+    "fontes",
+    "responseId",
+    "respostaEditorialBruta",
+    "status",
+    "resultadoEstruturado",
+    "chamadasWeb"
+  ],
+  "factual": "UNVERIFIABLE_WITHOUT_PRESERVED_SOURCE_CONTENT",
+  "published": false
+}

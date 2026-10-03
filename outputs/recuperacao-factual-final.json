@@ -1,0 +1,39 @@
+{
+  "audio": {
+    "palavras": 305
+  },
+  "evidence": {
+    "resultado": "PARTIAL",
+    "leiturasFontes": 4,
+    "noticias": [],
+    "rejeitadas": [
+      {
+        "ordem": 1,
+        "code": "FACTUAL_EVIDENCE_UNCONFIRMED",
+        "motivo": "Evidência do assunto 1: trecho não encontrado na página indicada"
+      },
+      {
+        "ordem": 2,
+        "code": "FACTUAL_EVIDENCE_UNCONFIRMED",
+        "motivo": "Evidência do assunto 2: termo/produto/modelo/versão sem apoio no trecho confirmado"
+      },
+      {
+        "ordem": 3,
+        "code": "FACTUAL_EVIDENCE_UNCONFIRMED",
+        "motivo": "Evidência do assunto 3: termo/produto/modelo/versão sem apoio no trecho confirmado"
+      },
+      {
+        "ordem": 4,
+        "code": "FACTUAL_EVIDENCE_UNCONFIRMED",
+        "motivo": "Evidência do assunto 4: não foi possível confirmar a fonte: Endereço de fonte não público"
+      }
+    ]
+  },
+  "final": {
+    "status": "FAIL",
+    "code": "INSUFFICIENT_VERIFIED_NEWS",
+    "message": "Menos de três assuntos possuem evidência confirmada"
+  },
+  "published": false,
+  "contentUnchanged": true
+}

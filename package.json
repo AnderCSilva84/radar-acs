@@ -1,0 +1,8 @@
+{
+  "name": "radar-acs",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests",
+    "publish:briefing": "node scripts/publish-briefing.js"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:486152588525:function:595cf9d1-33c9-4e53-b88b-e079ec7f84ac:Release_0"
+        },
+        "interfaces": [],
+        "locales": {},
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:486152588525:function:595cf9d1-33c9-4e53-b88b-e079ec7f84ac:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:486152588525:function:595cf9d1-33c9-4e53-b88b-e079ec7f84ac:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:486152588525:function:595cf9d1-33c9-4e53-b88b-e079ec7f84ac:Release_0"
+            }
+          }
+        },
+        "tasks": [
+          {
+            "name": "OuvirBriefingHoje",
+            "version": "1"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0",
+    "publishingInformation": {
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "pt-BR": {
+          "description": "Briefing diário pessoal de tecnologia, inteligência artificial, carreira e oportunidades.",
+          "examplePhrases": [
+            "Alexa, abra radar acs",
+            "ouvir briefing",
+            "ajuda"
+          ],
+          "keywords": [],
+          "name": "Radar ACS",
+          "summary": "Seu briefing diário Radar ACS."
+        }
+      },
+      "testingInstructions": "Em Development, diga: Alexa, abra radar acs. Configure o endpoint antes de testar."
+    }
+  }
+}

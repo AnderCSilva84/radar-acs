@@ -1,0 +1,47 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Ouvir briefing de hoje",
+    "version": "1",
+    "x-amzn-alexa-access-scope": "public",
+    "x-amzn-display-details": {
+      "pt-BR": {
+        "title": "Ouvir briefing de hoje",
+        "description": "Reproduz o briefing mais recente disponível no Radar ACS."
+      }
+    }
+  },
+  "paths": {
+    "/OuvirBriefingHoje": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "ouvirHoje": { "description": "Reproduzir sem parâmetros.", "value": {} }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Briefing reproduzido.",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/SuccessfulResponse" } }
+            }
+          },
+          "400": { "description": "Tarefa, versão, locale ou parâmetros inválidos." },
+          "500": { "description": "Briefing ausente ou indisponível." }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SuccessfulResponse": {
+        "type": "object",
+        "properties": { "endTime": { "type": "string", "format": "date-time" } }
+      }
+    }
+  }
+}

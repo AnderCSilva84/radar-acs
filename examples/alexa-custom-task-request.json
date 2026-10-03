@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "session": {
+    "new": true,
+    "sessionId": "SessionId.teste",
+    "application": {
+      "applicationId": "amzn1.ask.skill.SUBSTITUA_PELO_ID_DA_SKILL"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.TESTE"
+    },
+    "attributes": {}
+  },
+  "context": {
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.SUBSTITUA_PELO_ID_DA_SKILL"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.TESTE"
+      },
+      "device": {
+        "deviceId": "TESTE",
+        "supportedInterfaces": {}
+      }
+    }
+  },
+  "request": {
+    "type": "LaunchRequest",
+    "requestId": "EdwRequestId.teste",
+    "timestamp": "2026-10-03T00:00:00Z",
+    "locale": "pt-BR",
+    "task": {
+      "name": "amzn1.ask.skill.SUBSTITUA_PELO_ID_DA_SKILL.OuvirBriefingHoje",
+      "version": "1",
+      "input": {}
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "id": "resp_fixture",
+  "model": "gpt-5.4-mini",
+  "usage": {
+    "input_tokens": 40849,
+    "output_tokens": 3970,
+    "output_tokens_details": {
+      "reasoning_tokens": 2289
+    }
+  },
+  "output": [
+    {
+      "type": "web_search_call",
+      "status": "completed",
+      "action": {
+        "type": "search",
+        "sources": [
+          {
+            "url": "https://example.com/news/1"
+          },
+          {
+            "url": "https://example.com/news/2"
+          },
+          {
+            "url": "https://example.com/news/3"
+          },
+          {
+            "url": "https://example.com/news/4"
+          },
+          {
+            "url": "https://example.com/news/5"
+          }
+        ]
+      }
+    },
+    {
+      "type": "message",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"data\":\"2026-10-02\",\"titulo\":\"Radar ACS - 02/10/2026\",\"resumo\":\"Resumo editorial.\",\"roteiroAlexa\":\"Primeiro assunto. conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo conteúdo\",\"noticias\":[{\"ordem\":1,\"titulo\":\"Assunto 1\",\"resumo\":\"Equipe lança biblioteca para testes rápidos com relatórios locais e exemplos públicos nesta semana.\",\"contexto\":\"Impacto e aplicação.\",\"fonte\":\"Fonte de teste\",\"url\":\"https://example.com/news/1\",\"dataPublicacao\":\"2026-10-02\",\"evidencia\":\"Equipe lança biblioteca para testes rápidos com relatórios locais e exemplos públicos nesta semana.\"},{\"ordem\":2,\"titulo\":\"Assunto 2\",\"resumo\":\"Universidade abre inscrições para curso gratuito de redes e administração de servidores no Brasil.\",\"contexto\":\"Impacto e aplicação.\",\"fonte\":\"Fonte de teste\",\"url\":\"https://example.com/news/2\",\"dataPublicacao\":\"2026-10-02\",\"evidencia\":\"Universidade abre inscrições para curso gratuito de redes e administração de servidores no Brasil.\"},{\"ordem\":3,\"titulo\":\"Assunto 3\",\"resumo\":\"Empresa apresenta ferramenta para organizar tarefas e integrar calendário em projetos de desenvolvimento.\",\"contexto\":\"Impacto e aplicação.\",\"fonte\":\"Fonte de teste\",\"url\":\"https://example.com/news/3\",\"dataPublicacao\":\"2026-10-02\",\"evidencia\":\"Empresa apresenta ferramenta para organizar tarefas e integrar calendário em projetos de desenvolvimento.\"},{\"ordem\":4,\"titulo\":\"Assunto 4\",\"resumo\":\"Instituto publica edital de concurso para especialistas em infraestrutura com cronograma e vagas oficiais.\",\"contexto\":\"Impacto e aplicação.\",\"fonte\":\"Fonte de teste\",\"url\":\"https://example.com/news/4\",\"dataPublicacao\":\"2026-10-02\",\"evidencia\":\"Instituto publica edital de concurso para especialistas em infraestrutura com cronograma e vagas oficiais.\"},{\"ordem\":5,\"titulo\":\"Assunto 5\",\"resumo\":\"Comunidade atualiza documentação de banco de dados com orientações sobre consultas índices e desempenho.\",\"contexto\":\"Impacto e aplicação.\",\"fonte\":\"Fonte de teste\",\"url\":\"https://example.com/news/5\",\"dataPublicacao\":\"2026-10-02\",\"evidencia\":\"Comunidade atualiza documentação de banco de dados com orientações sobre consultas índices e desempenho.\"}],\"oportunidadeDoDia\":\"Aplicação prática.\"}",
+          "annotations": []
+        }
+      ]
+    }
+  ]
+}

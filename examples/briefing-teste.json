@@ -1,0 +1,52 @@
+{
+  "id": "2026-10-02",
+  "data": "2026-10-02",
+  "titulo": "Radar ACS - Edição de Teste",
+  "resumo": "Conteúdo sintético para testar integração; não são notícias reais.",
+  "roteiroAlexa": "Este é o primeiro briefing dinâmico do nosso sistema.\n\nA partir de agora, o conteúdo que você está ouvindo não precisa mais ficar gravado diretamente no código da Skill.\n\nO Radar ACS pode buscar automaticamente o briefing mais recente e reproduzi-lo pela Alexa.\n\nNos próximos passos, vamos conectar notícias, inteligência artificial, tecnologia, carreira, concursos e oportunidades para a ACS Tecnologia.\n\nSe você está ouvindo esta mensagem pela Alexa, nosso sistema de briefing dinâmico está funcionando corretamente.\n\nBem-vindo ao Radar ACS.",
+  "noticias": [
+    {
+      "ordem": 1,
+      "titulo": "Briefing dinâmico",
+      "resumo": "Item sintético de teste.",
+      "contexto": "Verificação técnica do MVP; substituir antes do uso diário.",
+      "fonte": "Documentação do projeto",
+      "url": "https://example.com/"
+    },
+    {
+      "ordem": 2,
+      "titulo": "Tecnologia e inteligência artificial",
+      "resumo": "Item sintético de teste.",
+      "contexto": "Verificação técnica do MVP; substituir antes do uso diário.",
+      "fonte": "Documentação do projeto",
+      "url": "https://example.com/"
+    },
+    {
+      "ordem": 3,
+      "titulo": "Desenvolvimento de software",
+      "resumo": "Item sintético de teste.",
+      "contexto": "Verificação técnica do MVP; substituir antes do uso diário.",
+      "fonte": "Documentação do projeto",
+      "url": "https://example.com/"
+    },
+    {
+      "ordem": 4,
+      "titulo": "Carreira e concursos",
+      "resumo": "Item sintético de teste.",
+      "contexto": "Verificação técnica do MVP; substituir antes do uso diário.",
+      "fonte": "Documentação do projeto",
+      "url": "https://example.com/"
+    },
+    {
+      "ordem": 5,
+      "titulo": "Oportunidades ACS",
+      "resumo": "Item sintético de teste.",
+      "contexto": "Verificação técnica do MVP; substituir antes do uso diário.",
+      "fonte": "Documentação do projeto",
+      "url": "https://example.com/"
+    }
+  ],
+  "oportunidadeDoDia": "Validar o briefing dinâmico na Alexa.",
+  "audioUrl": null,
+  "publicado": true
+}

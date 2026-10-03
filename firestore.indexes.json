@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "briefings",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "publicado",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "data",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

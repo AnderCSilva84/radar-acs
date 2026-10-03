@@ -1,0 +1,3 @@
+{
+  "briefingApiUrl": "https://us-east1-radar-acs.cloudfunctions.net/radarApi/api/briefing/latest"
+}

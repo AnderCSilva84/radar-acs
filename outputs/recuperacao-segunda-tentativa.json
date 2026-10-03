@@ -1,0 +1,15 @@
+{
+  "status": "GENERATED_NOT_PUBLISHED",
+  "quantidade": 5,
+  "palavras": 499,
+  "urlsDistintas": 3,
+  "urlsIrrecuperaveis": [
+    1,
+    2,
+    5
+  ],
+  "validacoes": {
+    "gerador": "URLs de fonte repetidas; isso não comprova duplicidade de acontecimentos",
+    "contratoAPI": "URL inválida"
+  }
+}

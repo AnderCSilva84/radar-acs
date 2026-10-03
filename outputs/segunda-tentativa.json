@@ -1,0 +1,9 @@
+﻿{
+    "requestId":  "680fffc8-61b6-4131-8583-cc46743f5497",
+    "inicio":  "2026-10-03T01:09:58.7993446Z",
+    "projeto":  "radar-acs",
+    "httpGeracao":  503,
+    "erroClienteTipo":  "WebException",
+    "erroHttp":  "{\"success\":false,\"message\":\"A geração não foi concluída. Consulte as métricas e verifique o briefing antes de repetir.\"}",
+    "duracaoClienteMs":  21270
+}
