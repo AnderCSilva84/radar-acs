@@ -2,7 +2,8 @@
 
 const Alexa = require('ask-sdk-core');
 const { createBriefingClient } = require('./briefing-client');
-const { getBriefingPlayback } = require('./playback');
+const { dailyPlayback, getGreetingOptions } = require('./daily-greeting');
+const { addEditionVisual, logEditionVisualResponse } = require('./edition-visual');
 
 const getLatest = createBriefingClient();
 const UNAVAILABLE = 'Não consegui acessar o Radar ACS neste momento. Tente novamente em alguns minutos.';
@@ -37,7 +38,7 @@ const BriefingTaskHandler = {
         try {
             const { briefing, prefix } = await getLatest();
             if (!briefing) return completeTask(input, '500', 'Seu briefing de hoje ainda não foi publicado. Tente novamente mais tarde.');
-            return completeTask(input, '200', getBriefingPlayback(briefing, prefix).ssml);
+            return completeTask(input, '200', dailyPlayback(briefing, prefix, new Date(), await getGreetingOptions(input)).ssml);
         } catch (error) {
             return completeTask(input, '500', UNAVAILABLE);
         }
@@ -59,18 +60,24 @@ const LaunchRequestHandler = {
         try {
             const { briefing, prefix } = await getLatest();
             const speech = briefing
-                ? getBriefingPlayback(briefing, prefix).ssml
+                ? dailyPlayback(briefing, prefix, new Date(), await getGreetingOptions(input)).ssml
                 : 'Seu briefing de hoje ainda não foi publicado. Tente novamente mais tarde.';
 
-            return input.responseBuilder
+            addEditionVisual(input, briefing);
+
+            const response = input.responseBuilder
                 .speak(speech)
                 .withShouldEndSession(true)
                 .getResponse();
+            logEditionVisualResponse(response);
+            return response;
         } catch (error) {
-            return input.responseBuilder
+            const response = input.responseBuilder
                 .speak(UNAVAILABLE)
                 .withShouldEndSession(true)
                 .getResponse();
+            logEditionVisualResponse(response);
+            return response;
         }
     }
 };
@@ -85,7 +92,7 @@ const IntentHandler = {
 
         if (['AMAZON.StopIntent', 'AMAZON.CancelIntent'].includes(name)) {
             return input.responseBuilder
-                .speak('Até mais, Anderson.')
+                .speak('Até mais.')
                 .withShouldEndSession(true)
                 .getResponse();
         }
@@ -136,5 +143,6 @@ exports.handler = Alexa.SkillBuilders.custom()
         SessionEndedHandler
     )
     .addErrorHandlers(ErrorHandler)
+    .withApiClient(new Alexa.DefaultApiClient())
     .withCustomUserAgent('radar-acs/mvp')
     .lambda();

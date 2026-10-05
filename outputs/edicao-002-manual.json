@@ -1,0 +1,56 @@
+{
+  "data": "2026-10-03",
+  "titulo": "Radar ACS — Edição #002",
+  "noticias": [
+    {
+      "ordem": 1,
+      "titulo": "GitHub libera Code Review do Copilot por API",
+      "fonte": "GitHub Changelog",
+      "resumo": "O GitHub anunciou em 2 de outubro que o Copilot Code Review pode ser solicitado pelas APIs REST e GraphQL. Também é possível determinar o nível de esforço da revisão, e Balanced passou a ser o padrão.",
+      "contexto": "A funcionalidade pode ser estudada para incorporar revisão automatizada ao fluxo de desenvolvimento dos projetos da ACS Tecnologia, especialmente antes de entregas e merges.",
+      "url": "https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level/",
+      "roteiroAlexa": "O GitHub anunciou em 2 de outubro que o Copilot Code Review pode ser solicitado pelas APIs REST e GraphQL. Também é possível determinar o nível de esforço da revisão, e Balanced passou a ser o padrão. Como contexto editorial para a ACS Tecnologia: A funcionalidade pode ser estudada para incorporar revisão automatizada ao fluxo de desenvolvimento dos projetos da ACS Tecnologia, especialmente antes de entregas e merges."
+    },
+    {
+      "ordem": 2,
+      "titulo": "GPT-6 Sol e Luna ampliam opções de modelos para desenvolvimento",
+      "fonte": "OpenAI",
+      "resumo": "A OpenAI apresentou GPT-6 Sol e Luna como opções da família GPT-6 voltadas a diferentes relações entre capacidade, velocidade e custo.",
+      "contexto": "A existência de modelos com diferentes perfis permite pensar em arquiteturas que reservem modelos mais caros para tarefas complexas e utilizem opções econômicas em operações simples e frequentes.",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "roteiroAlexa": "Agora, GPT-6 Sol e Luna ampliam opções de modelos para desenvolvimento. A OpenAI apresentou GPT-6 Sol e Luna como opções da família GPT-6 voltadas a diferentes relações entre capacidade, velocidade e custo. Como contexto editorial para a ACS Tecnologia: A existência de modelos com diferentes perfis permite pensar em arquiteturas que reservem modelos mais caros para tarefas complexas e utilizem opções econômicas em operações simples e frequentes."
+    },
+    {
+      "ordem": 3,
+      "titulo": "Concurso do TRT-8 abre oportunidade relacionada a Tecnologia da Informação",
+      "fonte": "Fonte jornalística utilizada no briefing editorial de 03/10/2026.",
+      "resumo": "O concurso do Tribunal Regional do Trabalho da 8ª Região, que atende Pará e Amapá, possui oportunidades relacionadas à Tecnologia da Informação. As inscrições começam em 5 de outubro e as provas estão previstas para janeiro de 2027.",
+      "contexto": "É uma oportunidade profissional que pode aproveitar parte dos estudos já realizados em desenvolvimento de sistemas, banco de dados, Java, SQL e disciplinas de concursos.",
+      "url": "https://www1.folha.uol.com.br/mercado/2026/10/trt-8-abre-concurso-com-salarios-de-ate-r-16-mil-e-inscricoes-comecam-na-segunda-5.shtml",
+      "roteiroAlexa": "Agora, Concurso do TRT-8 abre oportunidade relacionada a Tecnologia da Informação. O concurso do Tribunal Regional do Trabalho da 8ª Região, que atende Pará e Amapá, possui oportunidades relacionadas à Tecnologia da Informação. As inscrições começam em 5 de outubro e as provas estão previstas para janeiro de 2027. Como contexto editorial: É uma oportunidade profissional que pode aproveitar parte dos estudos já realizados em desenvolvimento de sistemas, banco de dados, Java, SQL e disciplinas de concursos."
+    },
+    {
+      "ordem": 4,
+      "titulo": "Investimentos em inteligência artificial aumentam pressão por retorno econômico",
+      "fonte": "Reuters",
+      "resumo": "Uma análise da Reuters publicada em 3 de outubro aborda a escala dos investimentos em inteligência artificial e a pressão crescente para transformar infraestrutura e capacidade tecnológica em retorno econômico.",
+      "contexto": "A aplicação prática para a ACS é priorizar funcionalidades de IA que produzam resultado mensurável para clientes, como economia de tempo, automação, aumento de produtividade ou apoio à tomada de decisão.",
+      "url": "https://www.reuters.com/business/retail-consumer/ais-race-transform-world-before-money-runs-out-2026-10-03/",
+      "roteiroAlexa": "Agora, Investimentos em inteligência artificial aumentam pressão por retorno econômico. Uma análise da Reuters publicada em 3 de outubro aborda a escala dos investimentos em inteligência artificial e a pressão crescente para transformar infraestrutura e capacidade tecnológica em retorno econômico. Como contexto editorial para a ACS Tecnologia: A aplicação prática para a ACS é priorizar funcionalidades de IA que produzam resultado mensurável para clientes, como economia de tempo, automação, aumento de produtividade ou apoio à tomada de decisão."
+    },
+    {
+      "ordem": 5,
+      "titulo": "Coreia do Norte realiza novo teste de míssil de alcance intermediário",
+      "fonte": "Reuters",
+      "resumo": "A Coreia do Norte confirmou em 3 de outubro um teste de míssil estratégico de alcance intermediário. Segundo informações atribuídas a militares sul-coreanos, o projétil percorreu mais de 700 quilômetros em direção ao mar na costa leste norte-coreana.",
+      "contexto": "É um acontecimento internacional relevante devido às implicações para a segurança regional envolvendo Coreia do Sul, Japão e Estados Unidos.",
+      "url": "https://www.reuters.com/world/asia-pacific/north-koreas-kim-yo-jong-says-intermediate-range-missile-test-was-conducted-2026-10-03/",
+      "roteiroAlexa": "Agora, Coreia do Norte realiza novo teste de míssil de alcance intermediário. A Coreia do Norte confirmou em 3 de outubro um teste de míssil estratégico de alcance intermediário. Segundo informações atribuídas a militares sul-coreanos, o projétil percorreu mais de 700 quilômetros em direção ao mar na costa leste norte-coreana. Como contexto editorial: É um acontecimento internacional relevante devido às implicações para a segurança regional envolvendo Coreia do Sul, Japão e Estados Unidos. Como ação prática desta edição, avaliar o uso do Copilot Code Review no fluxo de desenvolvimento da ACS e verificar o edital do TRT-8. Esses foram os destaques desta edição do Radar ACS. Tenha um ótimo dia e até o próximo Radar."
+    }
+  ],
+  "resumo": "O GitHub anunciou em 2 de outubro que o Copilot Code Review pode ser solicitado pelas APIs REST e GraphQL. Também é possível determinar o nível de esforço da revisão, e Balanced passou a ser o padrão. A OpenAI apresentou GPT-6 Sol e Luna como opções da família GPT-6 voltadas a diferentes relações entre capacidade, velocidade e custo. O concurso do Tribunal Regional do Trabalho da 8ª Região, que atende Pará e Amapá, possui oportunidades relacionadas à Tecnologia da Informação. As inscrições começam em 5 de outubro e as provas estão previstas para janeiro de 2027. Uma análise da Reuters publicada em 3 de outubro aborda a escala dos investimentos em inteligência artificial e a pressão crescente para transformar infraestrutura e capacidade tecnológica em retorno econômico. A Coreia do Norte confirmou em 3 de outubro um teste de míssil estratégico de alcance intermediário. Segundo informações atribuídas a militares sul-coreanos, o projétil percorreu mais de 700 quilômetros em direção ao mar na costa leste norte-coreana.",
+  "roteiroAlexa": "O GitHub anunciou em 2 de outubro que o Copilot Code Review pode ser solicitado pelas APIs REST e GraphQL. Também é possível determinar o nível de esforço da revisão, e Balanced passou a ser o padrão. Como contexto editorial para a ACS Tecnologia: A funcionalidade pode ser estudada para incorporar revisão automatizada ao fluxo de desenvolvimento dos projetos da ACS Tecnologia, especialmente antes de entregas e merges.\n\nAgora, GPT-6 Sol e Luna ampliam opções de modelos para desenvolvimento. A OpenAI apresentou GPT-6 Sol e Luna como opções da família GPT-6 voltadas a diferentes relações entre capacidade, velocidade e custo. Como contexto editorial para a ACS Tecnologia: A existência de modelos com diferentes perfis permite pensar em arquiteturas que reservem modelos mais caros para tarefas complexas e utilizem opções econômicas em operações simples e frequentes.\n\nAgora, Concurso do TRT-8 abre oportunidade relacionada a Tecnologia da Informação. O concurso do Tribunal Regional do Trabalho da 8ª Região, que atende Pará e Amapá, possui oportunidades relacionadas à Tecnologia da Informação. As inscrições começam em 5 de outubro e as provas estão previstas para janeiro de 2027. Como contexto editorial: É uma oportunidade profissional que pode aproveitar parte dos estudos já realizados em desenvolvimento de sistemas, banco de dados, Java, SQL e disciplinas de concursos.\n\nAgora, Investimentos em inteligência artificial aumentam pressão por retorno econômico. Uma análise da Reuters publicada em 3 de outubro aborda a escala dos investimentos em inteligência artificial e a pressão crescente para transformar infraestrutura e capacidade tecnológica em retorno econômico. Como contexto editorial para a ACS Tecnologia: A aplicação prática para a ACS é priorizar funcionalidades de IA que produzam resultado mensurável para clientes, como economia de tempo, automação, aumento de produtividade ou apoio à tomada de decisão.\n\nAgora, Coreia do Norte realiza novo teste de míssil de alcance intermediário. A Coreia do Norte confirmou em 3 de outubro um teste de míssil estratégico de alcance intermediário. Segundo informações atribuídas a militares sul-coreanos, o projétil percorreu mais de 700 quilômetros em direção ao mar na costa leste norte-coreana. Como contexto editorial: É um acontecimento internacional relevante devido às implicações para a segurança regional envolvendo Coreia do Sul, Japão e Estados Unidos. Como ação prática desta edição, avaliar o uso do Copilot Code Review no fluxo de desenvolvimento da ACS e verificar o edital do TRT-8. Esses foram os destaques desta edição do Radar ACS. Tenha um ótimo dia e até o próximo Radar.",
+  "oportunidadeDoDia": "Como ação prática, avaliar o uso do Copilot Code Review no fluxo de desenvolvimento da ACS e verificar o edital do TRT-8.",
+  "audioUrl": null,
+  "publicado": true
+}

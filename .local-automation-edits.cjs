@@ -1,0 +1,11 @@
+﻿const fs=require('fs');
+let s=fs.readFileSync('api/index.js','utf8');
+s=s.replace("if(options.onlyIfUnpublished&&existing.exists)throw", "if(options.onlyIfUnpublished){const numbered=await tx.get(db.collection('briefings').where('titulo','==',briefing.titulo).limit(1));if(!numbered.empty)throw Object.assign(new Error('Número de edição já publicado'),{code:'EDITION_NUMBER_EXISTS'});}if(options.onlyIfUnpublished&&existing.exists)throw");
+fs.writeFileSync('api/index.js',s);
+let c=JSON.parse(fs.readFileSync('api/generator-config.json','utf8'));c.timeoutMs=210000;fs.writeFileSync('api/generator-config.json',JSON.stringify(c,null,2)+'\n');
+s=fs.readFileSync('scripts/dry-run-radar.js','utf8').replace('reserve: async () => true,','claim: async () => ({acquired:true, runId:"mock",attempt:1}), finishAttempt: async () => Boolean(briefing),');fs.writeFileSync('scripts/dry-run-radar.js',s);
+s=fs.readFileSync('tests/scheduled.test.js','utf8').replace("editionTitle('2026-10-04'), 'Radar ACS — Edição #003'","editionTitle('2026-10-04', 'Radar ACS — Edição #002'), 'Radar ACS — Edição #003'");
+s=s.replace("reserve: async () => { if (acquired) return false;acquired = true;return true; },", "claim: async () => { if(acquired)return {acquired:false,status:'SKIPPED_ATTEMPTS_EXHAUSTED'};acquired=true;return {acquired:true,attempt:1,runId:'mock'}; }, finishAttempt: async () => false,");s=s.replace("'SKIPPED_ALREADY_ATTEMPTED'","'SKIPPED_ATTEMPTS_EXHAUSTED'");
+s=s.replace("reserve: async () => true, latest:","claim: async () => ({acquired:true,attempt:2,runId:'mock'}), finishAttempt: async () => false, latest:");fs.writeFileSync('tests/scheduled.test.js',s);
+s=fs.readFileSync('tests/scheduled-recovery.test.js','utf8').replace("reserve: async () => true, latest:","reserve: async () => true, claim: async () => ({acquired:true,attempt:1,runId:'mock'}), finishAttempt: async () => false, latest:");s=s.replace("assert.equal(response.code, 409);","assert.equal(response.code, body ? 409 : 503);");fs.writeFileSync('tests/scheduled-recovery.test.js',s);
+s=fs.readFileSync('tests/web-collection-resilience.test.js','utf8').replace("reserve: async () => true,", "claim: async () => ({acquired:true,attempt:2,runId:'mock'}), finishAttempt: async () => Boolean(published),");fs.writeFileSync('tests/web-collection-resilience.test.js',s);

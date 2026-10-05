@@ -1,0 +1,49 @@
+﻿{
+    "policy":  {
+                   "bindings":  [
+                                    {
+                                        "members":  [
+                                                        "serviceAccount:radar-scheduler@radar-acs.iam.gserviceaccount.com"
+                                                    ],
+                                        "role":  "roles/run.invoker"
+                                    }
+                                ],
+                   "etag":  "BwZdAt0LItA=",
+                   "version":  1
+               },
+    "scheduler":  {
+                      "name":  "projects/radar-acs/locations/us-east1/jobs/radar-acs-daily-0800",
+                      "schedule":  "0 8 * * *",
+                      "oidc":  {
+                                   "audience":  "https://generateradarscheduled-6ougocc2ia-ue.a.run.app",
+                                   "serviceAccountEmail":  "radar-scheduler@radar-acs.iam.gserviceaccount.com"
+                               },
+                      "uri":  "https://generateradarscheduled-6ougocc2ia-ue.a.run.app/",
+                      "state":  "ENABLED",
+                      "timezone":  "America/Belem"
+                  },
+    "latest":  {
+                   "data":  "2026-10-04",
+                   "titulo":  "Radar ACS — Edição #003",
+                   "roteiroAlexa":  "Na reta final da eleição, a Reuters Connect mostrou a movimentação de urnas eletrônicas em Manaus na véspera do 1º turno. O calendário oficial do TSE marca a votação para 4 de outubro de 2026.\n\nNo exterior, o G7 decidiu liberar 100 milhões de barris de petróleo após pressão dos Estados Unidos por alívio no diesel. A medida pode mexer com a leitura do mercado de energia nos próximos dias.",
+                   "audioUrl":  null,
+                   "noticias":  [
+                                    {
+                                        "titulo":  "Brasil entra na véspera da eleição com urnas, horários e preparação em destaque",
+                                        "resumo":  "Uma imagem da Reuters Connect registrada em 3 de outubro mostra trabalhadores eleitorais levando urna eletrônica para uso nas eleições gerais de 4 de outubro, em Manaus, no Amazonas.",
+                                        "fonte":  "Reuters Connect",
+                                        "sourceUrl":  "https://www.reutersconnect.com/item/preparations-ahead-of-brazils-october-4-general-election/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1JDMk9WTkFUNzdERQ?lastViewed=dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1JDMk9WTkFVTVE5VQ\u0026position=2"
+                                    },
+                                    {
+                                        "titulo":  "G7 reage à pressão por combustível e libera 100 milhões de barris de petróleo",
+                                        "resumo":  "Os países do G7 anunciaram a liberação de 100 milhões de barris de petróleo, em meio à pressão do governo Donald Trump por medidas para aliviar o preço do diesel.",
+                                        "fonte":  "Le Monde",
+                                        "sourceUrl":  "https://www.lemonde.fr/en/economy/article/2026/10/03/under-pressure-from-donald-trump-g7-releases-100-million-barrels-of-oil_6758200_19.html"
+                                    }
+                                ],
+                   "coverId":  "eleicoes-2026",
+                   "context":  "eleicoes-2026",
+                   "editionType":  "special",
+                   "specialTitle":  "Eleições 2026"
+               }
+}

@@ -3,6 +3,7 @@
 const https = require('node:https');
 const { lookup } = require('node:dns/promises');
 const { isIP } = require('node:net');
+const { assertSpecificSource } = require('./source-url');
 const { normalize } = require('./news-duplicates');
 
 function failure(message, index) {
@@ -96,31 +97,56 @@ function checkSpecificFacts(item, evidence) {
         throw failure('comunidade é fonte secundária para lançamento/modelo; exigir fonte primária', item.ordem);
     }
 }
+function validateDerivedClaims(item, excerpts) {
+    if (!Array.isArray(excerpts) || !excerpts.length || excerpts.length > 4 || excerpts.some(text => typeof text !== 'string' || text.trim().split(/\s+/).length < 10 || text.length > 1500)) throw failure('trecho literal ausente ou insuficiente', item.ordem);
+    const normalizedExcerpts = excerpts.map(normalize);
+    const evidence = normalizedExcerpts.join(' ');
+        if (item.evidencias !== undefined || item.allowedFacts !== undefined) {
+            if (!Array.isArray(item.allowedFacts) || !item.allowedFacts.length || item.allowedFacts.length > 8) throw failure('allowedFacts ausente ou inválido', item.ordem);
+            for (const fact of item.allowedFacts) {
+                if (!fact || typeof fact.texto !== 'string' || !fact.texto.trim() || !Array.isArray(fact.evidenciaIndices) || !fact.evidenciaIndices.length
+                    || fact.evidenciaIndices.some(index => !Number.isInteger(index) || index < 0 || index >= excerpts.length)) throw failure('fato permitido sem vínculo válido à evidência', item.ordem);
+                checkSpecificFacts({ ...item, titulo: fact.texto, resumo: '', contexto: '', roteiroAlexa: '', termosEspecificos: [] }, fact.evidenciaIndices.map(index => normalizedExcerpts[index]).join(' '));
+            }
+            // Conservative signal, not a semantic entailment proof: reject new
+            // concrete numbers/models/API/availability claims beyond allowedFacts.
+            const allowed = normalize(item.allowedFacts.map(fact => fact.texto).join(' '));
+            const claims = item.titulo + ' ' + item.resumo + ' ' + (item.contexto || '') + ' ' + (item.roteiroAlexa || '');
+            const numbers = claims.match(/\b\d+(?:[.,]\d+)*\b/g) || [];
+            if (numbers.some(value => !allowed.split(' ').includes(normalize(value)))) throw failure('número factual fora de allowedFacts', item.ordem);
+            checkSpecificFacts(item, allowed);
+        }
+        checkSpecificFacts(item, evidence);
+}
 async function collectEvidence(news, readSource = readPublicSource) {
-    const pages = new Map(); const results = []; const rejected = [];
+    const pages = new Map(); const results = []; const rejected = []; const candidates = [];
     for (const item of news) {
         try {
-        if (typeof item.evidencia !== 'string' || item.evidencia.trim().split(/\s+/).length < 10
-            || item.evidencia.length > 1500) throw failure('trecho literal ausente ou insuficiente', item.ordem);
+        assertSpecificSource(item.url);
+        const excerpts = item.evidencias ?? [item.evidencia];
+        if (!Array.isArray(excerpts) || !excerpts.length || excerpts.length > 4 || excerpts.some(text => typeof text !== 'string' || text.trim().split(/\s+/).length < 10 || text.length > 1500)) throw failure('trecho literal ausente ou insuficiente', item.ordem);
         const key = item.url.replace(/#.*$/, '');
         if (!pages.has(key)) {
             try { pages.set(key, { text: normalize(pageText(await readSource(key))) }); }
             catch (error) { pages.set(key, { error: 'não foi possível confirmar a fonte: ' + error.message }); }
         }
         if (pages.get(key).error) throw failure(pages.get(key).error, item.ordem);
-        const evidence = normalize(item.evidencia);
-        if (!pages.get(key).text.includes(evidence)) throw failure('trecho não encontrado na página indicada', item.ordem);
-        checkSpecificFacts(item, evidence);
+        const normalizedExcerpts = excerpts.map(normalize);
+        if (normalizedExcerpts.some(text => !pages.get(key).text.includes(text))) throw failure('trecho não encontrado na página indicada', item.ordem);
+        const evidence = normalizedExcerpts.join(' ');
+        validateDerivedClaims(item, excerpts);
+        candidates.push({ candidateId: 'candidate-' + item.ordem, title: item.titulo, sourceUrl: item.url, status: 'PASS', reason: 'Trechos confirmados e verificações determinísticas aprovadas', evidenceCount: excerpts.length, allowedFactsCount: item.allowedFacts?.length || 0 });
         results.push({ ordem: item.ordem, fonte: item.fonte, url: item.url, evidencia: item.evidencia, resultado: 'PASS' });
         } catch (error) {
+            candidates.push({ candidateId: 'candidate-' + item.ordem, title: item.titulo, sourceUrl: item.url, status: 'FAIL', reason: error.message, evidenceCount: Array.isArray(item.evidencias) ? item.evidencias.length : item.evidencia ? 1 : 0, allowedFactsCount: item.allowedFacts?.length || 0 });
             rejected.push({ ordem: item.ordem, code: error.code || 'FACTUAL_EVIDENCE_UNCONFIRMED', motivo: error.message });
         }
     }
-    return { resultado: rejected.length ? 'PARTIAL' : 'PASS', leiturasFontes: pages.size, noticias: results, rejeitadas: rejected };
+    return { resultado: rejected.length ? 'PARTIAL' : 'PASS', leiturasFontes: pages.size, noticias: results, rejeitadas: rejected, candidatos: candidates };
 }
 async function verifyEvidence(news, readSource = readPublicSource) {
     const result = await collectEvidence(news, readSource);
     if (result.rejeitadas.length) throw failure(result.rejeitadas[0].motivo, result.rejeitadas[0].ordem);
     return result;
 }
-module.exports = { verifyEvidence, collectEvidence, readPublicSource, pageText, publicIPv4 };
+module.exports = { validateDerivedClaims, verifyEvidence, collectEvidence, readPublicSource, pageText, publicIPv4 };

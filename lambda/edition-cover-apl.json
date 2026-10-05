@@ -1,0 +1,57 @@
+{
+  "type": "APL",
+  "version": "1.0",
+  "mainTemplate": {
+    "parameters": [
+      "edition"
+    ],
+    "items": [
+      {
+        "type": "Container",
+        "width": "100%",
+        "height": "100%",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "items": [
+          {
+            "type": "Frame",
+            "position": "absolute",
+            "width": "100%",
+            "height": "100%",
+            "backgroundColor": "#0e1723"
+          },
+          {
+            "type": "Text",
+            "text": "RADAR ACS",
+            "color": "#ffffff",
+            "fontSize": "48dp",
+            "textAlign": "center"
+          },
+          {
+            "type": "Text",
+            "text": "${edition.metadata}",
+            "color": "#ffffff",
+            "fontSize": "24dp",
+            "textAlign": "center"
+          },
+          {
+            "type": "Text",
+            "text": "${edition.specialTitle}",
+            "color": "#ffffff",
+            "fontSize": "32dp",
+            "textAlign": "center"
+          },
+          {
+            "type": "Image",
+            "position": "absolute",
+            "width": "100%",
+            "height": "100%",
+            "source": "${edition.coverUrl}",
+            "scale": "best-fill",
+            "align": "center"
+          }
+        ]
+      }
+    ]
+  }
+}

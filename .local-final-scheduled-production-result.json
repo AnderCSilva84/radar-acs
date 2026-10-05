@@ -1,0 +1,106 @@
+﻿{
+    "http":  200,
+    "status":  "PUBLISHED",
+    "date":  "2026-10-04",
+    "title":  "Radar ACS — Edição #003",
+    "metrics":  {
+                    "webToolItems":  4,
+                    "webSearchActions":  4,
+                    "completedSearchActions":  3,
+                    "inProgressSearchActions":  1,
+                    "queries":  12,
+                    "openPageActions":  0,
+                    "modelo":  "gpt-5.4-mini-2026-03-17",
+                    "tokensEntrada":  18229,
+                    "tokensEntradaCache":  4608,
+                    "tokensSaida":  1690,
+                    "tokensTotal":  19919,
+                    "chamadasOpenAI":  1,
+                    "tokensRaciocinio":  1003,
+                    "buscasWeb":  4,
+                    "unidadeBuscasWeb":  "itens_web_search_call_action_search",
+                    "toolCallsWeb":  4,
+                    "toolCallsWebIdsDistintos":  4,
+                    "queriesObservadas":  12,
+                    "limiteToolCallsSolicitado":  3,
+                    "duracaoGeracaoMs":  12880,
+                    "custoEstimadoUsd":  0.058166,
+                    "webCollectionWarnings":  [
+                                                  "WEB_COLLECTION_INCOMPLETE_WARNING"
+                                              ],
+                    "incompleteWebActions":  [
+                                                 {
+                                                     "action":  "search",
+                                                     "status":  "searching"
+                                                 }
+                                             ],
+                    "leiturasFontes":  0,
+                    "sourceEvidenceWarnings":  3,
+                    "audioWarnings":  [
+
+                                      ],
+                    "voz":  {
+                                "warnings":  [
+
+                                             ],
+                                "mentions":  0
+                            },
+                    "estimatedDurationSeconds":  30,
+                    "noticiasRemovidas":  1,
+                    "duracaoTotalMs":  13566
+                },
+    "attempts":  [
+                     {
+                         "attempt":  1,
+                         "metrics":  {
+                                         "webToolItems":  4,
+                                         "webSearchActions":  4,
+                                         "completedSearchActions":  3,
+                                         "inProgressSearchActions":  1,
+                                         "queries":  12,
+                                         "openPageActions":  0,
+                                         "modelo":  "gpt-5.4-mini-2026-03-17",
+                                         "tokensEntrada":  18229,
+                                         "tokensEntradaCache":  4608,
+                                         "tokensSaida":  1690,
+                                         "tokensTotal":  19919,
+                                         "chamadasOpenAI":  1,
+                                         "tokensRaciocinio":  1003,
+                                         "buscasWeb":  4,
+                                         "unidadeBuscasWeb":  "itens_web_search_call_action_search",
+                                         "toolCallsWeb":  4,
+                                         "toolCallsWebIdsDistintos":  4,
+                                         "queriesObservadas":  12,
+                                         "limiteToolCallsSolicitado":  3,
+                                         "duracaoGeracaoMs":  12880,
+                                         "custoEstimadoUsd":  0.058166,
+                                         "webCollectionWarnings":  [
+                                                                       "WEB_COLLECTION_INCOMPLETE_WARNING"
+                                                                   ],
+                                         "incompleteWebActions":  [
+                                                                      {
+                                                                          "action":  "search",
+                                                                          "status":  "searching"
+                                                                      }
+                                                                  ],
+                                         "leiturasFontes":  0,
+                                         "sourceEvidenceWarnings":  3,
+                                         "audioWarnings":  [
+
+                                                           ],
+                                         "voz":  {
+                                                     "warnings":  [
+
+                                                                  ],
+                                                     "mentions":  0
+                                                 },
+                                         "estimatedDurationSeconds":  30,
+                                         "noticiasRemovidas":  1,
+                                         "duracaoTotalMs":  13566
+                                     },
+                         "noticiasPublicadas":  2
+                     }
+                 ],
+    "noticiasPublicadas":  2,
+    "durationMs":  16360.6563
+}

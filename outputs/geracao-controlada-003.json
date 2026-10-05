@@ -1,0 +1,6 @@
+﻿{
+    "inicio":  "2026-10-03T12:12:04.6535405Z",
+    "resposta":  "{\"success\":false,\"message\":\"A geração não foi concluída. Consulte as métricas e verifique o briefing antes de repetir.\"}",
+    "http":  503,
+    "requestId":  "2334c703-5da9-445f-ad93-e60ac5c0dc5f"
+}

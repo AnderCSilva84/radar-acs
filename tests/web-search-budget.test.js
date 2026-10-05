@@ -9,12 +9,12 @@ test('Três pesquisas com doze queries e open_page auxiliar cabem no orçamento'
     assert.equal(result.pesquisasObservadas, 3); assert.equal(result.pesquisasConcluidas, 3);
     assert.equal(result.searchQueries, 12);
 });
-test('Quarta operação search continua bloqueada', () => {
-    assert.throws(() => assertSearchBudget([...searches, searches[0]], 3), e => e.code === 'WEB_TOOL_BUDGET_EXCEEDED');
+test('Quarta operação search é telemetria e não gate', () => {
+    assert.equal(assertSearchBudget([...searches, searches[0]], 3).searchActions, 4);
 });
 test('Evento desconhecido ou sem action não é presumido auxiliar', () => {
     for (const item of [{ type: 'web_search_call' }, { type: 'web_search_call', action: { type: 'unknown' } }]) {
-        assert.throws(() => assertSearchBudget([...searches, item], 3), e => e.code === 'WEB_TOOL_METADATA_INCOMPLETE');
+        assert.equal(assertSearchBudget([...searches, item], 3).classificacaoCompleta, false);
     }
 });
 test('Formato sanitizado persistido distingue search de open_page sem depender de ID', () => {

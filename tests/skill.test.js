@@ -4,13 +4,51 @@ const client=require('../lambda/briefing-client');
 let mode='success';
 client.createBriefingClient=()=>async()=>{if(mode==='error')throw new Error('indisponível');return mode==='empty'?{briefing:null}:{briefing:require('../examples/briefing-teste.json')};};
 const {handler}=require('../lambda/index');
-function invoke(request){return new Promise((resolve,reject)=>handler({version:'1.0',session:{new:true,sessionId:'test',application:{applicationId:'test'},user:{userId:'test'},attributes:{}},context:{System:{application:{applicationId:'test'},user:{userId:'test'},device:{deviceId:'test',supportedInterfaces:{}}}},request:{requestId:'test',timestamp:new Date().toISOString(),locale:'pt-BR',...request}}, {},(error,value)=>error?reject(error):resolve(value)));}
+function invoke(request, supportedInterfaces = {}){return new Promise((resolve,reject)=>handler({version:'1.0',session:{new:true,sessionId:'test',application:{applicationId:'test'},user:{userId:'test'},attributes:{}},context:{System:{application:{applicationId:'test'},user:{userId:'test'},device:{deviceId:'test',supportedInterfaces}}},request:{requestId:'test',timestamp:new Date().toISOString(),locale:'pt-BR',...request}}, {},(error,value)=>error?reject(error):resolve(value)));}
 test('SDK Alexa: Launch dinâmico, ausência, erro, ajuda e parada',async()=>{
  mode='success';let result=await invoke({type:'LaunchRequest'});assert.match(result.response.outputSpeech.ssml,/primeiro briefing dinâmico/);assert.equal(result.response.shouldEndSession,true);
  mode='empty';result=await invoke({type:'LaunchRequest'});assert.match(result.response.outputSpeech.ssml,/ainda não foi publicado/);
  mode='error';result=await invoke({type:'LaunchRequest'});assert.match(result.response.outputSpeech.ssml,/Não consegui acessar/);
  result=await invoke({type:'IntentRequest',intent:{name:'AMAZON.HelpIntent'}});assert.match(result.response.outputSpeech.ssml,/ouvir briefing/);
  result=await invoke({type:'IntentRequest',intent:{name:'AMAZON.StopIntent'}});assert.match(result.response.outputSpeech.ssml,/Até mais/);
+});
+
+test('SDK Alexa adiciona RenderDocument sem alterar áudio, sessão ou handlers sem tela', async () => {
+ mode='success';
+ const withoutScreen=await invoke({type:'LaunchRequest'});
+ const withScreen=await invoke({type:'LaunchRequest'}, {'Alexa.Presentation.APL':{}});
+ assert.deepEqual(withScreen.response.outputSpeech,withoutScreen.response.outputSpeech);
+ assert.equal(withScreen.response.shouldEndSession,withoutScreen.response.shouldEndSession);
+ assert.equal(withScreen.response.directives[0].type,'Alexa.Presentation.APL.RenderDocument');
+ assert.equal(withoutScreen.response.directives,undefined);
+});
+
+test('Launch logs presence of RenderDocument in the final SDK response', async () => {
+ const original=console.info;const logs=[];console.info=(_,fields)=>logs.push(fields);
+ try {
+  mode='success';const result=await invoke({type:'LaunchRequest'},{'Alexa.Presentation.APL':{}});
+  assert.equal(result.response.directives.length,1);
+  assert.equal(logs.at(-1).RADAR_APL_RENDERDOCUMENT_FINAL,true);
+  assert.equal(logs.at(-1).RADAR_APL_DIRECTIVE_COUNT,1);
+  await invoke({type:'LaunchRequest'});
+  assert.equal(logs.at(-1).RADAR_APL_RENDERDOCUMENT_FINAL,false);
+ } finally {console.info=original;}
+});
+
+test('Cover URL failure preserves final Launch speech and hides credentials', async () => {
+ mode='success';const before=await invoke({type:'LaunchRequest'});
+ const originalURL=global.URL;const originalLog=console.info;const logs=[];
+ try {
+  console.info=(_,fields)=>logs.push(fields);
+  global.URL=class { constructor() { throw new TypeError('Bearer PRIVATE_TOKEN cookie=PRIVATE_COOKIE'); } };
+  const after=await invoke({type:'LaunchRequest'},{'Alexa.Presentation.APL':{}});
+  assert.deepEqual(after.response.outputSpeech,before.response.outputSpeech);
+  assert.equal(after.response.shouldEndSession,true);
+  assert.match(logs[0].RADAR_APL_ERROR,/TypeError.*URL/);
+  assert.equal(logs[0].RADAR_APL_TEST_MODE,undefined);
+  assert.equal(logs.at(-1).RADAR_APL_RENDERDOCUMENT_FINAL,false);
+  assert.doesNotMatch(JSON.stringify(logs),/PRIVATE_TOKEN|PRIVATE_COOKIE/);
+ } finally {global.URL=originalURL;console.info=originalLog;}
 });
 
 test('Custom Task pt-BR reproduz briefing e conclui a tarefa com TTS', async () => {

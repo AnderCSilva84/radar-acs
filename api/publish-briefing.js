@@ -27,6 +27,7 @@ async function publishBriefing(input, options = {}) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                ...(options.onlyIfUnpublished ? { 'If-None-Match': '*' } : {}),
                 Authorization: 'Bearer ' + token
             },
             body: JSON.stringify(briefing),

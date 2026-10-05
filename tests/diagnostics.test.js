@@ -21,14 +21,10 @@ function run(value, overrides = {}) {
         publish: async () => {}, logger: { info() {} }, ...overrides });
 }
 
-test('Reproduz roteiro curto: snapshot salvo antes de BRIEFING_VALIDATION', async () => {
-    const calls = [];
-    await assert.rejects(run(response(g => { g.roteiroAlexa = 'Primeiro assunto. ' + 'conteúdo '.repeat(100); }), {
-        checkpoint: async snapshot => { calls.push(snapshot); },
-        publish: async () => assert.fail('Não deve publicar')
-    }), error => error.stage === 'BRIEFING_VALIDATION' && error.code === 'AUDIO_SCRIPT_INVALID' && error.message.includes('150–750'));
-    assert.equal(calls[0].status, 'GENERATED_NOT_PUBLISHED');
-    assert.ok(calls[0].resultadoEstruturado.roteiroAlexa.length > 0);
+test('Roteiro curto preservado no snapshot; fala final usa notícia sem nova IA',async()=>{
+ const calls=[];let published;
+ await run(response(g=>{g.roteiroAlexa='Primeiro assunto.'}),{checkpoint:async snapshot=>{calls.push(snapshot)},publish:async value=>{published=value}});
+ assert.equal(calls[0].status,'GENERATED_NOT_PUBLISHED');assert.equal(calls[0].resultadoEstruturado.roteiroAlexa,'Primeiro assunto.');assert.equal(published.noticias.length,5);assert.ok(published.roteiroAlexa.length>0);
 });
 
 test('JSON inválido é preservado e classificado como OPENAI_RESPONSE_PARSE', async () => {
@@ -39,7 +35,7 @@ test('JSON inválido é preservado e classificado como OPENAI_RESPONSE_PARSE', a
 });
 
 test('Diferença de URL reproduz rejeição na validação, não falha OpenAI', () => {
-    assert.throws(() => parseAndValidate(response(g => { g.noticias[0].url += '?utm_source=teste'; }), '2026-10-02'), error => error.stage === 'BRIEFING_VALIDATION' && /fontes/.test(error.message));
+    assert.throws(() => parseAndValidate(response(g => { g.noticias[0].url += '?version=teste'; }), '2026-10-02'), error => error.stage === 'BRIEFING_VALIDATION' && /fontes/.test(error.message));
 });
 
 test('Publicação mockada usa serviço real e distingue PUBLICATION HTTP 503', async () => {

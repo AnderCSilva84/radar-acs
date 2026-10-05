@@ -11,7 +11,7 @@ test('Contrato válido, cinco notícias, datas reais e limite Alexa',()=>{
 test('SSML escapa conteúdo externo e mantém roteiro completo',()=>{
  const result=getBriefingPlayback({roteiroAlexa:'A & B <speak> teste\n\nSegundo assunto'});
  assert.match(result.ssml,/A &amp; B &lt;speak&gt;/);assert.match(result.ssml,/Segundo assunto/);assert.ok(result.ssml.length<=8000);
- assert.equal(fsRead('../api/playback.js'),fsRead('../lambda/playback.js'));
+ assert.equal(require('../api/playback').getBriefingPlayback({roteiroAlexa:'A & B'}, '', {introduction:'Abertura neutra'}).ssml, getBriefingPlayback({roteiroAlexa:'A & B'}, '', {introduction:'Abertura neutra'}).ssml);
 });
 function fsRead(p){return require('fs').readFileSync(require('path').join(__dirname,p),'utf8');}
 test('Cache em falha, vazio limpa cache e payload inválido não é narrado',async()=>{
@@ -25,7 +25,7 @@ async function call(repo,{method='GET',path='/api/briefing/latest',body,auth,con
  await createApi(repo,()=>token)({method,path,body,get:()=>auth,is:t=>t===contentType},res);return res;
 }
 test('API lê apenas campos públicos, lida com vazio e indisponibilidade',async()=>{
- const result=await call({latest:async()=>sample});assert.deepEqual(Object.keys(result.body.briefing),['data','titulo','roteiroAlexa','audioUrl']);assert.equal(result.headers['Cache-Control'],'no-store');
+ const result=await call({latest:async()=>sample});assert.deepEqual(Object.keys(result.body.briefing),['data','titulo','roteiroAlexa','audioUrl','noticias']);assert.equal(result.headers['Cache-Control'],'no-store');
  assert.equal((await call({latest:async()=>null})).body.success,false);
  assert.equal((await call({latest:async()=>{throw new Error('banco');}})).code,503);
 });

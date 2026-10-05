@@ -1,0 +1,13 @@
+{
+  "publication": {
+    "success": true,
+    "id": "2026-10-03",
+    "publicado": true
+  },
+  "get": {
+    "http": 200,
+    "titulo": "Radar ACS — Edição #002",
+    "data": "2026-10-03",
+    "conteudoConfirmado": false
+  }
+}

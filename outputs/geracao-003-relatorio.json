@@ -1,0 +1,96 @@
+{
+  "status": "GENERATED_NOT_PUBLISHED",
+  "erro": {
+    "httpStatus": null,
+    "message": "Quantidade observada de operações search excedeu o orçamento",
+    "code": "WEB_TOOL_BUDGET_EXCEEDED",
+    "tipo": "object",
+    "etapa": "WEB_SEARCH_BUDGET",
+    "name": "Error",
+    "validacao": null,
+    "tipoExcecao": "Error"
+  },
+  "metrics": {
+    "tokensEntrada": 14733,
+    "chamadasOpenAI": 1,
+    "buscasWeb": 4,
+    "tokensEntradaCache": 0,
+    "duracaoGeracaoMs": 28438,
+    "tokensTotal": 18419,
+    "limiteToolCallsSolicitado": 3,
+    "modelo": "gpt-5.4-mini-2026-03-17",
+    "toolCallsWeb": 4,
+    "tokensSaida": 3686,
+    "tokensRaciocinio": 2434,
+    "unidadeBuscasWeb": "[REDACTED_OPAQUE_VALUE]",
+    "toolCallsWebIdsDistintos": 4,
+    "custoEstimadoUsd": 0.067637,
+    "queriesObservadas": 16
+  },
+  "web": [
+    {
+      "queries": [
+        "site:blog.google OR site:cloud.google.com changelog October 2026 AI developer release",
+        "site:github.blog changelog October 2026 release",
+        "site:openai.com/index October 2026 announcement",
+        "site:reuters.com October 2026 technology career Brazil concurso"
+      ],
+      "id": "[REDACTED_OPAQUE_VALUE]",
+      "tipoAcao": "search",
+      "status": "completed"
+    },
+    {
+      "queries": [
+        "site:github.blog/changelog/ 2026-10-02 GitHub Copilot new changelog",
+        "site:docs.github.com/en/changelog 2026-10 GitHub changelog copilot",
+        "site:cloud.google.com/blog 2026-10 official launch developer tool",
+        "site:aws.amazon.com/blogs/aws 2026 October announcement developer"
+      ],
+      "tipoAcao": "search",
+      "status": "completed",
+      "id": "[REDACTED_OPAQUE_VALUE]"
+    },
+    {
+      "id": "[REDACTED_OPAQUE_VALUE]",
+      "status": "completed",
+      "queries": [
+        "site:.gov.br concurso tecnologia informação outubro 2026 edital oficial",
+        "site:trt.jus.br concurso tecnologia informação 2026 edital",
+        "site:diariodejustica.tj* 2026 concurso analista tecnologia informação edital",
+        "site:reuters.com October 3 2026 AI return on investment Reuters"
+      ],
+      "tipoAcao": "search"
+    },
+    {
+      "tipoAcao": "search",
+      "queries": [
+        "site:reuters.com Oct. 3, 2026 artificial intelligence spending return on investment Reuters",
+        "site:reuters.com Oct. 3, 2026 technology Reuters October 2026 developer tools",
+        "site:reuters.com Oct. 3, 2026 OpenAI Reuters",
+        "site:reuters.com Oct. 3, 2026 GitHub Copilot Reuters"
+      ],
+      "status": "searching",
+      "id": "[REDACTED_OPAQUE_VALUE]"
+    }
+  ],
+  "candidatos": [],
+  "titulos": [
+    "GitHub libera tokens de instalação sem estado e amplia o Copilot no desktop",
+    "GitHub descontinua modelos selecionados do Copilot",
+    "ChatGPT libera Finances para usuários Free e Go nos EUA"
+  ],
+  "roteiro": "GitHub liberou tokens de instalação sem estado para GitHub Apps e também colocou o Copilot para interagir com aplicativos de desktop com computer use. É uma mudança pequena no texto, mas grande no uso: menos fricção para integrações e mais alcance para automação no dia a dia. ([github.blog](https://github.blog/?utm_source=openai))\n\nO GitHub colocou no changelog a depreciação de modelos selecionados do Copilot. Não é anúncio chamativo, mas é o tipo de mudança que merece leitura rápida porque pode afetar fluxo, consistência e escolha de modelo dentro da ferramenta. ([github.blog](https://github.blog/?utm_source=openai))\n\nO ChatGPT expandiu Finances para usuários Free e Go nos Estados Unidos, com acesso no web, iOS e Android. É um passo de distribuição importante, porque coloca uma função sensível do produto em um público mais amplo e em mais plataformas ao mesmo tempo. ([help.openai.com](https://help.openai.com/en/articles/6825453-chatgpt-release-notes?utm_source=openai))",
+  "words": 132,
+  "get": {
+    "resposta": {
+      "success": true,
+      "briefing": {
+        "data": "2026-10-03",
+        "titulo": "Radar ACS — Edição #002",
+        "roteiroAlexa": "O GitHub anunciou em 2 de outubro que o Copilot Code Review pode ser solicitado pelas APIs REST e GraphQL. Também é possível determinar o nível de esforço da revisão, e Balanced passou a ser o padrão. Como contexto editorial para a ACS Tecnologia: A funcionalidade pode ser estudada para incorporar revisão automatizada ao fluxo de desenvolvimento dos projetos da ACS Tecnologia, especialmente antes de entregas e merges.\n\nAgora, GPT-6 Sol e Luna ampliam opções de modelos para desenvolvimento. A OpenAI apresentou GPT-6 Sol e Luna como opções da família GPT-6 voltadas a diferentes relações entre capacidade, velocidade e custo. Como contexto editorial para a ACS Tecnologia: A existência de modelos com diferentes perfis permite pensar em arquiteturas que reservem modelos mais caros para tarefas complexas e utilizem opções econômicas em operações simples e frequentes.\n\nAgora, Concurso do TRT-8 abre oportunidade relacionada a Tecnologia da Informação. O concurso do Tribunal Regional do Trabalho da 8ª Região, que atende Pará e Amapá, possui oportunidades relacionadas à Tecnologia da Informação. As inscrições começam em 5 de outubro e as provas estão previstas para janeiro de 2027. Como contexto editorial: É uma oportunidade profissional que pode aproveitar parte dos estudos já realizados em desenvolvimento de sistemas, banco de dados, Java, SQL e disciplinas de concursos.\n\nAgora, Investimentos em inteligência artificial aumentam pressão por retorno econômico. Uma análise da Reuters publicada em 3 de outubro aborda a escala dos investimentos em inteligência artificial e a pressão crescente para transformar infraestrutura e capacidade tecnológica em retorno econômico. Como contexto editorial para a ACS Tecnologia: A aplicação prática para a ACS é priorizar funcionalidades de IA que produzam resultado mensurável para clientes, como economia de tempo, automação, aumento de produtividade ou apoio à tomada de decisão.\n\nAgora, Coreia do Norte realiza novo teste de míssil de alcance intermediário. A Coreia do Norte confirmou em 3 de outubro um teste de míssil estratégico de alcance intermediário. Segundo informações atribuídas a militares sul-coreanos, o projétil percorreu mais de 700 quilômetros em direção ao mar na costa leste norte-coreana. Como contexto editorial: É um acontecimento internacional relevante devido às implicações para a segurança regional envolvendo Coreia do Sul, Japão e Estados Unidos. Como ação prática desta edição, avaliar o uso do Copilot Code Review no fluxo de desenvolvimento da ACS e verificar o edital do TRT-8. Esses foram os destaques desta edição do Radar ACS. Tenha um ótimo dia e até o próximo Radar.",
+        "audioUrl": null
+      }
+    },
+    "http": 200
+  }
+}

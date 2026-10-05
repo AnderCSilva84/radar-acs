@@ -65,15 +65,10 @@ test('Geração válida publica apenas depois da validação e mede uso', async 
 });
 
 for (const [name, update] of [
-    ['duas notícias', g => { g.noticias.splice(2); }],
+    ['zero notícias', g => { g.noticias = []; }],
     ['seis notícias', g => { g.noticias.push({ ...g.noticias[4], ordem: 6 }); }],
-    ['roteiro vazio', g => { g.roteiroAlexa = ''; }],
-    ['abertura duplicada', g => { g.roteiroAlexa = 'Bom dia, Anderson. ' + g.roteiroAlexa; }],
     ['data diferente', g => { g.data = '2026-10-01'; }],
-    ['URL inventada', g => { g.noticias[0].url = 'https://example.com/inventada'; }],
-    ['notícia antiga', g => { g.noticias[0].dataPublicacao = '2026-09-01'; }],
-    ['notícia futura', g => { g.noticias[0].dataPublicacao = '2026-10-03'; }],
-    ['roteiro curto', g => { g.roteiroAlexa = 'Primeiro assunto.'; }]
+
 ]) {
     test('Gerador rejeita ' + name + ' sem publicar', async () => {
         let writes = 0;
@@ -138,4 +133,12 @@ test('Pesquisa limitada e roteiro ligeiramente abaixo do alvo são aceitos', () 
  assert.equal(request.tools[0].search_context_size, 'low');
  assert.equal(request.reasoning.effort, 'low');
  assert.equal(parseAndValidate(patch(fixture(), g => { g.roteiroAlexa = 'Primeiro assunto. ' + 'conteúdo '.repeat(410); }), date).noticias.length, 5);
+});
+
+for (const [name,update,total] of [
+ ['roteiro vazio',g=>{g.roteiroAlexa=''},5],['abertura duplicada',g=>{g.roteiroAlexa='Bom dia, Anderson.'},5],['roteiro curto',g=>{g.roteiroAlexa='Assunto curto.'},5],
+ ['URL inventada',g=>{g.noticias[0].url='https://example.com/inventada'},4],['data antiga',g=>{g.noticias[0].dataPublicacao='2026-09-01'},4],['data futura',g=>{g.noticias[0].dataPublicacao='2026-10-03'},4]
+])test('Notícia e fala separadas: '+name,async()=>{
+ let saved;await generateAndPublish({apiKey:'mock',now,fetchImpl:async()=>({ok:true,json:async()=>patch(fixture(),update)}),publish:async value=>{saved=value},logger:{info(){}}});
+ assert.equal(saved.noticias.length,total);assert.ok(saved.roteiroAlexa.trim());assert.ok(!saved.roteiroAlexa.includes('Bom dia'));
 });

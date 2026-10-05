@@ -21,6 +21,7 @@ function candidate() {
 }
 async function run(invalid, update = () => {}) {
     const g = candidate(); update(g);
+    g.noticias.forEach(item => { if (invalid.includes(item.ordem)) item.fonte = ''; });
     const response = structuredClone(fixture);
     response.output[1].content[0].text = JSON.stringify(g);
     let ai = 0, saved = null, checkpoint = null, sources = 0;
@@ -38,24 +39,24 @@ async function run(invalid, update = () => {}) {
     try { return { result: await promise, ai, saved, checkpoint, sources, g }; }
     catch (error) { return { error, ai, saved, checkpoint, sources, g }; }
 }
-for (const [name, invalid, total] of [['cinco válidas', [], 5], ['quatro válidas e uma inválida', [4], 4], ['três válidas e duas inválidas', [2, 4], 3]]) {
+for (const [name, invalid, total] of [['cinco válidas', [], 5], ['quatro válidas e uma inválida', [4], 4], ['três válidas e duas inválidas', [2, 4], 3], ['duas válidas', [1, 2, 4], 2], ['uma válida', [1, 2, 3, 4], 1]]) {
     test('Pipeline publica ' + name + ' sem reescrita ou IA adicional (mock)', async () => {
         const r = await run(invalid);
         assert.ifError(r.error); assert.equal(r.saved.noticias.length, total);
-        assert.equal(r.ai, 1); assert.equal(r.sources, 5);
+        assert.equal(r.ai, 1); assert.equal(r.sources, 0);
         assert.equal(r.checkpoint.status, 'GENERATED_NOT_PUBLISHED');
         assert.equal(r.checkpoint.resultadoEstruturado.noticias.length, 5);
         assert.equal(r.saved.roteiroAlexa, r.g.noticias.filter(item => !invalid.includes(item.ordem)).map(item => item.roteiroAlexa).join('\n\n'));
         assert.deepEqual(r.saved.noticias.map(item => item.ordem), Array.from({ length: total }, (_, i) => i + 1));
     });
 }
-test('Menos de três comprovadas não publica e não chama IA novamente', async () => {
-    const r = await run([1, 2, 4]); assert.equal(r.error.code, 'INSUFFICIENT_VERIFIED_NEWS');
-    assert.equal(r.saved, null); assert.equal(r.ai, 1); assert.equal(r.sources, 5);
+test('Zero fontes válidas não publica e não chama IA novamente', async () => {
+    const r = await run([1, 2, 3, 4, 5]); assert.equal(r.error.code, 'NO_VALID_NEWS');
+    assert.equal(r.saved, null); assert.equal(r.ai, 1); assert.equal(r.sources, 0);
 });
-test('Remoção de roteiro legado sem blocos explícitos é recusada', async () => {
+test('Notícias sem blocos recebem fallback de fala após seleção', async () => {
     const r = await run([4], g => { g.noticias.forEach(item => { delete item.roteiroAlexa; }); });
-    assert.equal(r.error.code, 'UNSAFE_DETERMINISTIC_RECOVERY'); assert.equal(r.saved, null);
+    assert.ifError(r.error);assert.equal(r.saved.noticias.length,4);assert.ok(r.saved.roteiroAlexa.includes(r.saved.noticias[0].resumo));
 });
 test('Remoção não mantém referência cruzada nem oportunidade de notícia removida', () => {
     for (const mutate of [g => { g.noticias[2].roteiroAlexa += ' Como mencionei no assunto anterior.'; g.roteiroAlexa = g.noticias.map(n => n.roteiroAlexa).join('\n\n'); }, g => { g.oportunidadeOrdem = 4; }, g => { g.oportunidadeDoDia = 'Aproveitar a notícia removida.'; }]) {
@@ -63,15 +64,16 @@ test('Remoção não mantém referência cruzada nem oportunidade de notícia re
         assert.throws(() => retainVerified(g, [1, 2, 3, 5]), e => e.code === 'UNSAFE_DETERMINISTIC_RECOVERY');
     }
 });
-test('Contrato aceita três, quatro e cinco, rejeitando dois e seis', () => {
-    for (const n of [3, 4, 5]) assert.equal(validateBriefing({ ...candidate(), noticias: candidate().noticias.slice(0, n), publicado: true }).noticias.length, n);
-    assert.throws(() => validateBriefing({ ...candidate(), noticias: candidate().noticias.slice(0, 2), publicado: true }));
+test('Contrato aceita uma a cinco, rejeitando zero e seis', () => {
+    for (const n of [1, 2, 3, 4, 5]) assert.equal(validateBriefing({ ...candidate(), noticias: candidate().noticias.slice(0, n), publicado: true }).noticias.length, n);
+    assert.throws(() => validateBriefing({ ...candidate(), noticias: [], publicado: true }));
+    assert.throws(() => validateBriefing({ ...candidate(), noticias: [...candidate().noticias, { ...candidate().noticias[0], ordem: 6 }], publicado: true }));
 });
 test('Schema compacto hidrata roteiro, ordem e metadados sem IA', () => {
     const g = candidate(); delete g.data; delete g.titulo; delete g.resumo; delete g.roteiroAlexa;
     g.noticias.forEach(item => { delete item.ordem; });
     assert.equal(hydrateGenerated(g, date).roteiroAlexa, candidate().roteiroAlexa);
-    assert.equal(buildRequest(date).text.format.schema.properties.noticias.minItems, 3);
+    assert.equal(buildRequest(date).text.format.schema.properties.noticias.minItems, 1);
     assert.equal(buildRequest(date).text.format.schema.properties.roteiroAlexa, undefined);
 });
 test('Métrica conta tool-call entries, não quantidade de queries', () => {
@@ -81,17 +83,17 @@ test('Métrica conta tool-call entries, não quantidade de queries', () => {
 test('Metadados ausentes não viram contagem presumida de queries', () => {
     const m = metricsFor(fixture, 1); assert.equal(m.queriesObservadas, null); assert.equal(m.toolCallsWebIdsDistintos, null);
 });
-test('Excesso observado de ferramenta é preservado e bloqueia publicação sem retry', async () => {
+test('Ações web adicionais não bloqueiam por orçamento', async () => {
     const response = structuredClone(fixture);
     const call = response.output[0];
     response.output = [...Array.from({ length: 4 }, (_, i) => ({ ...call, id: 'ws_' + i })), response.output[1]];
     let ai = 0, saved;
-    await assert.rejects(generateAndPublish({
+    await generateAndPublish({
         apiKey: 'fake', now: () => new Date(date + 'T12:00:00Z'),
         fetchImpl: async () => { ai++; return { ok: true, json: async () => response }; },
         checkpoint: async value => { saved = value; },
-        publish: async () => assert.fail('Não deve publicar'), logger: { info() {} }
-    }), e => e.code === 'WEB_TOOL_BUDGET_EXCEEDED' && e.stage === 'WEB_SEARCH_BUDGET');
+        publish: async briefing => assert.equal(briefing.noticias.length,5), logger: { info() {} }
+    });
     assert.equal(ai, 1); assert.equal(saved.chamadasWeb.length, 4);
     assert.equal(saved.status, 'GENERATED_NOT_PUBLISHED');
 });

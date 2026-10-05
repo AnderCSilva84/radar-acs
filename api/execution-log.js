@@ -16,6 +16,11 @@ function createExecutionLog(db, serverTimestamp) {
                 ...snapshot, criadoEm: serverTimestamp(), expiresAt: new Date(Date.now() + 7 * 86400000)
             });
         },
+        async evidence(id, candidates, secrets = []) {
+            const { redact } = require('./diagnostics');
+            const clean = candidates.map(item => Object.fromEntries(Object.entries(item).map(([key, value]) => [key, typeof value === 'string' ? redact(value, secrets) : value])));
+            await db.collection('geracoesDiagnostico').doc(id).update({ candidatos: clean });
+        },
         async complete(id, result) {
             // Notícias já estão no briefing; não duplicar o conteúdo no registro permanente.
             await db.collection('geracoesManuais').doc(id).update({

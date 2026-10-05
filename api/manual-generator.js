@@ -4,7 +4,7 @@ const { stage, errorSnapshot, atStage } = require('./diagnostics');
 
 // A plataforma Cloud Run exige IAM antes de executar este handler.
 
-function createManualGenerator({ generate, runs, getRedactions = () => [], logger = console }) {
+function createManualGenerator({ generate, runs, canGenerate = async () => true, getRedactions = () => [], logger = console }) {
     return async (req, res) => {
         res.set('Cache-Control', 'no-store');
         if (req.method !== 'POST') return res.status(405).json({ success: false, message: 'Use POST para geração manual.' });
@@ -16,6 +16,7 @@ function createManualGenerator({ generate, runs, getRedactions = () => [], logge
         const id = req.body.requestId;
         let acquired = false;
         try {
+            if (!await canGenerate()) return res.status(409).json({ success: false, message: 'Edição da data já existe ou latest é posterior; geração cancelada.' });
             acquired = await stage('FIRESTORE_EXECUTION_LOG', () => runs.acquire(id));
             if (!acquired) return res.status(409).json({ success: false, message: 'Esta execução já foi iniciada. Não será repetida.' });
             const result = await generate(id);

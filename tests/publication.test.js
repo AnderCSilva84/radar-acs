@@ -12,7 +12,8 @@ const clone = () => JSON.parse(JSON.stringify(sample));
 
 test('Abertura aparece uma vez e roteiro começa pelo conteúdo editorial', () => {
     const ssml = getBriefingPlayback(validateBriefing(clone())).ssml;
-    assert.equal(ssml.split('Bom dia, Anderson.').length - 1, 1);
+    assert.equal(ssml.split('Olá!').length - 1, 1);
+    assert.doesNotMatch(ssml, /Anderson/);
     assert.equal(ssml.split('Está começando o Radar ACS').length - 1, 1);
     assert.match(sample.roteiroAlexa, /^Este é o primeiro briefing/);
     for (const greeting of ['Bom dia, Anderson.', 'Boa tarde, Anderson.', 'Olá, Anderson.', 'Está começando o Radar ACS.', 'Esta comecando o Radar ACS.']) {
@@ -38,7 +39,7 @@ test('Publicador valida e envia cinco notícias sem segredo no JSON', async () =
 });
 
 for (const [name, patch] of [
-    ['duas notícias', { noticias: sample.noticias.slice(0, 2) }],
+    ['zero notícias', { noticias: [] }],
     ['seis notícias', { noticias: [...sample.noticias, { ...sample.noticias[4], ordem: 6 }] }],
     ['roteiro vazio', { roteiroAlexa: '  ' }],
     ['fonte vazia', { noticias: sample.noticias.map((item, i) => i === 0 ? { ...item, fonte: '' } : item) }],

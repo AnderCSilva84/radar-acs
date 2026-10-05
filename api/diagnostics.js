@@ -81,9 +81,9 @@ function diagnosticSnapshot(response, generated, metrics, secrets = []) {
     const clean = (value, key = '') => {
         if (typeof value === 'string') return redact(value, secrets).slice(0, key === 'roteiroAlexa' ? 20000 : key === 'data' || key === 'dataPublicacao' ? 20 : 2000);
         if (value === null || typeof value === 'number' || typeof value === 'boolean') return value;
-        if (Array.isArray(value)) return value.slice(0, 6).map(item => clean(item));
+        if (Array.isArray(value)) return value.slice(0, 8).map(item => clean(item));
         if (value && typeof value === 'object') {
-            const fields = ['data', 'titulo', 'resumo', 'roteiroAlexa', 'noticias', 'oportunidadeDoDia', 'ordem', 'contexto', 'fonte', 'url', 'dataPublicacao', 'evidencia', 'termosEspecificos', 'oportunidadeOrdem'];
+            const fields = ['data', 'titulo', 'resumo', 'roteiroAlexa', 'noticias', 'oportunidadeDoDia', 'ordem', 'contexto', 'fonte', 'url', 'dataPublicacao', 'evidencia', 'termosEspecificos', 'oportunidadeOrdem', 'evidencias', 'allowedFacts', 'texto', 'evidenciaIndices', 'desenvolvimentoNovo', 'relevante', 'sourceUrlAnterior', 'descricao', 'fatoIndex', 'sourceIds'];
             return Object.fromEntries(fields.filter(key => Object.hasOwn(value, key)).map(key => [key, clean(value[key], key)]));
         }
         return null;
@@ -95,6 +95,9 @@ function diagnosticSnapshot(response, generated, metrics, secrets = []) {
         respostaEditorialBruta: redact(output.filter(item => item.type === 'message').flatMap(item => item.content || []).filter(item => item.type === 'output_text').map(item => item.text).join(''), secrets).slice(0, 100000),
         resultadoEstruturado: clean(generated),
         fontes: sources,
+        sourceEvidence: require('./source-evidence-store').observedSourceEvidence(response).map(source => Object.fromEntries(Object.entries(source).map(([key, value]) => [key,
+            key === 'contentHash' ? value : key === 'searchActionId' || key === 'observedSourceId' ? (value ? 'id-' + require('node:crypto').createHash('sha256').update(String(value)).digest('hex').slice(0, 16) : null)
+            : typeof value === 'string' ? redact(value, secrets) : Array.isArray(value) ? value.map(item => redact(item, secrets)) : value]))),
         chamadasWeb: output.filter(item => item.type === 'web_search_call').map(item => ({ id: redact(item.id || '', secrets), status: redact(item.status || '', secrets), tipoAcao: redact(item.action?.type || '', secrets), queries: (Array.isArray(item.action?.queries) ? item.action.queries : typeof item.action?.query === 'string' ? [item.action.query] : []).map(query => redact(query, secrets).slice(0, 1000)) })),
         responseStatus: redact(response.status || '', secrets),
         responseId: redact(response.id || '', secrets),

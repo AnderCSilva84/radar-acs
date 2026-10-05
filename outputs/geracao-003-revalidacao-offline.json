@@ -1,0 +1,286 @@
+{
+  "found": true,
+  "web": {
+    "toolItems": 4,
+    "toolActions": 4,
+    "webToolItems": 4,
+    "webSearchActions": 4,
+    "searchActions": 4,
+    "completedSearchActions": 3,
+    "inProgressSearchActions": 1,
+    "openPageActions": 0,
+    "pesquisasObservadas": 4,
+    "pesquisasConcluidas": 3,
+    "queries": 16,
+    "searchQueries": 16,
+    "classificacaoCompleta": true,
+    "acoes": [
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "completed",
+        "action": "search",
+        "queries": [
+          "site:blog.google OR site:cloud.google.com changelog October 2026 AI developer release",
+          "site:github.blog changelog October 2026 release",
+          "site:openai.com/index October 2026 announcement",
+          "site:reuters.com October 2026 technology career Brazil concurso"
+        ]
+      },
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "completed",
+        "action": "search",
+        "queries": [
+          "site:github.blog/changelog/ 2026-10-02 GitHub Copilot new changelog",
+          "site:docs.github.com/en/changelog 2026-10 GitHub changelog copilot",
+          "site:cloud.google.com/blog 2026-10 official launch developer tool",
+          "site:aws.amazon.com/blogs/aws 2026 October announcement developer"
+        ]
+      },
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "completed",
+        "action": "search",
+        "queries": [
+          "site:.gov.br concurso tecnologia informação outubro 2026 edital oficial",
+          "site:trt.jus.br concurso tecnologia informação 2026 edital",
+          "site:diariodejustica.tj* 2026 concurso analista tecnologia informação edital",
+          "site:reuters.com October 3 2026 AI return on investment Reuters"
+        ]
+      },
+      {
+        "tipo": "web_search_call",
+        "id": "[REDACTED_OPAQUE_VALUE]",
+        "status": "searching",
+        "action": "search",
+        "queries": [
+          "site:reuters.com Oct. 3, 2026 artificial intelligence spending return on investment Reuters",
+          "site:reuters.com Oct. 3, 2026 technology Reuters October 2026 developer tools",
+          "site:reuters.com Oct. 3, 2026 OpenAI Reuters",
+          "site:reuters.com Oct. 3, 2026 GitHub Copilot Reuters"
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "status": "FAIL",
+    "code": "WEB_TOOL_BUDGET_EXCEEDED",
+    "reason": "Quantidade observada de operações search excedeu o orçamento"
+  },
+  "contract": {
+    "status": "PASS",
+    "detail": "Contrato estrutural válido"
+  },
+  "audio": {
+    "status": "FAIL",
+    "code": "AUDIO_SCRIPT_INVALID",
+    "reason": "Roteiro deve conter 150–750 palavras, sem URLs ou marcação"
+  },
+  "duplicate": {
+    "status": "PASS",
+    "detail": {
+      "resultado": "PASS",
+      "pares": [
+        {
+          "assuntos": [
+            1,
+            2
+          ],
+          "similaridadeTitulo": 0.16666666666666666,
+          "similaridadeResumo": 0.23809523809523808,
+          "mesmaUrl": false
+        },
+        {
+          "assuntos": [
+            1,
+            3
+          ],
+          "similaridadeTitulo": 0.06666666666666667,
+          "similaridadeResumo": 0.09615384615384616,
+          "mesmaUrl": false
+        },
+        {
+          "assuntos": [
+            2,
+            3
+          ],
+          "similaridadeTitulo": 0,
+          "similaridadeResumo": 0.09259259259259259,
+          "mesmaUrl": false
+        }
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "title": "GitHub libera tokens de instalação sem estado e amplia o Copilot no desktop",
+      "sourceUrl": null,
+      "sourceStatus": {
+        "status": "FAIL",
+        "code": "SOURCE_URL_NOT_SPECIFIC",
+        "reason": "SOURCE_URL_NOT_SPECIFIC: homepage ou página genérica de categoria/listagem"
+      },
+      "contract": "PASS",
+      "duplicate": "PASS",
+      "recentNewsDedup": {
+        "status": "PASS",
+        "reason": "Sem repetição forte na janela recente"
+      },
+      "evidence": [
+        "“Stateless GitHub App installation tokens rolled out”",
+        "“GitHub Copilot can now interact with desktop apps with computer use”"
+      ],
+      "allowedFacts": [
+        {
+          "texto": "O GitHub publicou, em 2 de outubro de 2026, a liberação de tokens de instalação sem estado para GitHub Apps.",
+          "evidenciaIndices": [
+            0
+          ]
+        },
+        {
+          "texto": "No mesmo conjunto de mudanças, o GitHub Copilot passou a interagir com aplicativos de desktop usando computer use.",
+          "evidenciaIndices": [
+            1
+          ]
+        }
+      ],
+      "factual": {
+        "candidateId": "candidate-1",
+        "title": "GitHub libera tokens de instalação sem estado e amplia o Copilot no desktop",
+        "sourceUrl": "https://github.blog/",
+        "status": "FAIL",
+        "reason": "SOURCE_URL_NOT_SPECIFIC: homepage ou página genérica de categoria/listagem",
+        "evidenceCount": 2,
+        "allowedFactsCount": 2
+      }
+    },
+    {
+      "title": "GitHub descontinua modelos selecionados do Copilot",
+      "sourceUrl": null,
+      "sourceStatus": {
+        "status": "FAIL",
+        "code": "SOURCE_URL_NOT_SPECIFIC",
+        "reason": "SOURCE_URL_NOT_SPECIFIC: homepage ou página genérica de categoria/listagem"
+      },
+      "contract": "PASS",
+      "duplicate": "PASS",
+      "recentNewsDedup": {
+        "status": "PASS",
+        "reason": "Sem repetição forte na janela recente"
+      },
+      "evidence": [
+        "“Selected models in GitHub Copilot deprecated”",
+        "“Copilot [Button: Clear all ] ## October Oct 2026”"
+      ],
+      "allowedFacts": [
+        {
+          "texto": "O GitHub marcou a depreciação de modelos selecionados do Copilot em 2 de outubro de 2026.",
+          "evidenciaIndices": [
+            0
+          ]
+        },
+        {
+          "evidenciaIndices": [
+            1
+          ],
+          "texto": "A mudança aparece no changelog de outubro de 2026 do GitHub, junto de outras atualizações do Copilot."
+        }
+      ],
+      "factual": {
+        "candidateId": "candidate-2",
+        "title": "GitHub descontinua modelos selecionados do Copilot",
+        "sourceUrl": "https://github.blog/changelog/",
+        "status": "FAIL",
+        "reason": "SOURCE_URL_NOT_SPECIFIC: homepage ou página genérica de categoria/listagem",
+        "evidenceCount": 2,
+        "allowedFactsCount": 2
+      }
+    },
+    {
+      "title": "ChatGPT libera Finances para usuários Free e Go nos EUA",
+      "sourceUrl": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "sourceStatus": {
+        "status": "PASS",
+        "detail": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      },
+      "contract": "PASS",
+      "duplicate": "PASS",
+      "recentNewsDedup": {
+        "status": "PASS",
+        "reason": "Sem repetição forte na janela recente"
+      },
+      "evidence": [
+        "“Finances expands to Free and Go users in the U.S. on web, iOS, and Android.”",
+        "“We’re introducing security history, a new way to review recent security activity for your OpenAI account.”"
+      ],
+      "allowedFacts": [
+        {
+          "evidenciaIndices": [
+            0
+          ],
+          "texto": "O ChatGPT passou a disponibilizar Finances para usuários Free e Go nos Estados Unidos."
+        },
+        {
+          "evidenciaIndices": [
+            0
+          ],
+          "texto": "O recurso ficou disponível no web, no iOS e no Android."
+        },
+        {
+          "texto": "A página de release notes também registrou uma novidade chamada security history para revisar atividade recente de segurança da conta.",
+          "evidenciaIndices": [
+            1
+          ]
+        }
+      ],
+      "factual": {
+        "candidateId": "candidate-3",
+        "title": "ChatGPT libera Finances para usuários Free e Go nos EUA",
+        "sourceUrl": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "status": "FAIL",
+        "reason": "Evidência do assunto 3: não foi possível confirmar a fonte: EVIDENCE_SOURCE_TEXT_NOT_PRESERVED: conteúdo independente da página não preservado",
+        "evidenceCount": 2,
+        "allowedFactsCount": 3
+      }
+    }
+  ],
+  "validCandidates": 0,
+  "publishable": false,
+  "publication": "DISABLED_FOR_HUMAN_REVIEW",
+  "roteiroAlexa": "GitHub liberou tokens de instalação sem estado para GitHub Apps e também colocou o Copilot para interagir com aplicativos de desktop com computer use. É uma mudança pequena no texto, mas grande no uso: menos fricção para integrações e mais alcance para automação no dia a dia. ([github.blog](https://github.blog/?utm_source=openai))\n\nO GitHub colocou no changelog a depreciação de modelos selecionados do Copilot. Não é anúncio chamativo, mas é o tipo de mudança que merece leitura rápida porque pode afetar fluxo, consistência e escolha de modelo dentro da ferramenta. ([github.blog](https://github.blog/?utm_source=openai))\n\nO ChatGPT expandiu Finances para usuários Free e Go nos Estados Unidos, com acesso no web, iOS e Android. É um passo de distribuição importante, porque coloca uma função sensível do produto em um público mais amplo e em mais plataformas ao mesmo tempo. ([help.openai.com](https://help.openai.com/en/articles/6825453-chatgpt-release-notes?utm_source=openai))",
+  "originalDistinctWebIds": 4,
+  "specificUrlsPreserved": [
+    "https://openai.com/index/expanding-ai-access-us-government/",
+    "https://openai.com/index/ai-policy-window/",
+    "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/",
+    "https://openai.com/index/next-chapter-of-microsoft-openai-partnership/",
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "https://openai.com/index/the-work-now-within-reach/",
+    "https://openai.com/index/built-to-benefit-everyone/",
+    "https://openai.com/index/five-new-stargate-sites/",
+    "https://openai.com/index/introducing-chatgpt-financial-services/",
+    "https://openai.com/index/accelerating-the-next-phase-ai/",
+    "https://openai.com/index/scaling-ai-for-everyone/",
+    "https://openai.com/index/election-safeguards-2026/",
+    "https://cdn.openai.com/global-affairs/f9361fe7-e452-4c78-94dc-e6946c73c858/openai-south-korea-economic-blueprint-october-2025.pdf",
+    "https://cdn.openai.com/global-affairs/f319686f-cf21-4b8e-b8bc-84dd9bbfb999/oai-workforce-blueprint-oct-2025.pdf",
+    "https://cdn.openai.com/pdf/21b88bb5-10a3-4566-919d-f9a6b9c3e632/%5BOpenAI_OSTP%20RFI%20Oct%2027%202025%5D.pdf",
+    "https://aws.amazon.com/blogs/training-and-certification/september-2026-new-offerings/",
+    "https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing/",
+    "https://cloud.google.com/blog/topics/developers-practitioners/announcing-developer-device-platform-on-google-cloud",
+    "https://cloud.google.com/blog/topics/developers-practitioners/introducing-the-google-cloud-developer-plugin-for-ai-coding-agents",
+    "https://cloud.google.com/blog/topics/developers-practitioners/io26-news-for-agent-developers-on-google-cloud",
+    "https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/",
+    "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams/",
+    "https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/aws-sdk-net-v4-dg.pdf",
+    "https://docs.aws.amazon.com/pdfs/iotevents/latest/developerguide/iotevents-dg.pdf",
+    "https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/internal-developer-platform/internal-developer-platform.pdf",
+    "https://docs.aws.amazon.com/pdfs/health/latest/ug/awshealth-ug.pdf",
+    "https://github.blog/wp-content/uploads/2023/06/Sea-Change-in-Software-Dev.pdf",
+    "https://cloud.google.com/innovators/programassets/champion_welcome_guide.pdf",
+    "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+  ]
+}

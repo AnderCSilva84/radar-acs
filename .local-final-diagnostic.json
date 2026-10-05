@@ -1,0 +1,75 @@
+﻿{
+    "status":  "FAILED",
+    "exceptionalRecoveryConsumed":  true,
+    "recoveryAttempted":  true,
+    "generated":  4,
+    "approved":  0,
+    "rejected":  4,
+    "published":  false,
+    "metrics":  {
+                    "duracaoGeracaoMs":  15409,
+                    "sourceEvidenceWarnings":  0,
+                    "tokensEntradaCache":  0,
+                    "limiteToolCallsSolicitado":  3,
+                    "tokensRaciocinio":  955,
+                    "leiturasFontes":  0,
+                    "queriesObservadas":  12,
+                    "tokensSaida":  2713,
+                    "incompleteWebActions":  [
+                                                 {
+                                                     "status":  "searching",
+                                                     "action":  "search"
+                                                 }
+                                             ],
+                    "unidadeBuscasWeb":  "[REDACTED_OPAQUE_VALUE]",
+                    "chamadasOpenAI":  1,
+                    "webToolItems":  4,
+                    "toolCallsWebIdsDistintos":  4,
+                    "queries":  12,
+                    "buscasWeb":  3,
+                    "tokensEntrada":  19137,
+                    "inProgressSearchActions":  1,
+                    "webCollectionWarnings":  [
+                                                  "WEB_COLLECTION_INCOMPLETE_WARNING"
+                                              ],
+                    "toolCallsWeb":  4,
+                    "openPageActions":  1,
+                    "tokensTotal":  21850,
+                    "completedSearchActions":  2,
+                    "webSearchActions":  3,
+                    "custoEstimadoUsd":  0.056561,
+                    "modelo":  "gpt-5.4-mini-2026-03-17"
+                },
+    "error":  {
+                  "tipo":  "object",
+                  "validacao":  "noticias.minimo_comprovado",
+                  "httpStatus":  null,
+                  "etapa":  "FACTUAL_EVIDENCE",
+                  "name":  "Error",
+                  "tipoExcecao":  "Error",
+                  "code":  "INSUFFICIENT_VERIFIED_NEWS",
+                  "message":  "Nenhum assunto possui evidência confirmada"
+              },
+    "candidates":  [
+                       {
+                           "reasonCode":  "FACTUAL_EVIDENCE_UNCONFIRMED",
+                           "stage":  "FACTUAL_EVIDENCE",
+                           "candidateId":  "candidate-1"
+                       },
+                       {
+                           "candidateId":  "candidate-2",
+                           "reasonCode":  "FACTUAL_EVIDENCE_UNCONFIRMED",
+                           "stage":  "FACTUAL_EVIDENCE"
+                       },
+                       {
+                           "reasonCode":  "FACTUAL_EVIDENCE_UNCONFIRMED",
+                           "candidateId":  "candidate-3",
+                           "stage":  "FACTUAL_EVIDENCE"
+                       },
+                       {
+                           "reasonCode":  "FACTUAL_EVIDENCE_UNCONFIRMED",
+                           "candidateId":  "candidate-4",
+                           "stage":  "FACTUAL_EVIDENCE"
+                       }
+                   ]
+}

@@ -1,0 +1,6 @@
+{
+  "radar": { "webAsset": "/capa-radar-default.png", "alt": "Radar ACS" },
+  "acs": { "webAsset": "/capa-acs-default.png", "alt": "ACS Tecnologia" },
+  "radar-news": { "webAsset": "/capa-radar.png", "alt": "Radar News" },
+  "eleicoes-2026": { "webAsset": "/capa-eleicoes-2026.png", "alt": "Eleições 2026" }
+}
