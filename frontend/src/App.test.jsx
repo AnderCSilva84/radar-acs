@@ -16,7 +16,7 @@ describe('Home', () => {
     getLatestBriefing.mockResolvedValue(briefing); render(<App />);
     expect(await screen.findByRole('heading', { name: briefing.titulo })).toBeInTheDocument();
     expect(screen.getAllByRole('article')).toHaveLength(5);
-    expect(screen.getAllByText('5 assuntos')).toHaveLength(2);
+    expect(screen.getAllByText('5 assuntos')).toHaveLength(1);
     expect(screen.getByText('sábado, 3 de outubro de 2026')).toBeInTheDocument();
     expect(screen.getByText('Online')).toBeInTheDocument();
     expect(screen.getByText(briefing.noticias[0].resumo)).toBeInTheDocument();
@@ -43,7 +43,7 @@ describe('Home', () => {
   });
   it('abre e fecha roteiro com nome acessível e devolve foco', async () => {
     getLatestBriefing.mockResolvedValue(alexaBriefing); render(<App />);
-    const trigger = await screen.findByRole('button', { name: 'Ler briefing' });
+    const trigger = await screen.findByRole('button', { name: 'Ler edição' });
     trigger.focus(); fireEvent.click(trigger);
     expect(screen.getByRole('dialog', { name: 'Roteiro do briefing' })).toBeInTheDocument();
     expect(screen.getByText('Leitura em texto. O botão não reproduz áudio gravado.')).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe('Home', () => {
   });
   it('fecha roteiro por Escape', async () => {
     getLatestBriefing.mockResolvedValue(alexaBriefing); render(<App />);
-    fireEvent.click(await screen.findByRole('button', { name: 'Ler briefing' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Ler edição' }));
     fireEvent(screen.getByRole('dialog'), new Event('cancel', { bubbles: true, cancelable: true }));
     await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
   });
@@ -90,12 +90,12 @@ describe('Home', () => {
     const edition = { ...briefing, titulo: 'Outra edição editorial', noticias: briefing.noticias.slice(0, 3), roteiroAlexa: Array(280).fill('palavra').join(' ') };
     getLatestBriefing.mockResolvedValue(edition); render(<App />);
     expect(await screen.findByText('3 assuntos que merecem sua atenção.')).toBeInTheDocument();
-    const summary = within(screen.getByRole('complementary', { name: 'EDIÇÃO DE HOJE' }));
+    const summary = within(screen.getByRole('region', { name: edition.titulo }));
     expect(summary.getByText(edition.titulo)).toBeInTheDocument();
     expect(summary.getByText('3 assuntos')).toBeInTheDocument();
-    expect(summary.getByText('aproximadamente 2 min')).toBeInTheDocument();
+    expect(summary.getByText('aproximadamente 2 min de leitura')).toBeInTheDocument();
     expect(summary.getByText('Publicado')).toBeInTheDocument();
-    fireEvent.click(summary.getByRole('button', { name: 'Ler briefing' }));
+    fireEvent.click(summary.getByRole('button', { name: 'Ler edição' }));
     expect(screen.getByRole('dialog')).toBeInTheDocument();
     expect(getLatestBriefing).toHaveBeenCalledTimes(1);
   });
@@ -107,3 +107,4 @@ describe('Home', () => {
     expect(screen.getByRole('link', { name: 'Fonte' }).textContent).toBe('Fonte');
   });
 });
+

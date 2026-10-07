@@ -1,0 +1,55 @@
+{
+  "type": "playlist",
+  "playlistId": "21Zn60qgps8agFlajllsd6",
+  "registeredUrl": "https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6",
+  "canonicalUrl": "https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6",
+  "embedUrl": "https://open.spotify.com/embed/playlist/21Zn60qgps8agFlajllsd6",
+  "mediaHTTP": 200,
+  "environments": [
+    {
+      "name": "desktop Chromium",
+      "width": 1440,
+      "canonical": {
+        "http": 404,
+        "finalUrl": "https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6",
+        "pageNotFound": false,
+        "title": "Página não encontrada",
+        "playControls": 0
+      },
+      "embed": {
+        "http": 200,
+        "finalUrl": "https://open.spotify.com/embed/playlist/21Zn60qgps8agFlajllsd6",
+        "pageNotFound": true,
+        "title": "- | Spotify",
+        "playControls": 0
+      },
+      "externalLink": {
+        "openedNewTab": true,
+        "finalUrl": "https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6"
+      }
+    },
+    {
+      "name": "iPhone emulation Chromium (not Safari)",
+      "width": 390,
+      "canonical": {
+        "http": 404,
+        "finalUrl": "https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6",
+        "pageNotFound": false,
+        "title": "Página não encontrada",
+        "playControls": 0
+      },
+      "embed": {
+        "http": 200,
+        "finalUrl": "https://open.spotify.com/embed/playlist/21Zn60qgps8agFlajllsd6",
+        "pageNotFound": true,
+        "title": "- | Spotify",
+        "playControls": 0
+      },
+      "externalLink": {
+        "openedNewTab": true,
+        "finalUrl": "https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6"
+      }
+    }
+  ],
+  "webkitAvailable": false
+}

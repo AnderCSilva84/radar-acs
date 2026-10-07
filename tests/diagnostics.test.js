@@ -2,7 +2,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fixture = require('./fixtures/generated-response.json');
-const { generateAndPublish, parseAndValidate } = require('../api/generator');
+const { generateAndPublish, parseAndValidate } = require('./helpers/legacy-generator');
 const { errorSnapshot, diagnosticSnapshot, redact } = require('../api/diagnostics');
 const { publishBriefing } = require('../api/publish-briefing');
 const { createManualGenerator } = require('../api/manual-generator');

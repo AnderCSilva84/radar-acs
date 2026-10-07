@@ -1,0 +1,253 @@
+{
+  "revalidated": 7,
+  "passed": 3,
+  "failed": 4,
+  "preservedHashes": [
+    "3f82d78975e11ff0e68f76f2070ce7f679e76a1562fc7b0bb74ad4fb943dac49",
+    "d458376f824e768ffc2a1ee3370f6026fd239a1a1c367185d3bdcdc7fca58493"
+  ],
+  "results": [
+    {
+      "title": "Após convocação à Venezuela, Ferraresi retorna ao Rio e amplia leque de opções de Tite na zaga do Botafogo",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A presença do zagueiro amplia as opções de Tite para a defesa.",
+          "evidenceIds": [
+            "e4"
+          ],
+          "evidence": "A presença de Ferraresi faz crescer o leque de opções para Tite na zaga: o técnico também conta com Lucas Monzón, Arthur Chaves e Justino na briga pelas duas vagas na linha defensiva.",
+          "overlap": 0.5
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "Ferraresi já voltou ao Botafogo depois da Data Fifa e vai treinar duas vezes antes do clássico com o Vasco.",
+          "evidenceIds": [
+            "e2",
+            "e3",
+            "e6"
+          ],
+          "evidence": "Dos três convocados do grupo profissional do Botafogo , o zagueiro Ferraresi — liberado após amistoso da Venezuela na última sexta-feira — foi o primeiro a voltar às atividades no Espaço Lonier, nesta segunda-feira. Desta forma, o zagueiro irá participar de duas sessões de treinamento antes do clássico contra o Vasco, na próxima quarta-feira. A seleção sul-americana ainda vai enfrentar a Jordânia, nesta terça-feira, mas o zagueiro foi um dos atletas liberados pela Vinotinto para retornar de forma antecipada ao clube.",
+          "overlap": 0.5384615384615384
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      },
+      "final": "FAIL"
+    },
+    {
+      "title": "Representação de parlamentares negros segue baixa, diz pesquisadora",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A representação de parlamentares negros segue baixa, apesar da eleição de 135 deputados pretos e pardos.",
+          "evidenceIds": [
+            "e1",
+            "e4"
+          ],
+          "evidence": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária. Dos 135 pretos e pardos eleitos neste domingo (4), 77 foram reeleitos.",
+          "overlap": 0.45454545454545453
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "A representação de parlamentares negros continua baixa na Câmara.",
+          "evidenceIds": [
+            "e1",
+            "e2",
+            "e4"
+          ],
+          "evidence": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária. Segundo a pesquisadora e professora do Centro Universitário de Brasília (Ceub), o dado mais relevante não é a perda de quatro cadeiras, mas sim a sub-representação persistente. Dos 135 pretos e pardos eleitos neste domingo (4), 77 foram reeleitos.",
+          "overlap": 0.5
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      },
+      "final": "FAIL"
+    },
+    {
+      "title": "Tite detalha montagem da comissão técnica e divisão de funções no Botafogo",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    },
+    {
+      "title": "ReviewBench: An open benchmark for AI code review",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A GitHub está lançando o ReviewBench, um benchmark para agentes de revisão de código baseado em pull requests representativos, ground truth de múltiplas fontes, avaliação calibrada e métricas alinhadas à produção.",
+          "evidenceIds": [
+            "e1"
+          ],
+          "evidence": "We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics.",
+          "overlap": 0.35
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A empresa diz que a revisão agentic se tornou uma parte essencial do desenvolvimento, mas que ainda é difícil medir a qualidade dos revisores de IA.",
+          "evidenceIds": [
+            "e2",
+            "e4"
+          ],
+          "evidence": "Agentic code review is becoming an essential piece of how development happens. But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you.",
+          "overlap": 0.07142857142857142
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "O objetivo é ajudar a entender pontos fortes e limitações, como encontrar mais issues, gerar menos ruído ou identificar problemas críticos.",
+          "evidenceIds": [
+            "e5",
+            "e6",
+            "e3"
+          ],
+          "evidence": "Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow. It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships.",
+          "overlap": 0.07142857142857142
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "A GitHub lançou o ReviewBench, um benchmark para agentes de revisão de código.",
+          "evidenceIds": [
+            "e1"
+          ],
+          "evidence": "We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics.",
+          "overlap": 0.42857142857142855
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "A ideia é medir melhor a qualidade desses revisores de IA, entender quando eles encontram mais problemas, geram menos ruído ou destacam falhas críticas.",
+          "evidenceIds": [
+            "e4",
+            "e5",
+            "e6",
+            "e3"
+          ],
+          "evidence": "But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you. Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow. It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships.",
+          "overlap": 0
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      },
+      "final": "FAIL"
+    },
+    {
+      "title": "Bets começam a sair do ar nesta terça-feira",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    },
+    {
+      "title": "Tite abre o jogo: ansiedade, frustração na Seleção, no Flamengo e revela primeira meta no Botafogo",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "Sobre o trabalho no Botafogo, ele foi direto: a primeira meta é deixar o time longe do perigo de queda no Brasileirão.",
+          "evidenceIds": [
+            "e2"
+          ],
+          "evidence": "Sobre a temporada, foi direto e reto: antes de ambicionar algo maior, o Botafogo precisa se afastar do perigo de cair no Brasileirão.",
+          "overlap": 0.36363636363636365
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "O treinador reconheceu que o objetivo inicial é modesto para o tamanho do clube, mas disse que é preciso garantir a permanência na Série A antes de pensar em metas maiores.",
+          "evidenceIds": [
+            "e3",
+            "e5",
+            "e6"
+          ],
+          "evidence": "O treinador admitiu que a primeira meta para este início de trabalho é bem modesta para o tamanho do clube, mas justificou que há a necessidade de garantir a pontuação para permanecer na Série A antes de pensar em voos maiores ao longo do contrato, que se encerra no fim de 2028. A primeira meta, como conversamos internamente, e o Léo Coelho (diretor) está aqui conosco, talvez não condiga com a grandeza do Botafogo. Vou me permitir fazer essa colocação: a história recente e passada do Botafogo exige mais do que eu vou falar agora.",
+          "overlap": 0.5294117647058824
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      },
+      "final": "FAIL"
+    },
+    {
+      "title": "Chuvas persistem em praticamente todas regiões do país",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    }
+  ],
+  "openAiCalls": 0,
+  "webSearch": 0,
+  "firestoreWrites": 0,
+  "newEditions": 0
+}

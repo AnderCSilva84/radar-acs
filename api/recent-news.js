@@ -18,7 +18,7 @@ function canonicalUrl(value) {
 
 function compactHistory(editions) {
     return editions.slice(0, config.recentEditionLimit).flatMap(edition =>
-        (Array.isArray(edition.noticias) ? edition.noticias : []).slice(0, 5).map(news => ({
+        (Array.isArray(edition.noticias) ? edition.noticias : []).slice(0, 7).map(news => ({
             title: String(news.titulo || '').slice(0, 200),
             url: canonicalUrl(news.url),
             date: edition.data,

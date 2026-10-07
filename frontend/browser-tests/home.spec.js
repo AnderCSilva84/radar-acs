@@ -1,9 +1,12 @@
 import { test, expect } from '@playwright/test';
+test.beforeEach(async ({ page }) => {
+  await page.route('**/api/live', route => route.fulfill({ json: { success: true, preferences: { editorial: {} }, football: { enabled: false, status: 'DISABLED', teams: [], matches: [] }, media: [] } }));
+});
 import fs from 'node:fs';
 const fixture = JSON.parse(fs.readFileSync(new URL('../../tests/fixtures/editorial-edicao-002.json', import.meta.url), 'utf8'));
 fixture.noticias = fixture.noticias.map(({ titulo, resumo, fonte, categoria, url }) => ({ titulo, resumo, fonte, categoria, sourceUrl: url }));
 
-for (const width of [375, 390, 430, 768, 1024, 1280, 1440]) {
+for (const width of [375, 390, 430, 768, 1024, 1280, 1440, 1920]) {
   test(`Home editorial sem overflow em ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.route('**/api/advertising', route => route.fulfill({ json: { success: true, campaigns: [] } }));
@@ -15,24 +18,26 @@ for (const width of [375, 390, 430, 768, 1024, 1280, 1440]) {
     expect(requests).toBe(1);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     await expect(page.locator('.edition-hero .edition-cover')).toBeVisible();
-    const summary = await page.getByRole('complementary', { name: 'EDIÇÃO DE HOJE' }).boundingBox();
-    const feed = await page.locator('.news-main').boundingBox();
+    const summary = await page.getByRole('complementary', { name: 'Seu Radar' }).boundingBox();
+    const feed = await page.locator('.home-editorial-content').boundingBox();
     if (width >= 1100) {
       expect(summary.x).toBeGreaterThan(feed.x + feed.width);
       expect(summary.width).toBeGreaterThanOrEqual(220);
-      expect(summary.width).toBeLessThanOrEqual(300);
+      expect(summary.width).toBeLessThan(feed.width);
     } else {
       expect(summary.y).toBeGreaterThanOrEqual(feed.y + feed.height);
     }
+    await expect(page.locator('.home-editorial-layout .edition-summary')).toHaveCount(0);
+    await expect(page.locator('.home-editorial-layout .editorial-directory')).toHaveCount(0);
     expect(await page.locator('.source a').first().evaluate(node => getComputedStyle(node, '::before').content)).toBe('none');
     if (width >= 1280) {
-      const heading = await page.getByRole('heading', { name: 'Seu Radar hoje' }).boundingBox();
+      const heading = await page.getByRole('heading', { name: 'Últimas notícias' }).boundingBox();
       const banner = await page.locator('.edition-hero .edition-cover').boundingBox();
       expect(Math.abs(banner.width / banner.height - 16 / 9)).toBeLessThan(0.02);
       expect(heading.y).toBeGreaterThan(banner.y + banner.height);
     }
     await page.screenshot({ path: `test-results/home-${width}.png`, fullPage: true });
-    await page.getByRole('button', { name: 'Ler briefing' }).first().click();
+    await page.getByRole('button', { name: 'Ler edição' }).first().click();
     const dialog = page.getByRole('dialog', { name: 'Roteiro do briefing' });
     await expect(dialog).toBeVisible();
     await page.keyboard.press('Tab');
@@ -40,7 +45,7 @@ for (const width of [375, 390, 430, 768, 1024, 1280, 1440]) {
     expect(await dialog.evaluate(node => node.scrollWidth <= node.clientWidth)).toBe(true);
     await page.keyboard.press('Escape');
     await expect(dialog).toHaveCount(0);
-    await expect(page.getByRole('button', { name: 'Ler briefing' }).first()).toBeFocused();
+    await expect(page.getByRole('button', { name: 'Ler edição' }).first()).toBeFocused();
     const links = page.locator('.source a');
     for (const link of await links.all()) {
       await expect(link).toHaveAttribute('target', '_blank');
@@ -66,3 +71,4 @@ test('loading, erro com retry manual e empty', async ({ page }) => {
   await expect(page.getByText('Ainda não há uma edição publicada.')).toBeVisible();
   expect(calls).toBe(2);
 });
+

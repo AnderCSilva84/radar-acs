@@ -2,7 +2,7 @@
   "name": "radar-acs",
   "private": true,
   "scripts": {
-    "test": "node --test tests",
+    "test": "node --require ./tests/helpers/no-network.cjs --test tests",
     "publish:briefing": "node scripts/publish-briefing.js"
   }
 }

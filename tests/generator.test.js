@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { editorialDate, buildRequest, parseAndValidate, generateAndPublish, metricsFor } = require('../api/generator');
+const { editorialDate, buildRequest, parseAndValidate, generateAndPublish, metricsFor } = require('./helpers/legacy-generator');
 const { createManualGenerator } = require('../api/manual-generator');
 const date = '2026-10-02';
 const now = () => new Date('2026-10-02T12:00:00Z');

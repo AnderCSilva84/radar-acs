@@ -80,24 +80,24 @@ test('edição #002 mantém contrato manual e publicador sem conferência extern
     assert.equal(calls, 1);
 });
 test('prompt solicita conversa e schema simples dispensa prova de fatos', () => {
-    const request = require('../api/generator').buildRequest('2026-10-03');
+    const request = require('./helpers/legacy-generator').buildRequest('2026-10-03');
     const schema = request.text.format.schema.properties.noticias.items;
     assert.ok(!schema.required.includes('allowedFacts')); assert.ok(!schema.required.includes('evidencias'));
     assert.ok(schema.required.includes('fonte')); assert.ok(schema.required.includes('url'));
     assert.ok(request.instructions.includes(prompt));
 });
-test('contrato editorial aceita 1–5 e rejeita 0 e 6 notícias', () => {
+test('contrato editorial aceita 1–7 e rejeita 0 e 8 notícias', () => {
     const input = require('./fixtures/editorial-edicao-002.json');
-    for (const count of [1, 2, 3, 4, 5]) {
-        assert.equal(validateBriefing({ ...input, noticias: input.noticias.slice(0, count) }).noticias.length, count);
+    for (const count of [1, 2, 3, 4, 5, 6, 7]) {
+        assert.equal(validateBriefing({ ...input, noticias: Array.from({length:count},(_,i)=>({...input.noticias[i%5],ordem:i+1})) }).noticias.length, count);
     }
     assert.throws(() => validateBriefing({ ...input, noticias: [] }));
-    assert.throws(() => validateBriefing({ ...input, noticias: [...input.noticias, { ...input.noticias[0], ordem: 6 }] }));
+    assert.throws(() => validateBriefing({ ...input, noticias: Array.from({length:8},(_,i)=>({...input.noticias[i%5],ordem:i+1})) }));
 });
 test('diagnóstico de fontes coletadas não descarta candidatos por ausência de prova posterior', async () => {
     const response = require('./fixtures/generated-response.json');
     let saved, ai = 0;
-    await require('../api/generator').generateAndPublish({
+    await require('./helpers/legacy-generator').generateAndPublish({
         apiKey: 'fake', now: () => new Date('2026-10-02T12:00:00Z'),
         fetchImpl: async () => { ai++; return { ok: true, json: async () => response }; },
         readSource: async () => assert.fail('Não revalidar'), evidenceCheckpoint: async candidates => { saved = candidates; },

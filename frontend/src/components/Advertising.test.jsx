@@ -25,9 +25,9 @@ it('anunciante permite editar, ativar/desativar e excluir por salvamento explíc
   advertisingRequest.mockResolvedValueOnce({ campaigns: [active()] }).mockImplementation(async (_, value) => value || { campaigns: [] });
   render(<Advertisers user={{ uid: 'mock-admin' }} />); await screen.findByRole('heading', { name: 'Mock campaign' });
   fireEvent.click(screen.getByRole('button', { name: 'Editar' })); fireEvent.change(screen.getByLabelText('Texto alternativo'), { target: { value: 'Updated banner' } });
-  fireEvent.click(screen.getByRole('button', { name: 'Salvar campanha' })); await screen.findByText('Campanhas salvas.'); expect(advertisingRequest.mock.calls[1][1].campaigns[0].alt).toBe('Updated banner');
-  fireEvent.click(screen.getByRole('button', { name: 'Desativar' })); await screen.findByText('INATIVA');
-  fireEvent.click(screen.getByRole('button', { name: 'Editar' })); fireEvent.click(screen.getByRole('button', { name: 'Excluir campanha' })); await screen.findByText('Nenhuma campanha cadastrada.');
+  fireEvent.submit(screen.getByRole('button', { name: 'Publicar campanha' }).closest('form')); fireEvent.click(screen.getByRole('button', { name: 'Confirmar' })); await screen.findByText('Campanhas salvas.'); expect(advertisingRequest.mock.calls[1][1].campaigns[0].alt).toBe('Updated banner');
+  fireEvent.click(screen.getByRole('button', { name: 'Desativar' })); await screen.findByText('PAUSADA');
+  fireEvent.click(screen.getByRole('button', { name: 'Editar' })); fireEvent.click(screen.getByRole('button', { name: 'Excluir campanha' })); fireEvent.click(screen.getByRole('button', { name: 'Confirmar' })); await screen.findByText('Nenhuma campanha cadastrada.');
   expect(advertisingRequest).toHaveBeenCalledTimes(4);
 });
 it('falha ao carregar não permite sobrescrever campanhas desconhecidas', async () => {

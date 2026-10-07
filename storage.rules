@@ -1,0 +1,24 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function superadmin() {
+      return request.auth != null && request.auth.uid == 'GUM5PnF3wreizm9y2P3dSrgkH3s1';
+    }
+    match /advertising/{campaignId}/{filename} {
+      function validPath() {
+        return campaignId.matches('^[a-z0-9][a-z0-9_-]{0,79}$')
+          && filename.matches('^[a-f0-9-]{36}[.](jpg|png|webp)$');
+      }
+      allow get: if validPath();
+      allow list: if false;
+      allow create: if superadmin() && validPath()
+        && request.resource.size > 0 && request.resource.size <= 5 * 1024 * 1024
+        && ((filename.matches('.*[.]jpg$') && request.resource.contentType == 'image/jpeg')
+          || (filename.matches('.*[.]png$') && request.resource.contentType == 'image/png')
+          || (filename.matches('.*[.]webp$') && request.resource.contentType == 'image/webp'));
+      allow update: if false;
+      allow delete: if superadmin() && validPath();
+    }
+    match /{allPaths=**} { allow read, write: if false; }
+  }
+}

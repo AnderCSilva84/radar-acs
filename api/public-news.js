@@ -1,4 +1,5 @@
 'use strict';
+const { newsImage } = require('./news-image');
 
 // Public projection of the already-loaded edition. Never spread internal data.
 function publicSourceUrl(value) {
@@ -16,11 +17,12 @@ function publicNews(items) {
     if (!Array.isArray(items)) return [];
     return items.filter(item => item && typeof item === 'object').map(item => {
         const news = {};
-        for (const key of ['id', 'categoria', 'titulo', 'resumo', 'fonte']) {
+        for (const key of ['id', 'categoria', 'titulo', 'resumo', 'editorialSummary', 'speechSummary', 'publishedAt', 'fonte']) {
             if (typeof item[key] === 'string' || (key === 'id' && typeof item[key] === 'number')) news[key] = item[key];
         }
         const sourceUrl = publicSourceUrl(item.sourceUrl || item.url);
         if (sourceUrl) news.sourceUrl = sourceUrl;
+        Object.assign(news, newsImage(item));
         return news;
     });
 }

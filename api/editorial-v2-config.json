@@ -1,0 +1,22 @@
+{
+  "version": "editorial-v2.1",
+  "targetPoolMin": 12,
+  "targetPoolMax": 20,
+  "maxDiscovered": 120,
+  "targetEditionMin": 5,
+  "maxEdition": 7,
+  "maxAgeDays": 3,
+  "minEvidenceWords": 25,
+  "maxEvidenceChars": 1400,
+  "maxEvidenceSentences": 6,
+  "maxSourcePages": 8,
+  "maxExternalRequests": 40,
+  "maxArticleFetches": 32,
+  "maxArticleVerificationsPerSource": 6,
+  "maxResponseBytes": 2097152,
+  "collectionTimeoutMs": 120000,
+  "requestTimeoutMs": 7000,
+  "priorityWeights": { "high": 60, "medium": 35, "low": 10, "off": 0 },
+  "teamBoost": 15,
+  "diversityPenalty": 15
+}

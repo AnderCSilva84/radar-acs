@@ -1,0 +1,19 @@
+{
+  "model": "gpt-5.4-mini",
+  "timezone": "America/Belem",
+  "maxOutputTokens": 12000,
+  "maxToolCalls": 3,
+  "timeoutMs": 210000,
+  "apiBaseUrl": "https://us-east1-radar-acs.cloudfunctions.net/radarApi",
+  "prices": {
+    "inputPerMillionUsd": 0.75,
+    "cachedInputPerMillionUsd": 0.075,
+    "outputPerMillionUsd": 4.5,
+    "webSearchPerCallUsd": 0.01
+  },
+  "narrationWordsPerMinute": 140,
+  "recentEditionLimit": 1,
+  "maxSearchOperations": 3,
+  "maxOpenPageOperations": null,
+  "maxQueries": null
+}

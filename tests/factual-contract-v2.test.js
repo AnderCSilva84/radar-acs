@@ -1,0 +1,6 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const {validateWriting}=require('../api/editorial-v2-generator');
+const fixture=require('./fixtures/editorial-v2.cjs');
+function sample(){const c=fixture.pool()[0], n=fixture.writing([require('../api/editorial-pool').normalizeCandidate(c,'2026-10-06').candidate]).noticias[0];return {c:require('../api/editorial-pool').normalizeCandidate(c,'2026-10-06').candidate,n};}
+test('V2 permits multiple literal references in one editorial paragraph',()=>{const {c,n}=sample(); const refs=n.evidenceReferences.filter(x=>x.field==='editorialSummary');n.editorialSummary=refs.map(x=>x.segment).join(' ');assert.doesNotThrow(()=>validateWriting(n,c));});
+for(const mode of ['omission','overlap','reorder','invented','unknownEvidence']) test('V2 rejects '+mode+' without weakening coverage',()=>{const {c,n}=sample();const refs=n.evidenceReferences.filter(x=>x.field==='editorialSummary');if(mode==='omission')n.evidenceReferences=n.evidenceReferences.filter(x=>x!==refs[0]);if(mode==='overlap')n.evidenceReferences.unshift({...refs[0]});if(mode==='reorder')n.evidenceReferences.reverse();if(mode==='invented')refs[0].segment+=' Informação inventada.';if(mode==='unknownEvidence')refs[0].evidenceIds=['missing'];assert.throws(()=>validateWriting(n,c),{code:'FACTUAL_EVIDENCE'});});

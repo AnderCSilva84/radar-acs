@@ -1,4 +1,7 @@
-﻿import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
+test.beforeEach(async ({ page }) => {
+  await page.route('**/api/live', route => route.fulfill({ json: { success: true, preferences: { editorial: {} }, football: { enabled: false, status: 'DISABLED', teams: [], matches: [] }, media: [] } }));
+});
 import fs from 'node:fs';
 import { adminMock, loginMock } from './admin-mock';
 const fixture = JSON.parse(fs.readFileSync(new URL('../../tests/fixtures/editorial-edicao-002.json', import.meta.url), 'utf8'));
@@ -35,7 +38,7 @@ for (const width of [375, 390, 430, 768, 1280]) {
     await expect(page.getByRole('heading', { name: /Roteiro da edi/ })).toBeVisible(); expect(historyCalls).toBe(2);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     await page.goto('/admin/calendar'); await expect(page.getByRole('heading', { name: /Calend.*rio editorial/ })).toBeVisible();
-    await page.goto('/admin/advertisers'); await expect(page.getByRole('heading', { name: 'Anunciantes' })).toBeVisible();
+    await page.goto('/admin/advertisers'); await expect(page.getByRole('heading', { name: 'Central Comercial' })).toBeVisible();
     await page.getByRole('button', { name: 'Sair', exact: true }).click(); await expect(page).toHaveURL(/\/login$/);
   });
 }

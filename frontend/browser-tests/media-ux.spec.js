@@ -1,0 +1,24 @@
+import { test, expect } from '@playwright/test';
+import { adminMock, loginMock } from './admin-mock.js';
+for (const width of [375, 1440]) test(`cadastro de mídia responsivo ${width}`, async ({ page }) => {
+  await page.setViewportSize({ width, height: 900 });
+  await adminMock(page);
+  await page.route('**/api/admin/radios', route => route.fulfill({ json: { success: true, settings: { media: [] } } }));
+  await loginMock(page);
+  await expect(page).toHaveURL(/\/admin$/);
+  await page.goto('/admin/radios');
+  await page.getByRole('button', { name: 'Nova mídia' }).click();
+  await expect(page.getByLabel('País')).toHaveValue('Brasil');
+  await expect(page.getByLabel('Status de uso')).toHaveValue('pending');
+  await page.getByLabel('Nome', { exact: false }).fill('Rádio de teste');
+  await page.getByLabel('URL do stream', { exact: false }).fill('https://example.com/stream');
+  await expect(page.getByRole('button', { name: '▶ Ouvir ao vivo' })).toBeDisabled();
+  await page.getByText('Destaque', { exact: true }).click();
+  await expect(page.getByRole('checkbox', { name: /^Destaque/ })).toBeChecked();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.getByLabel('Tipo').selectOption('SPOTIFY_PLAYLIST');
+  await expect(page.getByLabel('País')).toHaveCount(0);
+  await page.getByLabel('URL da playlist no Spotify', { exact: false }).fill('https://open.spotify.com/playlist/1234567890123456789012');
+  await expect(page.getByRole('button', { name: 'Abrir no Spotify ↗' })).toBeDisabled();
+  await page.screenshot({ path: `test-results/media-admin-${width}.png`, fullPage: true });
+});

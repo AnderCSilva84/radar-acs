@@ -1,4 +1,4 @@
-import { it, expect } from 'vitest';
+﻿import { it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { EditionHero } from './EditionHero';
 import { EditionCover } from './EditionCover';
@@ -16,7 +16,7 @@ it('hero keeps metadata below art and uses eager image without duplicated greeti
   const cover = screen.getByLabelText('Capa Eleições 2026');
   expect(cover.querySelector('img')).toHaveAttribute('loading', 'eager');
   expect(cover.querySelector('.news-cover-caption')).toBeNull();
-  expect(screen.getByText('RADAR ACS · EDIÇÃO ESPECIAL')).toBeInTheDocument();
+  expect(screen.getByText('EDIÇÃO ESPECIAL')).toBeInTheDocument();
   expect(screen.queryByText('Bom dia,')).not.toBeInTheDocument();
 });
 it('hero displays weekday and editorial date without extra metadata reads', () => {
@@ -33,3 +33,4 @@ it('image fallback tries original PNG before safe local SVG fallback', () => {
   fireEvent.error(cover.querySelector('img'));
   expect(cover.querySelector('svg')).toBeInTheDocument();
 });
+

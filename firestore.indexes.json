@@ -15,5 +15,10 @@
       ]
     }
   ],
-  "fieldOverrides": []
+  "fieldOverrides": [
+    { "collectionGroup": "audienceDaily", "fieldPath": "expiresAt", "ttl": true, "indexes": [] },
+    { "collectionGroup": "audiencePrivate", "fieldPath": "expiresAt", "ttl": true, "indexes": [] },
+    { "collectionGroup": "audienceDaily", "fieldPath": "visitors", "indexes": [] },
+    { "collectionGroup": "audiencePrivate", "fieldPath": "sessions", "indexes": [] }
+  ]
 }

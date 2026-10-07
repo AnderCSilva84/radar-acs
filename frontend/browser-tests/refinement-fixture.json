@@ -1,0 +1,114 @@
+{
+    "latest":  {
+                   "success":  true,
+                   "briefing":  {
+                                    "data":  "2026-10-05",
+                                    "titulo":  "Radar ACS — Edição #004",
+                                    "roteiroAlexa":  "O Google resumiu as principais novidades de IA de setembro em uma publicação de 2 de outubro. Entre os destaques estão o Gemini 4 Argon, novas integrações no Gemini e o WeatherNext 3. Também aparecem modelos de voz e ferramentas para uso em apps e tarefas científicas. (blog.google)\n\nO GitHub publicou um texto sobre como a IA está mudando o trabalho de desenvolvimento. A recomendação é fortalecer três pontos: dirigir agentes, revisar com olhar crítico e manter o julgamento técnico como peça central. (github.blog)",
+                                    "audioUrl":  null,
+                                    "noticias":  [
+                                                     {
+                                                         "titulo":  "Google reúne as principais novidades de IA de setembro em um resumo publicado em 2 de outubro",
+                                                         "resumo":  "O Google publicou um balanço com as novidades de IA de setembro de 2026, destacando o Gemini 4 Argon, novas integrações no Gemini e o WeatherNext 3. O texto também menciona lançamentos de modelos de voz, ferramentas para apps e avanços em aplicações científicas. ([blog.google](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/?utm_source=openai))",
+                                                         "fonte":  "Google Blog",
+                                                         "sourceUrl":  "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+                                                     },
+                                                     {
+                                                         "titulo":  "GitHub diz que trabalhar com IA exige três habilidades mais fortes em 2 de outubro",
+                                                         "resumo":  "Em um artigo publicado em 2 de outubro de 2026, o GitHub afirma que a IA está mudando o trabalho de desenvolvimento e aponta três habilidades para reforçar: orientar agentes, revisar criticamente as respostas e manter o julgamento técnico no centro do fluxo de trabalho. ([github.blog](https://github.blog/latest/?utm_source=openai))",
+                                                         "fonte":  "GitHub Blog",
+                                                         "sourceUrl":  "https://github.blog/latest/"
+                                                     }
+                                                 ],
+                                    "coverId":  "radar",
+                                    "editionType":  "regular"
+                                }
+               },
+    "live":  {
+                 "success":  true,
+                 "preferences":  {
+                                     "editorial":  {
+                                                       "tecnologiaIA":  "high",
+                                                       "desenvolvimento":  "high",
+                                                       "concursosCarreira":  "high",
+                                                       "oportunidades":  "high",
+                                                       "brasilMundo":  "medium",
+                                                       "economia":  "medium",
+                                                       "futebol":  "high",
+                                                       "clima":  "high"
+                                                   }
+                                 },
+                 "football":  {
+                                  "status":  "NOT_CONFIGURED",
+                                  "matches":  [
+
+                                              ],
+                                  "updatedAt":  "2026-10-05T22:38:33.735Z",
+                                  "stale":  false,
+                                  "enabled":  true,
+                                  "teams":  [
+                                                {
+                                                    "id":  "botafogo",
+                                                    "name":  "Botafogo"
+                                                }
+                                            ]
+                              },
+                 "media":  [
+                               {
+                                   "id":  "jovem-pan-news",
+                                   "mediaType":  "EXTERNAL_RADIO",
+                                   "name":  "Jovem Pan News",
+                                   "description":  "Notícias, informação, análises, economia, política e esportes.",
+                                   "logoUrl":  "https://yt3.googleusercontent.com/X3ymCXg8alVStN6YHuhfEaUdvzwP0mTgP-LiauuVj7_vDt88z_kL3AW6TRgXQJyGTaZAv5c3hA=s900-c-k-c0x00ffffff-no-rj",
+                                   "tags":  [
+                                                "notícias",
+                                                "jornalismo",
+                                                "economia",
+                                                "política",
+                                                "esportes"
+                                            ],
+                                   "enabled":  true,
+                                   "featured":  false,
+                                   "sortOrder":  1,
+                                   "externalUrl":  "https://jovempan.com.br/ao-vivo/",
+                                   "websiteUrl":  "https://jovempan.com.br/",
+                                   "city":  "",
+                                   "state":  "",
+                                   "country":  "Brasil",
+                                   "usageStatus":  "approved"
+                               },
+                               {
+                                   "id":  "acs-music",
+                                   "mediaType":  "SPOTIFY_PLAYLIST",
+                                   "name":  "ACS Music",
+                                   "description":  "Uma seleção paa relaxar",
+                                   "logoUrl":  "",
+                                   "tags":  [
+                                                "foco",
+                                                "trabalho",
+                                                "musica"
+                                            ],
+                                   "enabled":  true,
+                                   "featured":  false,
+                                   "sortOrder":  2,
+                                   "spotifyUrl":  "https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6"
+                               }
+                           ]
+             },
+    "ads":  {
+                "success":  true,
+                "campaigns":  [
+                                  {
+                                      "id":  "001",
+                                      "advertiserName":  "ACS Tecnologia",
+                                      "campaignName":  "Conheça a ACS Tecnologia",
+                                      "imageUrl":  "https://acstech.dev.br/acs-informatica-logo.png",
+                                      "targetUrl":  "https://acstech.dev.br/",
+                                      "alt":  "Seu negócio no controle. Seu próximo nível começa aqui.",
+                                      "startDate":  "2026-10-05",
+                                      "endDate":  "2026-11-30",
+                                      "position":  "HOME_TOP"
+                                  }
+                              ]
+            }
+}

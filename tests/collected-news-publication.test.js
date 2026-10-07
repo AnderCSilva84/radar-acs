@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { generateRadarEdition, generateAndPublish, buildRequest } = require('../api/generator');
+const { generateRadarEdition, generateAndPublish, buildRequest } = require('./helpers/legacy-generator');
 const { collectObservedEvidence } = require('../api/observed-factual-evidence');
 const { observedSourceEvidence } = require('../api/source-evidence-store');
 const fixture = require('./fixtures/collected-news-unconfirmed.json');

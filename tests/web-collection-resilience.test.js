@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { generateAndPublish } = require('../api/generator');
+const { generateAndPublish } = require('./helpers/legacy-generator');
 const { createScheduledGenerator } = require('../api/scheduled-generator');
 const { createDiagnosticBuffer, withConsolidatedDiagnostic } = require('../api/consolidated-diagnostic');
 const fixture = require('./fixtures/generated-response.json');

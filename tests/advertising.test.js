@@ -4,6 +4,16 @@ const { validateAdvertising, publicCampaigns, campaignStatus, createAdvertisingR
 const { createAdminSettings } = require('../api/admin-settings');
 const { createApi } = require('../api/handler');
 function campaign(overrides = {}) { return { id: 'fixture', advertiserName: 'Mock advertiser', campaignName: 'Fixture only', imageUrl: 'https://example.com/banner.png', targetUrl: 'https://example.com/product', alt: 'Mock banner', startDate: '2026-10-01', endDate: '2026-10-31', position: 'HOME_TOP', active: true, contact: 'PRIVATE_CONTACT', notes: 'PRIVATE_NOTES', ...overrides }; }
+test('ajuste e CTA opcionais preservam campanhas antigas e são públicos sem campos privados', () => {
+    const legacy = validateAdvertising({ campaigns: [campaign()] }).campaigns[0];
+    assert.equal(legacy.imageFit, 'contain'); assert.equal(legacy.ctaText, '');
+    const result = publicCampaigns({ campaigns: [campaign({ imageFit: 'cover', ctaText: 'Saiba mais' })] }, '2026-10-05');
+    assert.equal(result[0].imageFit, 'cover'); assert.equal(result[0].ctaText, 'Saiba mais');
+    assert.doesNotMatch(JSON.stringify(result), /PRIVATE/);
+});
+test('CTA inválido, ajuste arbitrário, alt vazio e blob local não são persistidos', () => {
+    for (const patch of [{ imageFit: 'fill' }, { ctaText: '<script>' }, { ctaText: 'a'.repeat(61) }, { alt: '' }, { imageUrl: 'blob:local' }, { imageUrl: 'data:image/png;base64,a' }]) assert.throws(() => validateAdvertising({ campaigns: [campaign(patch)] }));
+});
 test('campanha pública ativa é whitelist, sem contato, notas ou configurações', () => {
     const result = publicCampaigns({ campaigns: [campaign(), campaign({ id: 'future', startDate: '2026-11-01', endDate: '2026-12-01' }), campaign({ id: 'expired', endDate: '2026-10-02' }), campaign({ id: 'inactive', active: false })] }, '2026-10-04');
     assert.equal(result.length, 1); assert.equal(result[0].targetUrl, 'https://example.com/product');

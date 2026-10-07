@@ -5,7 +5,7 @@ const { observedSourceEvidence } = require('../api/source-evidence-store');
 const { collectObservedEvidence } = require('../api/observed-factual-evidence');
 const { validateAudioScript } = require('../api/audio-script');
 const { diagnosticSnapshot } = require('../api/diagnostics');
-const { generateAndPublish } = require('../api/generator');
+const { generateAndPublish } = require('./helpers/legacy-generator');
 
 const url = 'https://example.com/article';
 const a = 'A equipe lançou GPT-9 Sol com documentação para desenvolvedores e exemplos de integração em projetos de software.';

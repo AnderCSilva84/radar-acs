@@ -1,0 +1,601 @@
+[
+  {
+    "fileName": "assets/index-BVD9rAM5.js",
+    "isEntry": true,
+    "imports": [],
+    "dynamicImports": [
+      "assets/AdminArea-Dkh8TFLw.js",
+      "assets/History-DyZQtoKo.js",
+      "assets/Listen-DXdxlz-P.js",
+      "assets/Legal-TWBsWVqY.js"
+    ],
+    "modules": [
+      {
+        "id": "\u0000vite/modulepreload-polyfill.js",
+        "renderedLength": 1280
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/jsx-runtime.js?commonjs-module",
+        "renderedLength": 31
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/cjs/react-jsx-runtime.production.js?commonjs-exports",
+        "renderedLength": 36
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/cjs/react-jsx-runtime.production.js",
+        "renderedLength": 1294
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/jsx-runtime.js",
+        "renderedLength": 239
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/jsx-runtime.js?commonjs-es-import",
+        "renderedLength": 44
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/index.js?commonjs-module",
+        "renderedLength": 26
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/cjs/react.production.js?commonjs-exports",
+        "renderedLength": 26
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/cjs/react.production.js",
+        "renderedLength": 19185
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/index.js",
+        "renderedLength": 194
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react/index.js?commonjs-es-import",
+        "renderedLength": 34
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/client.js?commonjs-module",
+        "renderedLength": 27
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/cjs/react-dom-client.production.js?commonjs-exports",
+        "renderedLength": 35
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/scheduler/index.js?commonjs-module",
+        "renderedLength": 30
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/scheduler/cjs/scheduler.production.js?commonjs-exports",
+        "renderedLength": 30
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/scheduler/cjs/scheduler.production.js",
+        "renderedLength": 11134
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/scheduler/index.js",
+        "renderedLength": 226
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/index.js?commonjs-module",
+        "renderedLength": 29
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/cjs/react-dom.production.js?commonjs-exports",
+        "renderedLength": 29
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/cjs/react-dom.production.js",
+        "renderedLength": 7918
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/index.js",
+        "renderedLength": 520
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/cjs/react-dom-client.production.js",
+        "renderedLength": 644593
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/client.js",
+        "renderedLength": 512
+      },
+      {
+        "id": "\u0000C:/Users/ander/projetos/radar-acs/frontend/node_modules/react-dom/client.js?commonjs-es-import",
+        "renderedLength": 36
+      },
+      {
+        "id": "\u0000vite/preload-helper.js",
+        "renderedLength": 2206
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/AnimatedRadar.jsx",
+        "renderedLength": 1963
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/Header.jsx",
+        "renderedLength": 1469
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/covers.js",
+        "renderedLength": 1111
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/BrandSignature.jsx",
+        "renderedLength": 390
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/CoverArt.jsx",
+        "renderedLength": 4491
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/preferences.js",
+        "renderedLength": 1555
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/EditionCover.jsx",
+        "renderedLength": 456
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/Icon.jsx",
+        "renderedLength": 1502
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/StatusBadge.jsx",
+        "renderedLength": 199
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/utils/briefing.js",
+        "renderedLength": 1061
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/EditionHero.jsx",
+        "renderedLength": 3760
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/teamCrests.js",
+        "renderedLength": 632
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/TeamCrest.jsx",
+        "renderedLength": 1702
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/RadarLive.jsx",
+        "renderedLength": 6910
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/audience.js",
+        "renderedLength": 2707
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/Audience.jsx",
+        "renderedLength": 2822
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/YourRadar.jsx",
+        "renderedLength": 2935
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/utils/editorial.js",
+        "renderedLength": 2038
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/EditorialVisual.jsx",
+        "renderedLength": 5338
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/NewsItem.jsx",
+        "renderedLength": 2696
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/EditionSummary.jsx",
+        "renderedLength": 1212
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/advertising.js",
+        "renderedLength": 1349
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/adCreative.js",
+        "renderedLength": 2434
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/AdCreative.jsx",
+        "renderedLength": 3368
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/AdCarousel.jsx",
+        "renderedLength": 4775
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/AdSlot.jsx",
+        "renderedLength": 1516
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/live.js",
+        "renderedLength": 1650
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/EditorialSidebar.jsx",
+        "renderedLength": 1625
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/NewsFeed.jsx",
+        "renderedLength": 4615
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/BriefingModal.jsx",
+        "renderedLength": 2427
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/LoadState.jsx",
+        "renderedLength": 1283
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/radarApi.js",
+        "renderedLength": 896
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/hooks/useBriefing.js",
+        "renderedLength": 785
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/hooks/useNavigation.js",
+        "renderedLength": 988
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/hooks/useCampaigns.js",
+        "renderedLength": 338
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/hooks/useLive.js",
+        "renderedLength": 429
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/RadioPlayer.jsx",
+        "renderedLength": 2823
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/media.js",
+        "renderedLength": 2229
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/HomeListen.jsx",
+        "renderedLength": 2568
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/App.jsx",
+        "renderedLength": 6388
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/global.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/portal.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/public-premium.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/ad-creative.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/public-refinement.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/public-reference.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/product-round.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/team-crests.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/home-editorial.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/styles/visual-audience.css",
+        "renderedLength": 0
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/main.jsx",
+        "renderedLength": 113
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/index.html",
+        "renderedLength": 0
+      }
+    ]
+  },
+  {
+    "fileName": "assets/AdminArea-Dkh8TFLw.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [
+      "assets/Login-CGN-EaSD.js",
+      "assets/AdminHome-CsnIjYpQ.js",
+      "assets/Preferences-CnF0qHb6.js",
+      "assets/Calendar-6ktbsHCP.js",
+      "assets/Advertisers-Bc65ebBF.js",
+      "assets/MediaAdmin-COj3rGSH.js",
+      "assets/Analytics-DKGPYLnc.js"
+    ],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/@firebase/util/dist/postinstall.mjs",
+        "renderedLength": 53
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/@firebase/util/dist/index.esm.js",
+        "renderedLength": 27707
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/@firebase/component/dist/esm/index.esm.js",
+        "renderedLength": 16274
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/@firebase/logger/dist/esm/index.esm.js",
+        "renderedLength": 5256
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/idb/build/wrap-idb-value.js",
+        "renderedLength": 7391
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/idb/build/index.js",
+        "renderedLength": 2928
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/@firebase/app/dist/esm/index.esm.js",
+        "renderedLength": 34490
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/firebase/app/dist/esm/index.esm.js",
+        "renderedLength": 700
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/@firebase/auth/dist/esm/index-4NFEPWkC.js",
+        "renderedLength": 281799
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/adminAuth.js",
+        "renderedLength": 2192
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/hooks/useAdmin.js",
+        "renderedLength": 1512
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/AdminRoute.jsx",
+        "renderedLength": 1900
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/AdminArea.jsx",
+        "renderedLength": 2342
+      }
+    ]
+  },
+  {
+    "fileName": "assets/History-DyZQtoKo.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/historyApi.js",
+        "renderedLength": 971
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/History.jsx",
+        "renderedLength": 6880
+      }
+    ]
+  },
+  {
+    "fileName": "assets/Listen-DXdxlz-P.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js",
+      "assets/MediaCard-DPvrLXg7.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/Listen.jsx",
+        "renderedLength": 5597
+      }
+    ]
+  },
+  {
+    "fileName": "assets/Legal-TWBsWVqY.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/Legal.jsx",
+        "renderedLength": 7953
+      }
+    ]
+  },
+  {
+    "fileName": "assets/Login-CGN-EaSD.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js",
+      "assets/AdminArea-Dkh8TFLw.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/Login.jsx",
+        "renderedLength": 2381
+      }
+    ]
+  },
+  {
+    "fileName": "assets/AdminHome-CsnIjYpQ.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/AdminHome.jsx",
+        "renderedLength": 2498
+      }
+    ]
+  },
+  {
+    "fileName": "assets/Preferences-CnF0qHb6.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/clubCatalog.js",
+        "renderedLength": 3373
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/FollowedTeamsEditor.jsx",
+        "renderedLength": 4296
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/Preferences.jsx",
+        "renderedLength": 9472
+      }
+    ]
+  },
+  {
+    "fileName": "assets/Calendar-6ktbsHCP.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/Calendar.jsx",
+        "renderedLength": 7884
+      }
+    ]
+  },
+  {
+    "fileName": "assets/Advertisers-Bc65ebBF.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js",
+      "assets/AdminArea-Dkh8TFLw.js"
+    ],
+    "dynamicImports": [
+      "assets/index.esm-BHmBe88t.js"
+    ],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/AdCreativeEditor.jsx",
+        "renderedLength": 8200
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/creativeUpload.js",
+        "renderedLength": 1525
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/Advertisers.jsx",
+        "renderedLength": 26725
+      }
+    ]
+  },
+  {
+    "fileName": "assets/MediaAdmin-COj3rGSH.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js",
+      "assets/AdminArea-Dkh8TFLw.js",
+      "assets/MediaCard-DPvrLXg7.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/MediaAdmin.jsx",
+        "renderedLength": 13240
+      }
+    ]
+  },
+  {
+    "fileName": "assets/MediaCard-DPvrLXg7.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/services/spotifyEmbed.js",
+        "renderedLength": 304
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/SpotifyEmbed.jsx",
+        "renderedLength": 2168
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/components/MediaCard.jsx",
+        "renderedLength": 2186
+      }
+    ]
+  },
+  {
+    "fileName": "assets/Analytics-DKGPYLnc.js",
+    "isEntry": false,
+    "imports": [
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/src/pages/Analytics.jsx",
+        "renderedLength": 5246
+      }
+    ]
+  },
+  {
+    "fileName": "assets/index.esm-BHmBe88t.js",
+    "isEntry": false,
+    "imports": [
+      "assets/AdminArea-Dkh8TFLw.js",
+      "assets/index-BVD9rAM5.js"
+    ],
+    "dynamicImports": [],
+    "modules": [
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/@firebase/storage/dist/index.esm.js",
+        "renderedLength": 76325
+      },
+      {
+        "id": "C:/Users/ander/projetos/radar-acs/frontend/node_modules/firebase/storage/dist/esm/index.esm.js",
+        "renderedLength": 0
+      }
+    ]
+  }
+]

@@ -3,7 +3,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { canonicalUrl, loadRecentNews, classifyPreviousNews, compactHistory } = require('../api/recent-news');
 const { createDiagnosticBuffer, withConsolidatedDiagnostic } = require('../api/consolidated-diagnostic');
-const { buildRequest } = require('../api/generator');
+const { buildRequest } = require('./helpers/legacy-generator');
 const history = [{ title: 'Empresa anuncia produto', url: 'https://example.com/news', date: '2026-10-02' }];
 
 test('URL já publicada e URL canônica equivalente são repetição forte', () => {
@@ -88,7 +88,7 @@ test('pipeline exclui notícia repetida após conferência factual e consolida u
     response.output[1].content[0].text = JSON.stringify(generated);
     let queries = 0, ai = 0, writes = 0, diagnostic, published;
     const buffer = createDiagnosticBuffer(async value => { writes++; diagnostic = value; });
-    const result = await withConsolidatedDiagnostic(buffer, () => require('../api/generator').generateAndPublish({
+    const result = await withConsolidatedDiagnostic(buffer, () => require('./helpers/legacy-generator').generateAndPublish({
         apiKey: 'fake', now: () => new Date('2026-10-02T12:00:00Z'),
         getRecentNews: async () => { queries++; return [{ title: generated.noticias[0].titulo, url: canonicalUrl(generated.noticias[0].url), date: '2026-10-01' }]; },
         fetchImpl: async () => { ai++; return { ok: true, json: async () => response }; },

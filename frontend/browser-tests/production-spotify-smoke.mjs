@@ -1,0 +1,70 @@
+import { chromium } from '@playwright/test';
+import fs from 'node:fs';
+const browser = await chromium.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe', headless: true });
+try {
+  const page = await browser.newPage({ baseURL: 'https://radar-acs.web.app', viewport: { width: 1440, height: 1000 } });
+  page.setDefaultTimeout(15000);
+  const baseline = name => JSON.parse(fs.readFileSync(new URL(`../../.local-spotify-deploy-${name}.json`, import.meta.url), 'utf8').replace(/^\uFEFF/, ''));
+  const report = { productionWrites: 0 };
+  const latest = await page.request.get('/api/briefing/latest');
+  if (latest.status() !== 200 || JSON.stringify(await latest.json()) !== JSON.stringify(baseline('latest'))) throw Error('Latest changed');
+  report.latestUnchanged = true;
+  const media = await page.request.get('/api/live/radios');
+  if (media.status() !== 200 || JSON.stringify(await media.json()) !== JSON.stringify(baseline('media'))) throw Error('Media changed');
+  report.mediaUnchanged = true;
+  const listen = await page.goto('/listen', { waitUntil: 'domcontentloaded' });
+  if (listen.status() !== 200) throw Error('Listen unavailable');
+  report.listenHTTP = listen.status();
+  const pan = page.getByRole('heading', { name: 'Jovem Pan News', exact: true });
+  await pan.waitFor();
+  const panCard = page.locator('article').filter({ has: pan });
+  const panLink = panCard.locator('a');
+  if (await panLink.getAttribute('href') !== 'https://jovempan.com.br/ao-vivo/' || await panLink.getAttribute('target') !== '_blank') throw Error('Jovem Pan link changed');
+  report.jovemPan = 'PASS';
+  report.externalRadio = 'PASS';
+  const iframe = page.locator('iframe').first();
+  await iframe.waitFor(); await iframe.scrollIntoViewIfNeeded();
+  report.embedSrc = await iframe.getAttribute('src');
+  if (report.embedSrc !== 'https://open.spotify.com/embed/playlist/21Zn60qgps8agFlajllsd6') throw Error('Invalid embed source');
+  if (await page.locator('audio').getAttribute('src')) throw Error('Internal player started');
+  report.internalPlayerUnchanged = true;
+  const link = page.getByRole('link', { name: /Abrir no Spotify/ });
+  if (await link.getAttribute('target') !== '_blank' || await link.getAttribute('href') !== 'https://open.spotify.com/playlist/21Zn60qgps8agFlajllsd6') throw Error('Spotify external link invalid');
+  report.openInSpotify = 'PASS';
+  let frame = await iframe.contentFrame();
+  // Inspect official widget controls only. No Spotify credentials/API/SDK.
+  try {
+    await frame.getByRole('button', { name: /^(Play|Reproduzir)$/i }).first().waitFor({ timeout: 20000 });
+    report.widgetButtons = await frame.locator('button').evaluateAll(items => items.map(item => ({ label: item.getAttribute('aria-label'), title: item.getAttribute('title'), text: item.textContent.slice(0, 100) })));
+    await frame.getByRole('button', { name: /^(Play|Reproduzir)$/i }).first().click();
+    report.playClickExecuted = true;
+    const pause = frame.getByRole('button', { name: /^(Pause|Pausar)$/i }).first();
+    await pause.waitFor({ timeout: 15000 });
+    report.playbackWidget = 'PASS (official control changed to Pause)';
+    await pause.click();
+  } catch (error) {
+    report.playbackWidget = 'NOT_CONFIRMED';
+    report.playbackErrorType = error.name;
+    report.widgetButtons = await frame.locator('button').evaluateAll(items => items.map(item => ({ label: item.getAttribute('aria-label'), title: item.getAttribute('title'), text: item.textContent.slice(0, 100) }))).catch(() => []);
+  }
+  await page.setViewportSize({ width: 375, height: 900 });
+  await iframe.scrollIntoViewIfNeeded();
+  const box = await iframe.boundingBox();
+  if (box.x + box.width > 375 || !await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)) throw Error('Mobile overflow');
+  report.responsive = 'PASS';
+  await page.screenshot({ path: 'test-results/production-spotify-mobile.png', fullPage: true });
+  await page.getByRole('button', { name: /Player n.*carregou/ }).first().click();
+  await page.getByRole('status').filter({ hasText: /player do Spotify/ }).waitFor();
+  await page.getByRole('heading', { name: 'Ouvir', exact: true }).waitFor();
+  await pan.waitFor();
+  report.fallback = 'PASS';
+  const privacy = await page.goto('/privacy', { waitUntil: 'domcontentloaded' });
+  if (privacy.status() !== 200) throw Error('Privacy unavailable');
+  await page.getByRole('link', { name: /Privacidade do Spotify/ }).waitFor();
+  report.privacyHTTP = privacy.status();
+  const admin = await page.request.get('/api/admin/radios');
+  if (admin.status() !== 401) throw Error('Admin unprotected');
+  await page.goto('/admin/radios'); await page.waitForURL('**/login');
+  report.adminAnonymousHTTP = admin.status();
+  console.log(JSON.stringify(report));
+} finally { await browser.close(); }

@@ -1,0 +1,412 @@
+{
+  "revalidated": 7,
+  "passed": 1,
+  "failed": 6,
+  "preservedHashes": [
+    "3f82d78975e11ff0e68f76f2070ce7f679e76a1562fc7b0bb74ad4fb943dac49",
+    "d458376f824e768ffc2a1ee3370f6026fd239a1a1c367185d3bdcdc7fca58493"
+  ],
+  "results": [
+    {
+      "title": "Após convocação à Venezuela, Ferraresi retorna ao Rio e amplia leque de opções de Tite na zaga do Botafogo",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "FAIL",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A presença do zagueiro amplia as opções de Tite para a defesa.",
+          "evidenceIds": [
+            "e4"
+          ],
+          "evidence": "A presença de Ferraresi faz crescer o leque de opções para Tite na zaga: o técnico também conta com Lucas Monzón, Arthur Chaves e Justino na briga pelas duas vagas na linha defensiva."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "Ferraresi já voltou ao Botafogo depois da Data Fifa e vai treinar duas vezes antes do clássico com o Vasco.",
+          "evidenceIds": [
+            "e2",
+            "e3",
+            "e6"
+          ],
+          "evidence": "Dos três convocados do grupo profissional do Botafogo , o zagueiro Ferraresi — liberado após amistoso da Venezuela na última sexta-feira — foi o primeiro a voltar às atividades no Espaço Lonier, nesta segunda-feira. Desta forma, o zagueiro irá participar de duas sessões de treinamento antes do clássico contra o Vasco, na próxima quarta-feira. A seleção sul-americana ainda vai enfrentar a Jordânia, nesta terça-feira, mas o zagueiro foi um dos atletas liberados pela Vinotinto para retornar de forma antecipada ao clube."
+        },
+        {
+          "kind": "identifier",
+          "message": "Nome ou termo específico sem apoio no candidato",
+          "field": "speechSummary",
+          "claim": "Ferraresi já voltou ao Botafogo depois da Data Fifa e vai treinar duas vezes antes do clássico com o Vasco.",
+          "evidenceIds": [
+            "e2",
+            "e3",
+            "e6"
+          ],
+          "evidence": "Dos três convocados do grupo profissional do Botafogo , o zagueiro Ferraresi — liberado após amistoso da Venezuela na última sexta-feira — foi o primeiro a voltar às atividades no Espaço Lonier, nesta segunda-feira. Desta forma, o zagueiro irá participar de duas sessões de treinamento antes do clássico contra o Vasco, na próxima quarta-feira. A seleção sul-americana ainda vai enfrentar a Jordânia, nesta terça-feira, mas o zagueiro foi um dos atletas liberados pela Vinotinto para retornar de forma antecipada ao clube."
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "FAIL",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      }
+    },
+    {
+      "title": "Representação de parlamentares negros segue baixa, diz pesquisadora",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "FAIL",
+      "negation": "FAIL",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A representação de parlamentares negros segue baixa, apesar da eleição de 135 deputados pretos e pardos.",
+          "evidenceIds": [
+            "e1",
+            "e4"
+          ],
+          "evidence": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária. Dos 135 pretos e pardos eleitos neste domingo (4), 77 foram reeleitos."
+        },
+        {
+          "kind": "identifier",
+          "message": "Nome ou termo específico sem apoio no candidato",
+          "field": "editorialSummary",
+          "claim": "Ela aponta que negros são cerca de metade das candidaturas à Câmara e pouco mais da metade da população, mas ocupam pouco mais de 25% das cadeiras.",
+          "evidenceIds": [
+            "e3"
+          ],
+          "evidence": "“Os negros são cerca de metade das candidaturas à Câmara e pouco mais da metade da população, mas ocupam pouco mais de 25% das cadeiras”, lamentou Evelyn."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "Evelyn também cita desigualdade no acesso a financiamento e às estruturas partidárias.",
+          "evidenceIds": [
+            "e5",
+            "e6"
+          ],
+          "evidence": "Ela considera que os recursos de campanha, o acesso ao financiamento e as estruturas partidárias seguem desiguais. “As regras de incentivo, como a distribuição proporcional dos fundos, não bastaram para reduzir essa distância”, aponta."
+        },
+        {
+          "kind": "identifier",
+          "message": "Nome ou termo específico sem apoio no candidato",
+          "field": "editorialSummary",
+          "claim": "Evelyn também cita desigualdade no acesso a financiamento e às estruturas partidárias.",
+          "evidenceIds": [
+            "e5",
+            "e6"
+          ],
+          "evidence": "Ela considera que os recursos de campanha, o acesso ao financiamento e as estruturas partidárias seguem desiguais. “As regras de incentivo, como a distribuição proporcional dos fundos, não bastaram para reduzir essa distância”, aponta."
+        },
+        {
+          "kind": "negation",
+          "message": "Negação alterada em relação ao trecho indicado",
+          "field": "editorialSummary",
+          "claim": "Evelyn também cita desigualdade no acesso a financiamento e às estruturas partidárias.",
+          "evidenceIds": [
+            "e5",
+            "e6"
+          ],
+          "evidence": "Ela considera que os recursos de campanha, o acesso ao financiamento e as estruturas partidárias seguem desiguais. “As regras de incentivo, como a distribuição proporcional dos fundos, não bastaram para reduzir essa distância”, aponta."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "A representação de parlamentares negros continua baixa na Câmara.",
+          "evidenceIds": [
+            "e1",
+            "e2",
+            "e4"
+          ],
+          "evidence": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária. Segundo a pesquisadora e professora do Centro Universitário de Brasília (Ceub), o dado mais relevante não é a perda de quatro cadeiras, mas sim a sub-representação persistente. Dos 135 pretos e pardos eleitos neste domingo (4), 77 foram reeleitos."
+        },
+        {
+          "kind": "negation",
+          "message": "Negação alterada em relação ao trecho indicado",
+          "field": "speechSummary",
+          "claim": "A representação de parlamentares negros continua baixa na Câmara.",
+          "evidenceIds": [
+            "e1",
+            "e2",
+            "e4"
+          ],
+          "evidence": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária. Segundo a pesquisadora e professora do Centro Universitário de Brasília (Ceub), o dado mais relevante não é a perda de quatro cadeiras, mas sim a sub-representação persistente. Dos 135 pretos e pardos eleitos neste domingo (4), 77 foram reeleitos."
+        },
+        {
+          "kind": "identifier",
+          "message": "Nome ou termo específico sem apoio no candidato",
+          "field": "speechSummary",
+          "claim": "Evelyn Apolinária diz que negros são metade das candidaturas e da população, mas ocupam pouco mais de 25% das cadeiras, com desigualdade também no financiamento e nas estruturas partidárias.",
+          "evidenceIds": [
+            "e3",
+            "e5",
+            "e6"
+          ],
+          "evidence": "“Os negros são cerca de metade das candidaturas à Câmara e pouco mais da metade da população, mas ocupam pouco mais de 25% das cadeiras”, lamentou Evelyn. Ela considera que os recursos de campanha, o acesso ao financiamento e as estruturas partidárias seguem desiguais. “As regras de incentivo, como a distribuição proporcional dos fundos, não bastaram para reduzir essa distância”, aponta."
+        },
+        {
+          "kind": "negation",
+          "message": "Negação alterada em relação ao trecho indicado",
+          "field": "speechSummary",
+          "claim": "Evelyn Apolinária diz que negros são metade das candidaturas e da população, mas ocupam pouco mais de 25% das cadeiras, com desigualdade também no financiamento e nas estruturas partidárias.",
+          "evidenceIds": [
+            "e3",
+            "e5",
+            "e6"
+          ],
+          "evidence": "“Os negros são cerca de metade das candidaturas à Câmara e pouco mais da metade da população, mas ocupam pouco mais de 25% das cadeiras”, lamentou Evelyn. Ela considera que os recursos de campanha, o acesso ao financiamento e as estruturas partidárias seguem desiguais. “As regras de incentivo, como a distribuição proporcional dos fundos, não bastaram para reduzir essa distância”, aponta."
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "FAIL",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      }
+    },
+    {
+      "title": "Tite detalha montagem da comissão técnica e divisão de funções no Botafogo",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    },
+    {
+      "title": "ReviewBench: An open benchmark for AI code review",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "FAIL",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A GitHub está lançando o ReviewBench, um benchmark para agentes de revisão de código baseado em pull requests representativos, ground truth de múltiplas fontes, avaliação calibrada e métricas alinhadas à produção.",
+          "evidenceIds": [
+            "e1"
+          ],
+          "evidence": "We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "A empresa diz que a revisão agentic se tornou uma parte essencial do desenvolvimento, mas que ainda é difícil medir a qualidade dos revisores de IA.",
+          "evidenceIds": [
+            "e2",
+            "e4"
+          ],
+          "evidence": "Agentic code review is becoming an essential piece of how development happens. But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you."
+        },
+        {
+          "kind": "identifier",
+          "message": "Número, sigla ou identificador não sustentado: IA",
+          "field": "editorialSummary",
+          "claim": "A empresa diz que a revisão agentic se tornou uma parte essencial do desenvolvimento, mas que ainda é difícil medir a qualidade dos revisores de IA.",
+          "evidenceIds": [
+            "e2",
+            "e4"
+          ],
+          "evidence": "Agentic code review is becoming an essential piece of how development happens. But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "O objetivo é ajudar a entender pontos fortes e limitações, como encontrar mais issues, gerar menos ruído ou identificar problemas críticos.",
+          "evidenceIds": [
+            "e5",
+            "e6",
+            "e3"
+          ],
+          "evidence": "Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow. It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "A GitHub lançou o ReviewBench, um benchmark para agentes de revisão de código.",
+          "evidenceIds": [
+            "e1"
+          ],
+          "evidence": "We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "speechSummary",
+          "claim": "A ideia é medir melhor a qualidade desses revisores de IA, entender quando eles encontram mais problemas, geram menos ruído ou destacam falhas críticas.",
+          "evidenceIds": [
+            "e4",
+            "e5",
+            "e6",
+            "e3"
+          ],
+          "evidence": "But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you. Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow. It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships."
+        },
+        {
+          "kind": "identifier",
+          "message": "Número, sigla ou identificador não sustentado: IA",
+          "field": "speechSummary",
+          "claim": "A ideia é medir melhor a qualidade desses revisores de IA, entender quando eles encontram mais problemas, geram menos ruído ou destacam falhas críticas.",
+          "evidenceIds": [
+            "e4",
+            "e5",
+            "e6",
+            "e3"
+          ],
+          "evidence": "But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you. Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow. It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships."
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "FAIL",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      }
+    },
+    {
+      "title": "Bets começam a sair do ar nesta terça-feira",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "FAIL",
+      "failures": [
+        {
+          "kind": "modality",
+          "message": "Intenção ou possibilidade transformada em fato concluído",
+          "field": "editorialSummary",
+          "claim": "A medida cumpre a MP 1.394/2026, que proibiu a exploração, a oferta, a intermediação e a publicidade dessas atividades no Brasil.",
+          "evidenceIds": [
+            "e2"
+          ],
+          "evidence": "A medida cumpre o previsto na MP 1.394/2026 , que proibiu a exploração, a oferta, a intermediação e a publicidade dessas atividades no Brasil."
+        },
+        {
+          "kind": "modality",
+          "message": "Intenção ou possibilidade transformada em fato concluído",
+          "field": "speechSummary",
+          "claim": "A medida segue a MP 1.394/2026, e agora há prazos para informar saldos e devolver os recursos aos apostadores.",
+          "evidenceIds": [
+            "e2",
+            "e4",
+            "e5"
+          ],
+          "evidence": "A medida cumpre o previsto na MP 1.394/2026 , que proibiu a exploração, a oferta, a intermediação e a publicidade dessas atividades no Brasil. As empresas terão os dias 7 e 8 de outubro para informar às instituições financeiras os saldos remanescentes de seus clientes, vinculados aos respectivos CPFs. De 9 a 14 de outubro, os bancos deverão efetuar a devolução dos valores aos apostadores."
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "FAIL",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Intenção ou possibilidade transformada em fato concluído"
+      }
+    },
+    {
+      "title": "Tite abre o jogo: ansiedade, frustração na Seleção, no Flamengo e revela primeira meta no Botafogo",
+      "factual": "FAIL",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "FAIL",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "Sobre o trabalho no Botafogo, ele foi direto: a primeira meta é deixar o time longe do perigo de queda no Brasileirão.",
+          "evidenceIds": [
+            "e2"
+          ],
+          "evidence": "Sobre a temporada, foi direto e reto: antes de ambicionar algo maior, o Botafogo precisa se afastar do perigo de cair no Brasileirão."
+        },
+        {
+          "kind": "factual",
+          "message": "Conteúdo insuficientemente ancorado na evidência indicada",
+          "field": "editorialSummary",
+          "claim": "O treinador reconheceu que o objetivo inicial é modesto para o tamanho do clube, mas disse que é preciso garantir a permanência na Série A antes de pensar em metas maiores.",
+          "evidenceIds": [
+            "e3",
+            "e5",
+            "e6"
+          ],
+          "evidence": "O treinador admitiu que a primeira meta para este início de trabalho é bem modesta para o tamanho do clube, mas justificou que há a necessidade de garantir a pontuação para permanecer na Série A antes de pensar em voos maiores ao longo do contrato, que se encerra no fim de 2028. A primeira meta, como conversamos internamente, e o Léo Coelho (diretor) está aqui conosco, talvez não condiga com a grandeza do Botafogo. Vou me permitir fazer essa colocação: a história recente e passada do Botafogo exige mais do que eu vou falar agora."
+        },
+        {
+          "kind": "negation",
+          "message": "Negação alterada em relação ao trecho indicado",
+          "field": "editorialSummary",
+          "claim": "O treinador reconheceu que o objetivo inicial é modesto para o tamanho do clube, mas disse que é preciso garantir a permanência na Série A antes de pensar em metas maiores.",
+          "evidenceIds": [
+            "e3",
+            "e5",
+            "e6"
+          ],
+          "evidence": "O treinador admitiu que a primeira meta para este início de trabalho é bem modesta para o tamanho do clube, mas justificou que há a necessidade de garantir a pontuação para permanecer na Série A antes de pensar em voos maiores ao longo do contrato, que se encerra no fim de 2028. A primeira meta, como conversamos internamente, e o Léo Coelho (diretor) está aqui conosco, talvez não condiga com a grandeza do Botafogo. Vou me permitir fazer essa colocação: a história recente e passada do Botafogo exige mais do que eu vou falar agora."
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "FAIL",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Conteúdo insuficientemente ancorado na evidência indicada"
+      }
+    },
+    {
+      "title": "Chuvas persistem em praticamente todas regiões do país",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "FAIL",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "identifier",
+          "message": "Nome ou termo específico sem apoio no candidato",
+          "field": "editorialSummary",
+          "claim": "No Norte, o Inmet emitiu aviso amarelo para tempestades no sul de Rondônia e para chuvas intensas em áreas do Amazonas, além de chuva em outras partes do Pará, Acre, Roraima e Tocantins.",
+          "evidenceIds": [
+            "e3",
+            "e4"
+          ],
+          "evidence": "Na Região Norte , um aviso amarelo de perigo potencial alerta para tempestades no sul de Rondônia e chuvas intensas no centro, leste e noroeste do Amazonas. Chove também no sudoeste e sul do Pará, no Acre, nas demais áreas de Roraima, no oeste e sul do Tocantins."
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "FAIL",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Nome ou termo específico sem apoio no candidato"
+      }
+    }
+  ],
+  "openAiCalls": 0,
+  "webSearch": 0,
+  "firestoreWrites": 0,
+  "newEditions": 0
+}

@@ -1,0 +1,25 @@
+﻿{
+    "success":  true,
+    "briefing":  {
+                     "data":  "2026-10-05",
+                     "titulo":  "Radar ACS — Edição #004",
+                     "roteiroAlexa":  "O Google resumiu as principais novidades de IA de setembro em uma publicação de 2 de outubro. Entre os destaques estão o Gemini 4 Argon, novas integrações no Gemini e o WeatherNext 3. Também aparecem modelos de voz e ferramentas para uso em apps e tarefas científicas. (blog.google)\n\nO GitHub publicou um texto sobre como a IA está mudando o trabalho de desenvolvimento. A recomendação é fortalecer três pontos: dirigir agentes, revisar com olhar crítico e manter o julgamento técnico como peça central. (github.blog)",
+                     "audioUrl":  null,
+                     "noticias":  [
+                                      {
+                                          "titulo":  "Google reúne as principais novidades de IA de setembro em um resumo publicado em 2 de outubro",
+                                          "resumo":  "O Google publicou um balanço com as novidades de IA de setembro de 2026, destacando o Gemini 4 Argon, novas integrações no Gemini e o WeatherNext 3. O texto também menciona lançamentos de modelos de voz, ferramentas para apps e avanços em aplicações científicas. ([blog.google](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/?utm_source=openai))",
+                                          "fonte":  "Google Blog",
+                                          "sourceUrl":  "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+                                      },
+                                      {
+                                          "titulo":  "GitHub diz que trabalhar com IA exige três habilidades mais fortes em 2 de outubro",
+                                          "resumo":  "Em um artigo publicado em 2 de outubro de 2026, o GitHub afirma que a IA está mudando o trabalho de desenvolvimento e aponta três habilidades para reforçar: orientar agentes, revisar criticamente as respostas e manter o julgamento técnico no centro do fluxo de trabalho. ([github.blog](https://github.blog/latest/?utm_source=openai))",
+                                          "fonte":  "GitHub Blog",
+                                          "sourceUrl":  "https://github.blog/latest/"
+                                      }
+                                  ],
+                     "coverId":  "radar",
+                     "editionType":  "regular"
+                 }
+}

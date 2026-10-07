@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+test.beforeEach(async ({ page }) => {
+  await page.route('**/api/live', route => route.fulfill({ json: { success: true, preferences: { editorial: {} }, football: { enabled: false, status: 'DISABLED', teams: [], matches: [] }, media: [] } }));
+});
 import fs from 'node:fs';
 import { adminMock, loginMock } from './admin-mock';
 const fixture = JSON.parse(fs.readFileSync(new URL('../../tests/fixtures/editorial-edicao-002.json', import.meta.url), 'utf8'));

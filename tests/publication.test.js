@@ -40,7 +40,7 @@ test('Publicador valida e envia cinco notícias sem segredo no JSON', async () =
 
 for (const [name, patch] of [
     ['zero notícias', { noticias: [] }],
-    ['seis notícias', { noticias: [...sample.noticias, { ...sample.noticias[4], ordem: 6 }] }],
+    ['oito notícias', { noticias: Array.from({ length: 8 }, (_, i) => ({ ...sample.noticias[i % 5], ordem: i + 1 })) }],
     ['roteiro vazio', { roteiroAlexa: '  ' }],
     ['fonte vazia', { noticias: sample.noticias.map((item, i) => i === 0 ? { ...item, fonte: '' } : item) }],
     ['URL vazia', { noticias: sample.noticias.map((item, i) => i === 0 ? { ...item, url: '' } : item) }],

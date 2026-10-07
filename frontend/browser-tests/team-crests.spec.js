@@ -1,0 +1,28 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import { adminMock, loginMock } from './admin-mock.js';
+const fixture = JSON.parse(fs.readFileSync(new URL('./refinement-fixture.json', import.meta.url), 'utf8'));
+for (const width of [390,1440]) test(`escudo oficial, seleção e futebol sem gravação em ${width}px`, async ({page}) => {
+  await page.setViewportSize({width,height:900});
+  await page.route('https://**/*', route => route.abort());
+  await page.route('https://botafogo.com.br/_next/image?*', route => route.fulfill({contentType:'image/png',body:fs.readFileSync(new URL('../review/team-crests/botafogo-official.png',import.meta.url))}));
+  await page.route('**/api/briefing/latest', route=>route.fulfill({json:fixture.latest}));
+  await page.route('**/api/live', route=>route.fulfill({json:fixture.live}));
+  await page.route('**/api/advertising', route=>route.fulfill({json:fixture.ads}));
+  const mock = await adminMock(page); await loginMock(page);
+  await page.goto('/admin/preferences');
+  const input = page.getByRole('combobox', {name:'Pesquise um time'}); await input.fill('bota');
+  const options = page.getByRole('listbox', {name:'Clubes encontrados'}).getByRole('option');
+  await expect(options).toHaveCount(3);
+  await expect(options.first().getByAltText('Escudo do Botafogo')).toBeVisible();
+  await page.waitForFunction(()=>Array.from(document.querySelectorAll('.team-crest img')).every(img=>img.complete&&img.naturalWidth>0));
+  await page.locator('.team-editor').screenshot({path:`review/team-crests/teams-${width}.png`});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  expect(mock.settings().followedTeams).toHaveLength(1);
+  await page.goto('/'); await page.locator('.followed-team-crests').scrollIntoViewIfNeeded();
+  await expect(page.locator('.followed-team-crests img')).toHaveCount(1);
+  await page.locator('.your-radar').screenshot({path:`review/team-crests/home-${width}.png`});
+  await page.goto('/live'); await expect(page.locator('.followed-team-crests img')).toHaveCount(1);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.locator('.live-section').screenshot({path:`review/team-crests/live-${width}.png`});
+});

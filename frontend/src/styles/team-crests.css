@@ -1,0 +1,10 @@
+.team-crest { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; flex: 0 0 48px; font-size: 26px; }
+.team-crest img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.team-crest-large { width: 64px; height: 64px; flex-basis: 64px; }
+.followed-team-crests { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 12px 0; }
+.followed-team-visual { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; max-width: 110px; text-align: center; font-size: 13px; }
+.followed-team-visual > span { overflow-wrap: anywhere; }
+.single-team .followed-team-visual { flex-direction: row; max-width: 100%; text-align: left; font-size: 16px; }
+.team-crest-more { border: 1px solid var(--portal-line, #405963); border-radius: 50%; padding: 10px; }
+.live-match-crests { display: flex; align-items: center; gap: 14px; margin: 10px 0; }
+@media (max-width: 430px) { .followed-team-crests { gap: 8px; } .followed-team-visual { max-width: 74px; } }

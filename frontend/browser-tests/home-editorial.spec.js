@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+const fixture=JSON.parse(fs.readFileSync(new URL('./refinement-fixture.json',import.meta.url),'utf8'));
+fs.mkdirSync('review/home-editorial',{recursive:true});
+for(const width of [375,390,430,768,1280,1440])test(`hierarquia editorial Home em ${width}px`,async({page})=>{
+ await page.setViewportSize({width,height:1000});
+ await page.route('https://**/*',route=>route.abort());
+ await page.route('https://botafogo.com.br/_next/image?*',route=>route.fulfill({contentType:'image/png',body:fs.readFileSync(new URL('../review/team-crests/botafogo-official.png',import.meta.url))}));
+ await page.route('https://acstech.dev.br/**',route=>route.fulfill({contentType:'image/png',body:fs.readFileSync(new URL('../public/logo-acs.png',import.meta.url))}));
+ await page.route('**/api/radar/latest',route=>route.fulfill({json:fixture.latest}));
+ await page.route('**/api/briefing/latest',route=>route.fulfill({json:fixture.latest}));
+ await page.route('**/api/live',route=>route.fulfill({json:fixture.live}));
+ await page.route('**/api/advertising',route=>route.fulfill({json:fixture.ads}));
+ await page.route('**/api/audience/listeners',route=>route.fulfill({json:{success:true,listeners:0}}));
+ const errors=[];page.on('pageerror',error=>errors.push(error.message));
+ await page.goto('/');await page.getByRole('heading',{name:'Últimas notícias'}).waitFor();
+ const layout=page.locator('.home-editorial-layout');await layout.scrollIntoViewIfNeeded();
+ await expect(layout.locator('.news-item')).toHaveCount(fixture.latest.briefing.noticias.length);
+ await expect(layout.locator('.edition-summary,.editorial-directory')).toHaveCount(0);
+ const editorial=await page.locator('.home-editorial-content').boundingBox(),side=await page.locator('.your-radar').boundingBox();
+ if(width>=1100){expect(side.x).toBeGreaterThan(editorial.x+editorial.width);expect(editorial.width/side.width).toBeGreaterThan(2);}
+ else expect(side.y).toBeGreaterThanOrEqual(editorial.y+editorial.height);
+ const secondary=page.locator('.secondary-stories .editorial-visual').first();const rect=await secondary.boundingBox();expect(Math.abs(rect.width/rect.height-16/9)).toBeLessThan(.03);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await expect(page.getByAltText('Escudo do Botafogo')).toBeVisible();
+ const before=await layout.boundingBox();await page.evaluate(()=>document.fonts.ready);const after=await layout.boundingBox();expect(Math.abs(before.height-after.height)).toBeLessThan(2);
+ expect(errors).toEqual([]);
+ expect(await page.locator('.your-radar-module').first().evaluate(node=>getComputedStyle(node).borderTopWidth)).toBe('1px');
+ if([390,768,1440].includes(width))await page.locator('.home-editorial-section').screenshot({path:`review/home-editorial/home-editorial-${width===1440?'desktop':width===768?'tablet':'mobile'}.png`,style:'.skip-link {visibility:hidden} .public-page .header {position:static!important}'});
+});

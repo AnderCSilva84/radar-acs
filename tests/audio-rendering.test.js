@@ -1,7 +1,7 @@
-﻿'use strict';
+'use strict';
 const test=require('node:test');const assert=require('node:assert/strict');
 const {sanitizeSpeech,renderEditionAudio}=require('../api/audio-rendering');
-const {generateRadarEdition}=require('../api/generator');
+const {generateRadarEdition}=require('./helpers/legacy-generator');
 const {validateAudioScript}=require('../api/audio-script');
 const {getBriefingPlayback}=require('../api/playback');
 const fixture=require('./fixtures/collected-news-unconfirmed.json');

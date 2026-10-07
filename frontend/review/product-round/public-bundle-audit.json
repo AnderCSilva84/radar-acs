@@ -1,0 +1,50 @@
+{
+  "initialChunks": [
+    "assets/index-DceTkcmS.js"
+  ],
+  "adminModulesInInitial": 0,
+  "routes": [
+    {
+      "path": "/",
+      "http": 200,
+      "adminLoaded": false,
+      "js": [
+        "/assets/index-DceTkcmS.js"
+      ]
+    },
+    {
+      "path": "/listen",
+      "http": 200,
+      "adminLoaded": false,
+      "js": [
+        "/assets/index-DceTkcmS.js",
+        "/assets/Listen-DyAeg7ft.js",
+        "/assets/MediaCard-Bg_bfY9t.js"
+      ]
+    },
+    {
+      "path": "/live",
+      "http": 200,
+      "adminLoaded": false,
+      "js": [
+        "/assets/index-DceTkcmS.js"
+      ]
+    },
+    {
+      "path": "/history",
+      "http": 200,
+      "adminLoaded": false,
+      "js": [
+        "/assets/index-DceTkcmS.js",
+        "/assets/History-rZLSGsHT.js"
+      ]
+    },
+    {
+      "path": "/admin/advertisers",
+      "authorizedMock": true,
+      "lazyLoaded": true
+    }
+  ],
+  "realWrites": 0,
+  "realUploads": 0
+}

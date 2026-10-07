@@ -35,7 +35,8 @@ function customUsable(value,news) {
 function renderEditionAudio(edition) {
     let script='';const warnings=[];
     const noticias=edition.noticias.map(news=>{
-        const personalized=customUsable(news.roteiroAlexa,news)?sanitizeSpeech(news.roteiroAlexa):'';
+        const supplied=news.speechSummary || news.roteiroAlexa;
+        const personalized=customUsable(supplied,news)?sanitizeSpeech(supplied):'';
         const title=sanitizeSpeech(news.titulo),summary=sanitizeSpeech(news.resumo);
         const choices=[personalized,[title,summary].filter(Boolean).join('. '),summary].filter(usable);
         let chosen='';

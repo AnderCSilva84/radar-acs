@@ -1,0 +1,16 @@
+const fs=require('node:fs');
+const report=JSON.parse(fs.readFileSync('.local-editorial-v2-preview-report.json'));
+const paid=JSON.parse(fs.readFileSync('.local-editorial-v2-paid-preview.json'));
+const writing=JSON.parse(paid.output.filter(x=>x.type==='message').flatMap(x=>x.content||[]).filter(x=>x.type==='output_text').map(x=>x.text).join(''));
+const esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const words=s=>s.trim().split(/\s+/).filter(Boolean).length;
+let html='<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:16px system-ui;background:#091217;color:#eef;max-width:900px;margin:auto;padding:24px}article{padding:24px;border:1px solid #466;margin:20px 0}p{white-space:pre-wrap;line-height:1.6}a{color:#6dc}</style><h1>RADAR ACS</h1><h2>EDITORIAL V2 — PREVIEW NÃO PUBLICADO</h2><p>DIAGNÓSTICO: todas as matérias foram rejeitadas. Textos abaixo não estão aprovados para publicação ou Alexa.</p>';
+const items=report.selected.map((c,i)=>{const n=writing.noticias.find(x=>x.candidateId===c.id);html+=`<article><small>${i+1} · ${esc(c.category)} · ${c.priority} · SCORE ${c.score} · REJEITADA</small><h2>${esc(c.title)}</h2><p>${esc(c.sourceName)} · ${c.publishedAt} · IMAGEM ${c.imageUrl?'SIM':'NÃO'}</p><a href="${esc(c.url)}">${esc(c.url)}</a><h3>Editorial summary</h3><p>${esc(n.editorialSummary)}</p><h3>Speech summary</h3><p>${esc(n.speechSummary)}</p></article>`;return {c,n};});
+fs.writeFileSync('.local-editorial-v2-pwa-preview.html',html+'</html>');
+const script=items.map(x=>x.n.speechSummary).join('\n\n');
+const briefing={data:'2026-10-06',titulo:'PREVIEW NÃO VALIDADO',roteiroAlexa:script,audioUrl:null};
+const playback=require('../lambda/daily-greeting').dailyPlayback(briefing,'',new Date());
+fs.writeFileSync('.local-editorial-v2-alexa-preview.ssml',playback.ssml);
+fs.writeFileSync('.local-editorial-v2-alexa-preview.txt','PREVIEW DIAGNÓSTICO NÃO VALIDADO — NÃO ENVIADO À ALEXA\n\n'+playback.ssml.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&'));
+const fullSpeech=playback.ssml.replace(/<[^>]+>/g,'');
+console.log(JSON.stringify({draftPwaWords:items.reduce((a,x)=>a+words(x.n.editorialSummary),0),draftSpeechWords:words(script),draftAlexaFullWords:words(fullSpeech),draftAlexaSeconds:Math.ceil(words(fullSpeech)*60/140),mismatch:items.map(x=>({title:x.c.title,paragraphs:x.n.editorialSummary.split(/\n\s*\n/).length,editorialReferences:x.n.evidenceReferences.filter(y=>y.field==='editorialSummary').length}))},null,2));

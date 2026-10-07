@@ -16,6 +16,11 @@ async function auth() {
 export async function observeAdmin(callback) { return onAuthStateChanged(await auth(), callback); }
 export async function loginAdmin(email, password) { return signInWithEmailAndPassword(await auth(), email, password); }
 export async function logoutAdmin() { return signOut(await auth()); }
+export async function adminFirebaseApp(user) {
+  const instance = await auth();
+  if (!user || instance.currentUser?.uid !== user.uid) throw Error('Autenticação necessária.');
+  return instance.app;
+}
 async function adminRequest(user, settings, path) {
   if (!user) throw new Error('Autenticação necessária.');
   const response = await fetch(path, {
@@ -30,3 +35,4 @@ async function adminRequest(user, settings, path) {
 }
 export const editorialRequest = (user, settings) => adminRequest(user, settings, '/api/admin/editorial');
 export const advertisingRequest = (user, settings) => adminRequest(user, settings, '/api/admin/advertisers');
+export const mediaRequest = (user, settings) => adminRequest(user, settings, '/api/admin/radios');

@@ -1,4 +1,7 @@
 import { test, expect } from '@playwright/test';
+test.beforeEach(async ({ page }) => {
+  await page.route('**/api/live', route => route.fulfill({ json: { success: true, preferences: { editorial: {} }, football: { enabled: false, status: 'DISABLED', teams: [], matches: [] }, media: [] } }));
+});
 import fs from 'node:fs';
 const old = JSON.parse(fs.readFileSync(new URL('../../tests/fixtures/editorial-edicao-002.json', import.meta.url), 'utf8'));
 const special = { ...old, data: '2026-10-04', titulo: 'Radar ACS — Edição #003', coverId: 'eleicoes-2026', context: 'eleicoes-2026', editionType: 'special', specialTitle: 'Eleições 2026' };

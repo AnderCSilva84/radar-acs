@@ -1,0 +1,108 @@
+{
+  "public": [
+    {
+      "path": "/",
+      "width": 1440,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/history",
+      "width": 1440,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/listen",
+      "width": 1440,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/live",
+      "width": 1440,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/privacy",
+      "width": 1440,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/terms",
+      "width": 1440,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/history",
+      "width": 390,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/listen",
+      "width": 390,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/live",
+      "width": 390,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/privacy",
+      "width": 390,
+      "http": 200,
+      "adminChunks": 0
+    },
+    {
+      "path": "/terms",
+      "width": 390,
+      "http": 200,
+      "adminChunks": 0
+    }
+  ],
+  "private": [
+    {
+      "path": "/admin",
+      "anonymous": "DENIED"
+    },
+    {
+      "path": "/admin/preferences",
+      "anonymous": "DENIED"
+    },
+    {
+      "path": "/admin/calendar",
+      "anonymous": "DENIED"
+    },
+    {
+      "path": "/admin/radios",
+      "anonymous": "DENIED"
+    },
+    {
+      "path": "/admin/advertisers",
+      "anonymous": "DENIED"
+    }
+  ],
+  "errors": [],
+  "writes": 0,
+  "edition": {
+    "preserved": true,
+    "title": "Radar ACS — Edição #004",
+    "date": "2026-10-05"
+  },
+  "campaignPreserved": true,
+  "adminApi": 401,
+  "result": "PASS"
+}

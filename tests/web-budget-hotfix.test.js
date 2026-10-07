@@ -1,7 +1,7 @@
-﻿'use strict';
+'use strict';
 const test=require('node:test');const assert=require('node:assert/strict');
 const {createScheduledGenerator}=require('../api/scheduled-generator');
-const {generateRadarEdition}=require('../api/generator');
+const {generateRadarEdition}=require('./helpers/legacy-generator');
 const fixture=require('./fixtures/collected-news-unconfirmed.json');
 for(const [name,completed,pending] of [['3 completed + 1 searching',3,1],['5 ações internas',5,0],['10 ações internas',10,0]]){
  test('pipeline Scheduled completo sem gate web: '+name,async()=>{

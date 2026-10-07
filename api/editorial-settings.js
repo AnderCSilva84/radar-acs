@@ -31,7 +31,14 @@ function validateSettings(input) {
     if (!Array.isArray(input.followedTeams) || input.followedTeams.length > 20 || !Array.isArray(input.events) || input.events.length > 100) invalid();
     result.followedTeams = input.followedTeams.map(team => {
         if (typeof team.active !== 'boolean') invalid();
-        return { id: identifier(team.id), name: text(team.name), sport: text(team.sport), country: text(team.country), active: team.active };
+        const value = { id: identifier(team.id), name: text(team.name), sport: text(team.sport), country: text(team.country), active: team.active };
+        if (team.catalogId) value.catalogId = identifier(team.catalogId);
+        if (team.provider || team.providerTeamId) {
+            if (team.provider !== 'football-data' || !/^\d{1,10}$/.test(String(team.providerTeamId || ''))) invalid();
+            value.provider = team.provider;
+            value.providerTeamId = String(team.providerTeamId);
+        }
+        return value;
     });
     result.events = input.events.map(event => {
         if (!eventTypes.includes(event.type) || !Object.hasOwn(categories, event.category) || !eventPriorities.includes(event.priority) || typeof event.active !== 'boolean') invalid();
@@ -56,7 +63,7 @@ function dailyEditorial(settings, date) {
     const headline = events.find(event => event.priority === 'headline');
     const context = headline ? { editionType: 'special', context: headline.id, specialTitle: headline.title, coverId: headline.coverId || settings.appearance.cover }
         : { editionType: 'regular', coverId: settings.appearance.cover };
-    return { context, prompt: JSON.stringify({ priorities: settings.editorial, categories, followedTeams: settings.editorial.futebol === 'off' ? [] : settings.followedTeams.filter(team => team.active).map(({ name, sport, country }) => ({ name, sport, country })), todayEvents: events.map(({ title, category, priority, description, teamId, competition, startTime, endTime, location }) => ({ title, category, priority, description, teamId, competition, startTime, endTime, location })) }) };
+    return { context, settings, prompt: JSON.stringify({ priorities: settings.editorial, categories, followedTeams: settings.editorial.futebol === 'off' ? [] : settings.followedTeams.filter(team => team.active).map(({ name, sport, country }) => ({ name, sport, country })), todayEvents: events.map(({ title, category, priority, description, teamId, competition, startTime, endTime, location }) => ({ title, category, priority, description, teamId, competition, startTime, endTime, location })) }) };
 }
 async function loadEditorial(getSettings, date, logger = console) {
     let saved, settings = defaultSettings();
@@ -75,4 +82,4 @@ function createEditorialRepository(db) {
     const ref = db.collection('settings').doc('editorial');
     return { async get() { const snapshot = await ref.get(); return snapshot.exists ? snapshot.data() : null; }, async save(value) { await ref.set(value); } };
 }
-module.exports = { defaultSettings, validateSettings, dailyEditorial, loadEditorial, createEditorialRepository };
+module.exports = { categories, defaultSettings, validateSettings, dailyEditorial, loadEditorial, createEditorialRepository };

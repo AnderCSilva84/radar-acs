@@ -2,7 +2,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const fixture = require('./fixtures/generated-response.json');
-const { generateAndPublish, metricsFor, buildRequest } = require('../api/generator');
+const { generateAndPublish, metricsFor, buildRequest } = require('./helpers/legacy-generator');
 const { retainVerified, hydrateGenerated } = require('../api/briefing-recovery');
 const { verifyEvidence } = require('../api/source-evidence');
 const { validateBriefing } = require('../api/validation');
@@ -64,10 +64,10 @@ test('Remoção não mantém referência cruzada nem oportunidade de notícia re
         assert.throws(() => retainVerified(g, [1, 2, 3, 5]), e => e.code === 'UNSAFE_DETERMINISTIC_RECOVERY');
     }
 });
-test('Contrato aceita uma a cinco, rejeitando zero e seis', () => {
-    for (const n of [1, 2, 3, 4, 5]) assert.equal(validateBriefing({ ...candidate(), noticias: candidate().noticias.slice(0, n), publicado: true }).noticias.length, n);
+test('Contrato aceita uma a sete, rejeitando zero e oito', () => {
+    for (const n of [1, 2, 3, 4, 5, 6, 7]) assert.equal(validateBriefing({ ...candidate(), noticias: Array.from({length:n},(_,i)=>({...candidate().noticias[i%5],ordem:i+1})), publicado: true }).noticias.length, n);
     assert.throws(() => validateBriefing({ ...candidate(), noticias: [], publicado: true }));
-    assert.throws(() => validateBriefing({ ...candidate(), noticias: [...candidate().noticias, { ...candidate().noticias[0], ordem: 6 }], publicado: true }));
+    assert.throws(() => validateBriefing({ ...candidate(), noticias: Array.from({length:8},(_,i)=>({...candidate().noticias[i%5],ordem:i+1})), publicado: true }));
 });
 test('Schema compacto hidrata roteiro, ordem e metadados sem IA', () => {
     const g = candidate(); delete g.data; delete g.titulo; delete g.resumo; delete g.roteiroAlexa;

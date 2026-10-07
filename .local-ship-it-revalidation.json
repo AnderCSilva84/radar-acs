@@ -1,0 +1,218 @@
+{
+  "results": [
+    {
+      "title": "Após convocação à Venezuela, Ferraresi retorna ao Rio e amplia leque de opções de Tite na zaga do Botafogo",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "warnings": [
+        {
+          "code": "ANCHORING_WARNING",
+          "field": "editorialSummary",
+          "claim": "Com isso, Tite ganha mais uma opção para a zaga.",
+          "evidenceIds": [
+            "e4"
+          ],
+          "evidence": "A presença de Ferraresi faz crescer o leque de opções para Tite na zaga: o técnico também conta com Lucas Monzón, Arthur Chaves e Justino na briga pelas duas vagas na linha defensiva.",
+          "overlap": 0.5
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    },
+    {
+      "title": "Representação de parlamentares negros segue baixa, diz pesquisadora",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "FAIL",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "negation",
+          "message": "Nega??o alterada em rela??o ? afirma??o indicada",
+          "field": "speechSummary",
+          "claim": "A cientista política Evelyn Apolinária disse que a queda de parlamentares pardos e pretos na Câmara, de 139 para 135, não é o principal ponto.",
+          "evidenceIds": [
+            "e1",
+            "e2"
+          ],
+          "evidence": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária. Segundo a pesquisadora e professora do Centro Universitário de Brasília (Ceub), o dado mais relevante não é a perda de quatro cadeiras, mas sim a sub-representação persistente.",
+          "overlap": 0.7333333333333333,
+          "scopedEvidence": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária"
+        }
+      ],
+      "warnings": [
+        {
+          "code": "ANCHORING_WARNING",
+          "field": "editorialSummary",
+          "claim": "Para ela, o principal problema segue sendo a sub-representação persistente.",
+          "evidenceIds": [
+            "e2"
+          ],
+          "evidence": "Segundo a pesquisadora e professora do Centro Universitário de Brasília (Ceub), o dado mais relevante não é a perda de quatro cadeiras, mas sim a sub-representação persistente.",
+          "overlap": 0.42857142857142855
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Nega??o alterada em rela??o ? afirma??o indicada"
+      },
+      "final": "FAIL"
+    },
+    {
+      "title": "Tite detalha montagem da comissão técnica e divisão de funções no Botafogo",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "warnings": [],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    },
+    {
+      "title": "ReviewBench: An open benchmark for AI code review",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "FAIL",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [
+        {
+          "kind": "identifier",
+          "message": "Número, sigla ou identificador não sustentado: IA",
+          "field": "speechSummary",
+          "claim": "O texto diz que a revisão de código com agentes está se tornando uma parte essencial do desenvolvimento e que os revisores de IA variam na quantidade de issues que encontram e no tipo de problema que conseguem detectar.",
+          "evidenceIds": [
+            "e2",
+            "e5",
+            "e6"
+          ],
+          "evidence": "Agentic code review is becoming an essential piece of how development happens. Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow.",
+          "overlap": 0.05555555555555555
+        }
+      ],
+      "warnings": [
+        {
+          "code": "ANCHORING_WARNING",
+          "field": "editorialSummary",
+          "claim": "A ferramenta chega para medir melhor a qualidade de revisores de IA.",
+          "evidenceIds": [
+            "e4"
+          ],
+          "evidence": "But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you.",
+          "overlap": 0
+        },
+        {
+          "code": "ANCHORING_WARNING",
+          "field": "editorialSummary",
+          "claim": "Segundo o texto, a revisão de código com agentes está se tornando uma parte essencial de como o desenvolvimento acontece.",
+          "evidenceIds": [
+            "e2"
+          ],
+          "evidence": "Agentic code review is becoming an essential piece of how development happens.",
+          "overlap": 0
+        },
+        {
+          "code": "ANCHORING_WARNING",
+          "field": "editorialSummary",
+          "claim": "O material também diz que os revisores atuais podem variar na quantidade de issues que encontram, no nível de ruído e na capacidade de detectar problemas críticos ou pequenas melhorias.",
+          "evidenceIds": [
+            "e5",
+            "e6"
+          ],
+          "evidence": "Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow.",
+          "overlap": 0.058823529411764705
+        },
+        {
+          "code": "ANCHORING_WARNING",
+          "field": "speechSummary",
+          "claim": "O texto diz que a revisão de código com agentes está se tornando uma parte essencial do desenvolvimento e que os revisores de IA variam na quantidade de issues que encontram e no tipo de problema que conseguem detectar.",
+          "evidenceIds": [
+            "e2",
+            "e5",
+            "e6"
+          ],
+          "evidence": "Agentic code review is becoming an essential piece of how development happens. Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow.",
+          "overlap": 0.05555555555555555
+        }
+      ],
+      "url": "PASS",
+      "source": "PASS",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Número, sigla ou identificador não sustentado: IA"
+      },
+      "final": "FAIL"
+    },
+    {
+      "title": "Bets começam a sair do ar nesta terça-feira",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "warnings": [],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    },
+    {
+      "title": "Tite abre o jogo: ansiedade, frustração na Seleção, no Flamengo e revela primeira meta no Botafogo",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "PASS",
+      "failures": [],
+      "warnings": [],
+      "url": "PASS",
+      "source": "PASS",
+      "final": "PASS"
+    },
+    {
+      "title": "Chuvas persistem em praticamente todas regiões do país",
+      "factual": "PASS",
+      "numeric": "PASS",
+      "identifier": "PASS",
+      "negation": "PASS",
+      "modality": "FAIL",
+      "failures": [
+        {
+          "kind": "modality",
+          "message": "Modalidade alterada em rela??o ? afirma??o indicada",
+          "field": "speechSummary",
+          "claim": "Nesta terça-feira, o Inmet prevê céu nublado, chuvas e trovoadas em parte do Norte, Centro-Oeste, Sudeste e Sul.",
+          "evidenceIds": [
+            "e1"
+          ],
+          "evidence": "Céu nublado, chuvas e trovoadas estão previstos nesta terça-feira (6) para parte das regiões Norte, Centro-Oeste, Sudeste e Sul do país.",
+          "overlap": 0.8666666666666667,
+          "scopedEvidence": "Céu nublado, chuvas e trovoadas estão previstos nesta terça-feira (6) para parte das regiões Norte, Centro-Oeste, Sudeste e Sul do país"
+        }
+      ],
+      "warnings": [],
+      "url": "PASS",
+      "source": "PASS",
+      "error": {
+        "code": "FACTUAL_EVIDENCE",
+        "message": "Modalidade alterada em rela??o ? afirma??o indicada"
+      },
+      "final": "FAIL"
+    }
+  ],
+  "passed": 4,
+  "failed": 3,
+  "paidHash": "49444774dbf1c4c044cc90db95b429877cd69489a55c13ecad394ed58210a60f",
+  "openaiCalls": 0
+}

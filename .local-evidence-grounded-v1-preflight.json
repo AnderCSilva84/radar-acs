@@ -1,0 +1,450 @@
+{
+  "date": "2026-10-06",
+  "collectionDate": "2026-10-06",
+  "pool": 11,
+  "selected": 7,
+  "profile": {
+    "editorial": {
+      "tecnologiaIA": "high",
+      "desenvolvimento": "high",
+      "concursosCarreira": "high",
+      "oportunidades": "high",
+      "brasilMundo": "medium",
+      "economia": "medium",
+      "futebol": "high",
+      "clima": "high"
+    },
+    "appearance": {
+      "cover": "acs",
+      "density": "comfortable"
+    },
+    "followedTeams": [
+      {
+        "id": "botafogo",
+        "name": "Botafogo",
+        "sport": "football",
+        "country": "BR",
+        "active": true
+      }
+    ],
+    "events": [
+      {
+        "id": "002",
+        "title": "Círio de Nazaré",
+        "date": "2026-10-11",
+        "type": "special",
+        "category": "brasilMundo",
+        "priority": "high",
+        "active": true,
+        "priorityOrder": 0,
+        "coverId": "cirio-2026",
+        "description": "Cirio de Nossa Senhora de Nazaré",
+        "location": "Belém",
+        "startTime": "06:00",
+        "endTime": "12:00"
+      }
+    ]
+  },
+  "selectedCandidates": [
+    {
+      "id": "candidate-40f868edf7da",
+      "title": "Após convocação à Venezuela, Ferraresi retorna ao Rio e amplia leque de opções de Tite na zaga do Botafogo",
+      "url": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/05/apos-convocacao-a-venezuela-ferraresi-retorna-ao-rio-e-amplia-leque-de-opcoes-de-tite-na-zaga-do-botafogo.ghtml",
+      "sourceName": "GE",
+      "sourceDomain": "ge.globo.com",
+      "publishedAt": "2026-10-05",
+      "category": "futebol",
+      "teamId": "botafogo",
+      "evidenceText": "Zagueiro é o primeiro dos três titulares convocados a retomar atividades no CT após a Data Fifa; Danilo e Huguinho se reapresentarão nesta terça Com o iminente fim da Data Fifa, os jogadores convocados começaram a retomar as respectivas rotinas nos clubes. Dos três convocados do grupo profissional do Botafogo , o zagueiro Ferraresi — liberado após amistoso da Venezuela na última sexta-feira — foi o primeiro a voltar às atividades no Espaço Lonier, nesta segunda-feira. Desta forma, o zagueiro irá participar de duas sessões de treinamento antes do clássico contra o Vasco, na próxima quarta-feira. A presença de Ferraresi faz crescer o leque de opções para Tite na zaga: o técnico também conta com Lucas Monzón, Arthur Chaves e Justino na briga pelas duas vagas na linha defensiva. Enquanto esteve a serviço da Venezuela, Ferraresi completou 180 minutos, atuando na derrota para o Japão e no empate com a Coreia do Sul. A seleção sul-americana ainda vai enfrentar a Jordânia, nesta terça-feira, mas o zagueiro foi um dos atletas liberados pela Vinotinto para retornar de forma antecipada ao clube.",
+      "evidence": [
+        {
+          "id": "e1",
+          "text": "Zagueiro é o primeiro dos três titulares convocados a retomar atividades no CT após a Data Fifa; Danilo e Huguinho se reapresentarão nesta terça Com o iminente fim da Data Fifa, os jogadores convocados começaram a retomar as respectivas rotinas nos clubes."
+        },
+        {
+          "id": "e2",
+          "text": "Dos três convocados do grupo profissional do Botafogo , o zagueiro Ferraresi — liberado após amistoso da Venezuela na última sexta-feira — foi o primeiro a voltar às atividades no Espaço Lonier, nesta segunda-feira."
+        },
+        {
+          "id": "e3",
+          "text": "Desta forma, o zagueiro irá participar de duas sessões de treinamento antes do clássico contra o Vasco, na próxima quarta-feira."
+        },
+        {
+          "id": "e4",
+          "text": "A presença de Ferraresi faz crescer o leque de opções para Tite na zaga: o técnico também conta com Lucas Monzón, Arthur Chaves e Justino na briga pelas duas vagas na linha defensiva."
+        },
+        {
+          "id": "e5",
+          "text": "Enquanto esteve a serviço da Venezuela, Ferraresi completou 180 minutos, atuando na derrota para o Japão e no empate com a Coreia do Sul."
+        },
+        {
+          "id": "e6",
+          "text": "A seleção sul-americana ainda vai enfrentar a Jordânia, nesta terça-feira, mas o zagueiro foi um dos atletas liberados pela Vinotinto para retornar de forma antecipada ao clube."
+        }
+      ],
+      "collectedAt": "2026-10-06",
+      "quality": 3,
+      "generalRelevance": 0,
+      "imageUrl": "https://s2-ge.glbimg.com/BA8DovpoB89z-Sm-g8JqaECCELA=/1574x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/e/t/Yb9NBdTlqmTR0BqPHiVw/55526224401-dab76df2ca-k.jpg",
+      "imageSource": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/05/apos-convocacao-a-venezuela-ferraresi-retorna-ao-rio-e-amplia-leque-de-opcoes-de-tite-na-zaga-do-botafogo.ghtml",
+      "imageAlt": "",
+      "imageApproved": false,
+      "priority": "high",
+      "score": 104,
+      "scoreComponents": {
+        "priority": 60,
+        "followedTeam": 15,
+        "freshness": 9,
+        "source": 9,
+        "evidence": 6,
+        "articleUrl": 5,
+        "generalRelevance": 0
+      },
+      "selectionScore": 104,
+      "selectionReason": "Prioridade, atualidade, fonte e evidência; diversidade progressiva"
+    },
+    {
+      "id": "candidate-67ef6273e183",
+      "title": "Representação de parlamentares negros segue baixa, diz pesquisadora",
+      "url": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-10/representacao-de-parlamentares-negros-segue-baixa-diz-pesquisadora",
+      "sourceName": "Agência Brasil",
+      "sourceDomain": "agenciabrasil.ebc.com.br",
+      "publishedAt": "2026-10-06",
+      "category": "oportunidades",
+      "teamId": null,
+      "evidenceText": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária. Segundo a pesquisadora e professora do Centro Universitário de Brasília (Ceub), o dado mais relevante não é a perda de quatro cadeiras, mas sim a sub-representação persistente. “Os negros são cerca de metade das candidaturas à Câmara e pouco mais da metade da população, mas ocupam pouco mais de 25% das cadeiras”, lamentou Evelyn. Dos 135 pretos e pardos eleitos neste domingo (4), 77 foram reeleitos. Ela considera que os recursos de campanha, o acesso ao financiamento e as estruturas partidárias seguem desiguais. “As regras de incentivo, como a distribuição proporcional dos fundos, não bastaram para reduzir essa distância”, aponta.",
+      "evidence": [
+        {
+          "id": "e1",
+          "text": "A redução no número de parlamentares pardos e pretos de 139 para 135 na Câmara dos Deputados tem um significado que vai além dos números, para a cientista política Evelyn Apolinária."
+        },
+        {
+          "id": "e2",
+          "text": "Segundo a pesquisadora e professora do Centro Universitário de Brasília (Ceub), o dado mais relevante não é a perda de quatro cadeiras, mas sim a sub-representação persistente."
+        },
+        {
+          "id": "e3",
+          "text": "“Os negros são cerca de metade das candidaturas à Câmara e pouco mais da metade da população, mas ocupam pouco mais de 25% das cadeiras”, lamentou Evelyn."
+        },
+        {
+          "id": "e4",
+          "text": "Dos 135 pretos e pardos eleitos neste domingo (4), 77 foram reeleitos."
+        },
+        {
+          "id": "e5",
+          "text": "Ela considera que os recursos de campanha, o acesso ao financiamento e as estruturas partidárias seguem desiguais."
+        },
+        {
+          "id": "e6",
+          "text": "“As regras de incentivo, como a distribuição proporcional dos fundos, não bastaram para reduzir essa distância”, aponta."
+        }
+      ],
+      "collectedAt": "2026-10-06",
+      "quality": 3,
+      "generalRelevance": 0,
+      "imageUrl": "https://imagens.ebc.com.br/LqfyRKWAriCfzpscohksOpQfOPo=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/52195713712_340ecd23e8_k.jpg?itok=2zZUhDhY",
+      "imageSource": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-10/representacao-de-parlamentares-negros-segue-baixa-diz-pesquisadora",
+      "imageAlt": "",
+      "imageApproved": false,
+      "priority": "high",
+      "score": 92,
+      "scoreComponents": {
+        "priority": 60,
+        "followedTeam": 0,
+        "freshness": 12,
+        "source": 9,
+        "evidence": 6,
+        "articleUrl": 5,
+        "generalRelevance": 0
+      },
+      "selectionScore": 92,
+      "selectionReason": "Prioridade, atualidade, fonte e evidência; diversidade progressiva"
+    },
+    {
+      "id": "candidate-572cdf1cf58c",
+      "title": "Tite detalha montagem da comissão técnica e divisão de funções no Botafogo",
+      "url": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/05/tite-detalha-montagem-da-comissao-tecnica-e-divisao-de-funcoes-no-botafogo.ghtml",
+      "sourceName": "GE",
+      "sourceDomain": "ge.globo.com",
+      "publishedAt": "2026-10-05",
+      "category": "futebol",
+      "teamId": "botafogo",
+      "evidenceText": "Treinador chegou com dois profissionais e integrou comissão permanente do clube A chegada de Tite ao Botafogo não provocou uma reformulação completa na comissão técnica. Pelo contrário: ex-técnico do sub-20, Rodrigo Bellão foi mantido e agora integra de forma fixa o grupo profissional. Também houve a integração de Marcelo “Fera” Salles, auxiliar do clube. Tite levou para a comissão o auxiliar Matheus Bachi e o preparador físico Fábio Mahseredjian. Mas como funciona a divisão de funções no dia a dia? Segundo o próprio Tite, a ideia é aproveitar o conhecimento de quem já trabalhava no clube.",
+      "evidence": [
+        {
+          "id": "e1",
+          "text": "Treinador chegou com dois profissionais e integrou comissão permanente do clube A chegada de Tite ao Botafogo não provocou uma reformulação completa na comissão técnica."
+        },
+        {
+          "id": "e2",
+          "text": "Pelo contrário: ex-técnico do sub-20, Rodrigo Bellão foi mantido e agora integra de forma fixa o grupo profissional."
+        },
+        {
+          "id": "e3",
+          "text": "Também houve a integração de Marcelo “Fera” Salles, auxiliar do clube."
+        },
+        {
+          "id": "e4",
+          "text": "Tite levou para a comissão o auxiliar Matheus Bachi e o preparador físico Fábio Mahseredjian."
+        },
+        {
+          "id": "e5",
+          "text": "Mas como funciona a divisão de funções no dia a dia?"
+        },
+        {
+          "id": "e6",
+          "text": "Segundo o próprio Tite, a ideia é aproveitar o conhecimento de quem já trabalhava no clube."
+        }
+      ],
+      "collectedAt": "2026-10-06",
+      "quality": 3,
+      "generalRelevance": 0,
+      "imageUrl": "https://s2-ge.glbimg.com/SddEYt7w2Jzl_5y46n89kcevMlw=/1250x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/q/2/8ze5Z3SguRAxAYA1Tt3w/captura-de-tela-2026-10-02-194025.png",
+      "imageSource": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/05/tite-detalha-montagem-da-comissao-tecnica-e-divisao-de-funcoes-no-botafogo.ghtml",
+      "imageAlt": "",
+      "imageApproved": false,
+      "priority": "high",
+      "score": 104,
+      "scoreComponents": {
+        "priority": 60,
+        "followedTeam": 15,
+        "freshness": 9,
+        "source": 9,
+        "evidence": 6,
+        "articleUrl": 5,
+        "generalRelevance": 0
+      },
+      "selectionScore": 89,
+      "selectionReason": "Prioridade, atualidade, fonte e evidência; diversidade progressiva"
+    },
+    {
+      "id": "candidate-d8885d98544b",
+      "title": "ReviewBench: An open benchmark for AI code review",
+      "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review",
+      "sourceName": "GitHub Blog",
+      "sourceDomain": "github.blog",
+      "publishedAt": "2026-10-05",
+      "category": "desenvolvimento",
+      "teamId": null,
+      "evidenceText": "We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics. Agentic code review is becoming an essential piece of how development happens. It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships. But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you. Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too. You may need code review to do different things within your workflow.",
+      "evidence": [
+        {
+          "id": "e1",
+          "text": "We’re launching ReviewBench, a benchmark for code review agents built on representative GitHub pull requests, multi-source ground truth, calibrated evaluation, and production-aligned metrics."
+        },
+        {
+          "id": "e2",
+          "text": "Agentic code review is becoming an essential piece of how development happens."
+        },
+        {
+          "id": "e3",
+          "text": "It helps you inspect pull requests, catch issues, and decide what deserves attention before code ships."
+        },
+        {
+          "id": "e4",
+          "text": "But the quality of existing AI reviewers can be hard to measure, and you need to know the strengths of a reviewer before you know if it will help you."
+        },
+        {
+          "id": "e5",
+          "text": "Some reviewers surface more issues, some produce less noise, and some are stronger at catching critical problems while others surface smaller improvements, too."
+        },
+        {
+          "id": "e6",
+          "text": "You may need code review to do different things within your workflow."
+        }
+      ],
+      "collectedAt": "2026-10-06",
+      "quality": 3,
+      "generalRelevance": 0,
+      "imageUrl": "https://github.blog/wp-content/uploads/2026/01/generic-invertocat-logo.png?resize=150%2C150",
+      "imageSource": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review",
+      "imageAlt": "",
+      "imageApproved": false,
+      "priority": "high",
+      "score": 89,
+      "scoreComponents": {
+        "priority": 60,
+        "followedTeam": 0,
+        "freshness": 9,
+        "source": 9,
+        "evidence": 6,
+        "articleUrl": 5,
+        "generalRelevance": 0
+      },
+      "selectionScore": 89,
+      "selectionReason": "Prioridade, atualidade, fonte e evidência; diversidade progressiva"
+    },
+    {
+      "id": "candidate-6bf63d627a3c",
+      "title": "Bets começam a sair do ar nesta terça-feira",
+      "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-10/bets-comecam-sair-do-ar-nesta-terca-feira",
+      "sourceName": "Agência Brasil",
+      "sourceDomain": "agenciabrasil.ebc.com.br",
+      "publishedAt": "2026-10-06",
+      "category": "oportunidades",
+      "teamId": null,
+      "evidenceText": "Os sites e aplicativos de apostas esportivas e jogos online , conhecidos como bets, começam a sair do ar em todo o país nesta terça-feira (6). A medida cumpre o previsto na MP 1.394/2026 , que proibiu a exploração, a oferta, a intermediação e a publicidade dessas atividades no Brasil. O prazo para que os usuários retirassem voluntariamente os recursos mantidos nas plataformas terminou às 23h59 de ontem (5). As empresas terão os dias 7 e 8 de outubro para informar às instituições financeiras os saldos remanescentes de seus clientes, vinculados aos respectivos CPFs. De 9 a 14 de outubro, os bancos deverão efetuar a devolução dos valores aos apostadores. Nos casos em que houver impedimento para a restituição dos recursos pelas instituições financeiras, a Caixa Econômica Federal poderá intermediar os pagamentos a partir de 14 de outubro.",
+      "evidence": [
+        {
+          "id": "e1",
+          "text": "Os sites e aplicativos de apostas esportivas e jogos online , conhecidos como bets, começam a sair do ar em todo o país nesta terça-feira (6)."
+        },
+        {
+          "id": "e2",
+          "text": "A medida cumpre o previsto na MP 1.394/2026 , que proibiu a exploração, a oferta, a intermediação e a publicidade dessas atividades no Brasil."
+        },
+        {
+          "id": "e3",
+          "text": "O prazo para que os usuários retirassem voluntariamente os recursos mantidos nas plataformas terminou às 23h59 de ontem (5)."
+        },
+        {
+          "id": "e4",
+          "text": "As empresas terão os dias 7 e 8 de outubro para informar às instituições financeiras os saldos remanescentes de seus clientes, vinculados aos respectivos CPFs."
+        },
+        {
+          "id": "e5",
+          "text": "De 9 a 14 de outubro, os bancos deverão efetuar a devolução dos valores aos apostadores."
+        },
+        {
+          "id": "e6",
+          "text": "Nos casos em que houver impedimento para a restituição dos recursos pelas instituições financeiras, a Caixa Econômica Federal poderá intermediar os pagamentos a partir de 14 de outubro."
+        }
+      ],
+      "collectedAt": "2026-10-06",
+      "quality": 3,
+      "generalRelevance": 0,
+      "imageUrl": "https://imagens.ebc.com.br/NdBx3yU_880KmiA-pSTdszJUPP8=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2024/10/08/bets.jpg?itok=r9kup9L4",
+      "imageSource": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-10/bets-comecam-sair-do-ar-nesta-terca-feira",
+      "imageAlt": "",
+      "imageApproved": false,
+      "priority": "high",
+      "score": 92,
+      "scoreComponents": {
+        "priority": 60,
+        "followedTeam": 0,
+        "freshness": 12,
+        "source": 9,
+        "evidence": 6,
+        "articleUrl": 5,
+        "generalRelevance": 0
+      },
+      "selectionScore": 77,
+      "selectionReason": "Prioridade, atualidade, fonte e evidência; diversidade progressiva"
+    },
+    {
+      "id": "candidate-79e4be52eb09",
+      "title": "Tite abre o jogo: ansiedade, frustração na Seleção, no Flamengo e revela primeira meta no Botafogo",
+      "url": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/05/tite-abre-o-jogo-ansiedade-frustracao-na-selecao-no-flamengo-e-revela-primeira-meta-no-botafogo.ghtml",
+      "sourceName": "GE",
+      "sourceDomain": "ge.globo.com",
+      "publishedAt": "2026-10-05",
+      "category": "futebol",
+      "teamId": "botafogo",
+      "evidenceText": "Treinador concedeu ao ge a primeira entrevista exclusiva desde que assumiu o clube carioca Recém-chegado ao Botafogo , Tite recebeu o Globo Esporte no Espaço Lonier e falou sobre tudo: a decisão em assumir o clube, a passagem pelo Flamengo, as eliminações com a seleção brasileira, a crise de ansiedade que o afastou do futebol por um período e até o tal \"titês\". Sobre a temporada, foi direto e reto: antes de ambicionar algo maior, o Botafogo precisa se afastar do perigo de cair no Brasileirão. O treinador admitiu que a primeira meta para este início de trabalho é bem modesta para o tamanho do clube, mas justificou que há a necessidade de garantir a pontuação para permanecer na Série A antes de pensar em voos maiores ao longo do contrato, que se encerra no fim de 2028. — É preciso fazer todo um processo. A primeira meta, como conversamos internamente, e o Léo Coelho (diretor) está aqui conosco, talvez não condiga com a grandeza do Botafogo. Vou me permitir fazer essa colocação: a história recente e passada do Botafogo exige mais do que eu vou falar agora.",
+      "evidence": [
+        {
+          "id": "e1",
+          "text": "Treinador concedeu ao ge a primeira entrevista exclusiva desde que assumiu o clube carioca Recém-chegado ao Botafogo , Tite recebeu o Globo Esporte no Espaço Lonier e falou sobre tudo: a decisão em assumir o clube, a passagem pelo Flamengo, as eliminações com a seleção brasileira, a crise de ansiedade que o afastou do futebol por um período e até o tal \"titês\"."
+        },
+        {
+          "id": "e2",
+          "text": "Sobre a temporada, foi direto e reto: antes de ambicionar algo maior, o Botafogo precisa se afastar do perigo de cair no Brasileirão."
+        },
+        {
+          "id": "e3",
+          "text": "O treinador admitiu que a primeira meta para este início de trabalho é bem modesta para o tamanho do clube, mas justificou que há a necessidade de garantir a pontuação para permanecer na Série A antes de pensar em voos maiores ao longo do contrato, que se encerra no fim de 2028."
+        },
+        {
+          "id": "e4",
+          "text": "— É preciso fazer todo um processo."
+        },
+        {
+          "id": "e5",
+          "text": "A primeira meta, como conversamos internamente, e o Léo Coelho (diretor) está aqui conosco, talvez não condiga com a grandeza do Botafogo."
+        },
+        {
+          "id": "e6",
+          "text": "Vou me permitir fazer essa colocação: a história recente e passada do Botafogo exige mais do que eu vou falar agora."
+        }
+      ],
+      "collectedAt": "2026-10-06",
+      "quality": 3,
+      "generalRelevance": 0,
+      "imageUrl": "https://s2-ge.glbimg.com/SddEYt7w2Jzl_5y46n89kcevMlw=/1250x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/q/2/8ze5Z3SguRAxAYA1Tt3w/captura-de-tela-2026-10-02-194025.png",
+      "imageSource": "https://ge.globo.com/futebol/times/botafogo/noticia/2026/10/05/tite-abre-o-jogo-ansiedade-frustracao-na-selecao-no-flamengo-e-revela-primeira-meta-no-botafogo.ghtml",
+      "imageAlt": "",
+      "imageApproved": false,
+      "priority": "high",
+      "score": 104,
+      "scoreComponents": {
+        "priority": 60,
+        "followedTeam": 15,
+        "freshness": 9,
+        "source": 9,
+        "evidence": 6,
+        "articleUrl": 5,
+        "generalRelevance": 0
+      },
+      "selectionScore": 74,
+      "selectionReason": "Prioridade, atualidade, fonte e evidência; diversidade progressiva"
+    },
+    {
+      "id": "candidate-8aab94860c27",
+      "title": "Chuvas persistem em praticamente todas regiões do país",
+      "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-10/chuvas-persistem-em-praticamente-todas-regioes-do-pais",
+      "sourceName": "Agência Brasil",
+      "sourceDomain": "agenciabrasil.ebc.com.br",
+      "publishedAt": "2026-10-06",
+      "category": "brasilMundo",
+      "teamId": null,
+      "evidenceText": "Céu nublado, chuvas e trovoadas estão previstos nesta terça-feira (6) para parte das regiões Norte, Centro-Oeste, Sudeste e Sul do país. No Nordeste chove de forma isolada e predomina alerta para baixa umidade do ar, informa o Instituto Nacional de Meteorologia (Inmet) . Na Região Norte , um aviso amarelo de perigo potencial alerta para tempestades no sul de Rondônia e chuvas intensas no centro, leste e noroeste do Amazonas. Chove também no sudoeste e sul do Pará, no Acre, nas demais áreas de Roraima, no oeste e sul do Tocantins. O calor persiste na região com temperatura máxima de 38°C em Boa Vista e mínima de 23°C em Palmas. Em relação ao Centro-Oeste , o Inmet emitiu aviso laranja de perigo para tempestades no sul de Mato Grosso e de Goiás e no noroeste, norte e leste de Mato Grosso do Sul.",
+      "evidence": [
+        {
+          "id": "e1",
+          "text": "Céu nublado, chuvas e trovoadas estão previstos nesta terça-feira (6) para parte das regiões Norte, Centro-Oeste, Sudeste e Sul do país."
+        },
+        {
+          "id": "e2",
+          "text": "No Nordeste chove de forma isolada e predomina alerta para baixa umidade do ar, informa o Instituto Nacional de Meteorologia (Inmet) ."
+        },
+        {
+          "id": "e3",
+          "text": "Na Região Norte , um aviso amarelo de perigo potencial alerta para tempestades no sul de Rondônia e chuvas intensas no centro, leste e noroeste do Amazonas."
+        },
+        {
+          "id": "e4",
+          "text": "Chove também no sudoeste e sul do Pará, no Acre, nas demais áreas de Roraima, no oeste e sul do Tocantins."
+        },
+        {
+          "id": "e5",
+          "text": "O calor persiste na região com temperatura máxima de 38°C em Boa Vista e mínima de 23°C em Palmas."
+        },
+        {
+          "id": "e6",
+          "text": "Em relação ao Centro-Oeste , o Inmet emitiu aviso laranja de perigo para tempestades no sul de Mato Grosso e de Goiás e no noroeste, norte e leste de Mato Grosso do Sul."
+        }
+      ],
+      "collectedAt": "2026-10-06",
+      "quality": 3,
+      "generalRelevance": 0,
+      "imageUrl": "https://imagens.ebc.com.br/1KcdLF7j9ALb9GmJXYL88DAbDnw=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/928544-chuva_bras%C3%ADlia_%20143819.jpg?itok=-IFwtqXo",
+      "imageSource": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-10/chuvas-persistem-em-praticamente-todas-regioes-do-pais",
+      "imageAlt": "",
+      "imageApproved": false,
+      "priority": "medium",
+      "score": 67,
+      "scoreComponents": {
+        "priority": 35,
+        "followedTeam": 0,
+        "freshness": 12,
+        "source": 9,
+        "evidence": 6,
+        "articleUrl": 5,
+        "generalRelevance": 0
+      },
+      "selectionScore": 67,
+      "selectionReason": "Prioridade, atualidade, fonte e evidência; diversidade progressiva"
+    }
+  ],
+  "latestHash": "1f651c0c0f9d43cfb86030740a82c2e7a9ec9ee748797ff319df216f6dcc1951"
+}

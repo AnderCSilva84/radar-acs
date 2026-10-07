@@ -1,0 +1,17 @@
+import { verifiedCrests } from './teamCrests';
+// CBF 2026: internal identities, never inferred provider IDs.
+export const CLUB_SOURCES = {
+ A:'https://www.cbf.com.br/futebol-brasileiro/times/campeonato-brasileiro/serie-a/2026',
+ B:'https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/REC_Brasileiro_Serie_B_2026_85d55b9f72.pdf',
+ C:'https://stcbfsiteprdimgbrs.blob.core.windows.net/img-site/cdn/REC_Brasileiro_Serie_C_2026_d2552ddc00.pdf'
+};
+const lists = {
+ A:[['athletico-pr','Athletico Paranaense','PR'],['atletico-mg','Atlético Mineiro','MG'],['bahia','Bahia','BA'],['botafogo','Botafogo','RJ'],['chapecoense','Chapecoense','SC'],['corinthians','Corinthians','SP'],['coritiba','Coritiba','PR'],['cruzeiro','Cruzeiro','MG'],['flamengo','Flamengo','RJ'],['fluminense','Fluminense','RJ'],['gremio','Grêmio','RS'],['internacional','Internacional','RS'],['mirassol','Mirassol','SP'],['palmeiras','Palmeiras','SP'],['bragantino','Red Bull Bragantino','SP'],['remo','Remo','PA'],['santos','Santos','SP'],['sao-paulo','São Paulo','SP'],['vasco','Vasco da Gama','RJ'],['vitoria','Vitória','BA']],
+ B:[['america-mg','América-MG','MG'],['athletic','Athletic Club','MG'],['atletico-go','Atlético Goianiense','GO'],['avai','Avaí','SC'],['botafogo-sp','Botafogo-SP','SP'],['ceara','Ceará','CE'],['crb','CRB','AL'],['criciuma','Criciúma','SC'],['cuiaba','Cuiabá','MT'],['fortaleza','Fortaleza','CE'],['goias','Goiás','GO'],['juventude','Juventude','RS'],['londrina','Londrina','PR'],['nautico','Náutico','PE'],['novorizontino','Novorizontino','SP'],['operario-pr','Operário Ferroviário','PR'],['ponte-preta','Ponte Preta','SP'],['sao-bernardo','São Bernardo','SP'],['sport','Sport','PE'],['vila-nova','Vila Nova','GO']],
+ C:[['ferroviaria','Ferroviária','SP'],['amazonas','Amazonas','AM'],['volta-redonda','Volta Redonda','RJ'],['paysandu','Paysandu','PA'],['caxias','Caxias','RS'],['brusque','Brusque','SC'],['guarani','Guarani','SP'],['floresta','Floresta','CE'],['confianca','Confiança','SE'],['ypiranga','Ypiranga','RS'],['maringa','Maringá','PR'],['ituano','Ituano','SP'],['botafogo-pb','Botafogo-PB','PB'],['figueirense','Figueirense','SC'],['anapolis','Anápolis','GO'],['itabaiana','Itabaiana','SE'],['barra','Barra','SC'],['santa-cruz','Santa Cruz','PE'],['inter-limeira','Inter de Limeira','SP'],['maranhao','Maranhão','MA']]
+};
+export const clubs = Object.entries(lists).flatMap(([division, entries]) => entries.map(([id,name,state]) => ({id,name,shortName:name,state,competition:'Campeonato Brasileiro',division,season:2026,series:division,crestUrl:verifiedCrests[id]?.crestUrl || null,crestSource:verifiedCrests[id]?.crestSource || null,providerIds:{footballData:null},source:CLUB_SOURCES[division]})));
+export const normalizeClub = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+export function searchClubs(query) { const key=normalizeClub(query); return key ? clubs.filter(club=>normalizeClub(club.name).includes(key)).slice(0,12) : []; }
+export function clubForTeam(team) { return clubs.find(club=>club.id===team.catalogId || club.id===team.id || normalizeClub(club.name)===normalizeClub(team.name)); }
+export function followClub(club,teams) { const existing=teams.find(team=>clubForTeam(team)?.id===club.id); return existing ? teams.map(team=>team===existing ? {...team,active:true} : team) : [...teams,{id:club.id,catalogId:club.id,name:club.name,sport:'football',country:'BR',active:true}]; }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { CATEGORIES, PRIORITIES, COVERS, defaultPreferences, loadPreferences, savePreferences } from '../services/preferences';
 import { CoverArt } from '../components/CoverArt';
 import { formatDate } from '../utils/briefing';
+import { FollowedTeamsEditor } from '../components/FollowedTeamsEditor';
 
 export function Preferences({ briefing, serverSettings, onSave }) {
   const [preferences, setPreferences] = useState(() => serverSettings || loadPreferences());
@@ -27,7 +28,7 @@ export function Preferences({ briefing, serverSettings, onSave }) {
       <section className="preferences-section" aria-labelledby="content-title"><h2 id="content-title">Conteúdo</h2><p className="subtle">{onSave ? 'Estas preferências definem os assuntos priorizados no seu Radar diário.' : 'Ajustes locais de preferência. Ainda não alteram as notícias geradas.'}</p>
         <div className="priority-list">{CATEGORIES.map(([key, label]) => <div className="priority-row" key={key}><label htmlFor={`priority-${key}`}>{label}</label><select id={`priority-${key}`} value={preferences.editorial[key]} onChange={event => update('editorial', key, event.target.value)}>{PRIORITIES.map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></div>)}</div>
       </section>
-      {onSave && <section className="preferences-section"><h2>Times que sigo</h2>{preferences.followedTeams.map((team, index) => <label key={team.id}><input type="checkbox" checked={team.active} onChange={event => setPreferences(current => ({ ...current, followedTeams: current.followedTeams.map((item, i) => i === index ? { ...item, active: event.target.checked } : item) }))} /> {team.name} · {team.sport} · {team.country}</label>)}</section>}
+      {onSave && <section className="preferences-section"><h2>Times que sigo</h2><FollowedTeamsEditor teams={preferences.followedTeams} onChange={teams => setPreferences(current => ({ ...current, followedTeams: teams }))} /></section>}
       <section className="preferences-section" aria-labelledby="appearance-title"><h2 id="appearance-title">Aparência</h2><p className="subtle">Escolha como o Radar aparece nas suas telas.</p>
         <fieldset className="cover-options"><legend>Capa da edição</legend>{COVERS.map(([id, label, description]) => <label className={'cover-option ' + (preferences.appearance.cover === id ? 'selected' : '')} key={id}>
           <span className="cover-thumb"><CoverArt cover={id} thumbnail /></span><span><input type="radio" aria-label={label} name="cover" value={id} checked={preferences.appearance.cover === id} onChange={() => update('appearance', 'cover', id)} />{label}</span><small>{description}</small>

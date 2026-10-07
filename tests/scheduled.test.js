@@ -1,6 +1,6 @@
 'use strict';
 const test = require('node:test');const assert = require('node:assert/strict');
-const { editorialDate, buildRequest, generateAndPublish } = require('../api/generator');
+const { editorialDate, buildRequest, generateAndPublish } = require('./helpers/legacy-generator');
 const { editionContext, editionTitle, validateElection } = require('../api/edition-context');
 const { createScheduledGenerator } = require('../api/scheduled-generator');
 const { validateBriefing } = require('../api/validation');

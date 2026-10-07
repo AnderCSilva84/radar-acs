@@ -1,0 +1,49 @@
+{
+  "widths": [
+    {
+      "width": 375,
+      "http": 200,
+      "layout": "PASS",
+      "crest": "PASS"
+    },
+    {
+      "width": 390,
+      "http": 200,
+      "layout": "PASS",
+      "crest": "PASS"
+    },
+    {
+      "width": 430,
+      "http": 200,
+      "layout": "PASS",
+      "crest": "PASS"
+    },
+    {
+      "width": 768,
+      "http": 200,
+      "layout": "PASS",
+      "crest": "PASS"
+    },
+    {
+      "width": 1280,
+      "http": 200,
+      "layout": "PASS",
+      "crest": "PASS"
+    },
+    {
+      "width": 1440,
+      "http": 200,
+      "layout": "PASS",
+      "crest": "PASS"
+    }
+  ],
+  "errors": [],
+  "writes": 0,
+  "edition": {
+    "title": "Radar ACS — Edição #004",
+    "date": "2026-10-05",
+    "preserved": true
+  },
+  "campaignPreserved": true,
+  "result": "PASS"
+}

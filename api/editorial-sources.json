@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-06",
+  "sources": [
+    { "id": "google-ai", "name": "Google Blog", "url": "https://blog.google/innovation-and-ai/technology/ai/", "categories": ["tecnologiaIA"], "quality": 3, "articlePattern": "^/innovation-and-ai/.+/.+" },
+    { "id": "github", "name": "GitHub Blog", "url": "https://github.blog/latest/", "categories": ["desenvolvimento"], "quality": 3, "articlePattern": "^/(?:[^/]+/){2,}[^/]+/?$" },
+    { "id": "agencia-brasil", "name": "Agência Brasil", "url": "https://agenciabrasil.ebc.com.br/", "categories": ["brasilMundo", "economia", "oportunidades"], "quality": 3, "articlePattern": "^/[^/]+/noticia/" },
+    { "id": "mte", "name": "Ministério do Trabalho e Emprego", "url": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/servidores/concursos", "categories": ["concursosCarreira"], "quality": 3, "articlePattern": "^/trabalho-e-emprego/.+/(?:noticias|concursos)/.+" },
+    { "id": "inmet", "name": "INMET", "url": "https://portal.inmet.gov.br/", "categories": ["clima"], "quality": 3, "articlePattern": "^/(?:noticias|uploads)/[^/]+" }
+  ],
+  "teams": {
+    "botafogo": {
+      "name": "Botafogo", "aliases": ["Botafogo de Futebol e Regatas", "Botafogo-RJ"],
+      "officialSite": "https://botafogo.com.br/", "geUrl": "https://ge.globo.com/futebol/times/botafogo/",
+      "newsSources": [
+        { "id": "ge-botafogo", "name": "GE", "url": "https://ge.globo.com/futebol/times/botafogo/", "categories": ["futebol"], "quality": 3, "articlePattern": "^/futebol/times/botafogo/noticia/" },
+        { "id": "oficial-botafogo", "name": "Botafogo", "url": "https://botafogo.com.br/", "categories": ["futebol"], "quality": 3, "articlePattern": "^/(?:noticias|noticia)/.+" }
+      ]
+    },
+    "remo": {
+      "name": "Clube do Remo", "aliases": ["Clube do Remo", "Remo-PA"],
+      "officialSite": "https://clubedoremo.com.br/", "geUrl": "https://ge.globo.com/pa/futebol/times/remo/",
+      "newsSources": [
+        { "id": "ge-remo", "name": "GE", "url": "https://ge.globo.com/pa/futebol/times/remo/", "categories": ["futebol"], "quality": 3, "articlePattern": "^/pa/futebol/times/remo/noticia/" },
+        { "id": "oficial-remo", "name": "Clube do Remo", "url": "https://clubedoremo.com.br/", "categories": ["futebol"], "quality": 3, "articlePattern": "^/noticias/.+" }
+      ]
+    }
+  }
+}

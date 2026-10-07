@@ -79,11 +79,11 @@ async function stage(stageName, operation) {
 
 function diagnosticSnapshot(response, generated, metrics, secrets = []) {
     const clean = (value, key = '') => {
-        if (typeof value === 'string') return redact(value, secrets).slice(0, key === 'roteiroAlexa' ? 20000 : key === 'data' || key === 'dataPublicacao' ? 20 : 2000);
+        if (typeof value === 'string') return redact(value, secrets).slice(0, key === 'roteiroAlexa' ? 20000 : key === 'editorialSummary' || key === 'segment' ? 3000 : key === 'data' || key === 'dataPublicacao' ? 20 : 2000);
         if (value === null || typeof value === 'number' || typeof value === 'boolean') return value;
-        if (Array.isArray(value)) return value.slice(0, 8).map(item => clean(item));
+        if (Array.isArray(value)) return value.slice(0, key === 'evidenceReferences' ? 24 : 8).map(item => clean(item));
         if (value && typeof value === 'object') {
-            const fields = ['data', 'titulo', 'resumo', 'roteiroAlexa', 'noticias', 'oportunidadeDoDia', 'ordem', 'contexto', 'fonte', 'url', 'dataPublicacao', 'evidencia', 'termosEspecificos', 'oportunidadeOrdem', 'evidencias', 'allowedFacts', 'texto', 'evidenciaIndices', 'desenvolvimentoNovo', 'relevante', 'sourceUrlAnterior', 'descricao', 'fatoIndex', 'sourceIds'];
+            const fields = ['data', 'titulo', 'resumo', 'roteiroAlexa', 'noticias', 'oportunidadeDoDia', 'ordem', 'contexto', 'fonte', 'url', 'dataPublicacao', 'evidencia', 'termosEspecificos', 'oportunidadeOrdem', 'evidencias', 'allowedFacts', 'texto', 'evidenciaIndices', 'desenvolvimentoNovo', 'relevante', 'sourceUrlAnterior', 'descricao', 'fatoIndex', 'sourceIds', 'candidateId', 'editorialSummary', 'speechSummary', 'evidenceReferences', 'field', 'segment', 'evidenceIds'];
             return Object.fromEntries(fields.filter(key => Object.hasOwn(value, key)).map(key => [key, clean(value[key], key)]));
         }
         return null;
